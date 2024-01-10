@@ -9,8 +9,10 @@ Download nodeJS: https://nodejs.org/en (recomment version)
 3. Install Git:
 Download Git: https://gitforwindows.org/
 
+Lấy code về:
 git pull
 
+Đẩy code lên:
 git add .
 git commit -m "sua Readme"
 git push
