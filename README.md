@@ -2,11 +2,18 @@
 COS30049-Computing Technology Innovation Project
 1. Clone the Repository:
 git clone https://github.com/DuySeu/Steam_Market.git
+
 2. Install NodeJS:
 Download nodeJS: https://nodejs.org/en (recomment version)
 
 3. Install Git:
 Download Git: https://gitforwindows.org/
+
+git pull
+
+git add .
+git commit -m "sua Readme"
+git push
 
 # For Backend
 4. Install XAMPP:
