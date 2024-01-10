@@ -1,7 +1,7 @@
 # Steam_Market
 COS30049-Computing Technology Innovation Project
 1. Clone the Repository:
-git clone https://github.com/DuySeu/cos20031.git
+git clone https://github.com/DuySeu/Steam_Market.git
 2. Install NodeJS:
 Download nodeJS: https://nodejs.org/en (recomment version)
 
