@@ -8,7 +8,7 @@ Download nodeJS: https://nodejs.org/en (recomment version)
 3. Install Git:
 Download Git: https://gitforwindows.org/
 
-  For Backend
+# For Backend
 4. Install XAMPP:
 Install XAMPP to set up a local server environment: https://www.apachefriends.org/index.html
 
