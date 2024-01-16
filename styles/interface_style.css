@@ -69,3 +69,20 @@ footer a {
 footer ul {
     list-style-type: none;
 }
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    color: #c5c3c0;
+}
+
+.form-select:hover {
+    color: #d9d8d6;
+}
+
+
+.form-select option {
+    background: #3d4450;
+}
