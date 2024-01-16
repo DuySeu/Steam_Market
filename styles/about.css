@@ -1,0 +1,54 @@
+/* About page styles */
+.dots {
+    padding-bottom: 2px;
+}
+
+button {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    font-weight: 100;
+    font-size: 16px; /* Font size */
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+    color: white;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+}
+
+button:hover {
+    background-position: 100% 0;
+}
+
+#about-section {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: #fafafa;
+}
+
+.box {
+    width: 30%;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+#about-video {
+    display: block;
+    margin: 10% auto;
+    align-items: center;
+}
+
+.status {
+    font-size: 10px;
+    font-weight: bold;
+    color: #969798;
+}
+
+#user-status {
+    display: flex;
+    padding: 10px 0;
+}
