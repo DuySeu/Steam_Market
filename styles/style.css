@@ -62,7 +62,6 @@ text-decoration: none;
 }
 .myListListContainer{
     position: relative;
-    
     padding: 9px 15px 0 0;
     margin-top: 30px;
     left: 25%;
@@ -74,8 +73,12 @@ text-decoration: none;
 .mySellListings{
 
 }
+.mySellListings>h3{
+    color: #fff;
+    text-align: center;
+    font-size: xx-large;
+}
 .MySellListingsContent{
-background-color:  grey;
 padding: 1px 1px;
 }
 .myBuyOrders{
@@ -98,3 +101,24 @@ font-size: small;
     list-style-type: none;
     padding: 10px 30px;
 }
+
+div.polaroid {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+  
+  div.container {
+    padding: 10px;
+  }
+  .polaroid:hover{
+      box-shadow: 0 6px 20px 0 grey;
+      cursor: pointer;
+  }
+  .table{display: table; border-spacing: 20px;}
+  .row{display: table-row}
+  .row>div{display: table-cell; border-radius: 10px;background-color: #fff;}
+  .cart:hover{background-color: #67c1f5}
+  .cart{background-color: #445468; color: white;font-family: sans-serif;width: 200px; height: 40px;}
+  .redeem{text-align: center;}
+  .redeem>input{width: 200px; height: 40px;}
