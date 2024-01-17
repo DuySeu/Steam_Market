@@ -49,8 +49,28 @@ header li {
     line-height: 30px;
 }
 
-header a:hover {
+.nav-links:hover {
     color: #d9d8d6;
+}
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    background: none;
+    color: #c5c3c0;
+    border: none;
+}
+
+.form-select:hover {
+    color: #d9d8d6;
+}
+
+
+.form-select option {
+    background: #3d4450;
+    border: none;
 }
 
 .main-content {
@@ -73,20 +93,21 @@ footer ul {
     list-style-type: none;
 }
 
-.form-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: none;
-    color: #c5c3c0;
-    border: none;
+
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    
 }
 
-.form-select:hover {
-    color: #d9d8d6;
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #434953;
+    border-radius: 10px;
 }
 
-
-.form-select option {
-    background: #3d4450;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4f5259; 
 }

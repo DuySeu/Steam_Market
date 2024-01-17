@@ -6,6 +6,7 @@
     left: 25%;
     width: 50%;
 }
+
 .marketTab{
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
@@ -15,13 +16,16 @@
     left: 0;
     right: 0;
 }
+
 .marketTab button{
     background-color: black;
 }
+
 #myList{
     display: inline-block;
     position: relative;
 }
+
 #myList span{
     display: block;
     line-height: 39px;
@@ -34,10 +38,12 @@
     color: white;
   
 }
+
 #myHistory{
     display: inline-block;
     position: relative;
 }
+
 #myHistory span{
     display: block;
     line-height: 39px;
@@ -49,12 +55,15 @@
     text-align: center;
    color: white;
 }
+
 #myList:hover {
     background-color: greenyellow;
 }
+
 #myHistory:hover{
     background-color: greenyellow;
 }
+
 .myListListContainer{
     position: relative;
     
@@ -63,30 +72,37 @@
     left: 25%;
     width: 50%;
 }
-.myActiveListList{
+
+.myActiveListList {
     
 }
+
 .mySellListings{
 
 }
+
 .MySellListingsContent{
-background-color:  grey;
-padding: 1px 1px;
+    background-color:  grey;
+    padding: 1px 1px;
 }
-.myBuyOrders{
+
+.myBuyOrders {
 
 }
+
 .myBuyOrdersContent{
     background-color:  grey;
     padding: 1px 1px;
 }
-.myHistory{
+
+.myHistory {
     
 }
+
 .historyHeader{
-background-color: gray;
-height: 41px;
-font-size: small;
+    background-color: gray;
+    height: 41px;
+    font-size: small;
 }
 .historyCate{
     display: inline-block;
