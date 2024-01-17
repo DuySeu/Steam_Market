@@ -23,9 +23,11 @@ form {
     color: #adaeb0;
 }
 
-#remember-box {
+ {
     background-color: #32353c;
+    color: #32353c;
 }
+
 
 .login-input {
     background-color: #32353c;
