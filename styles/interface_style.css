@@ -79,6 +79,7 @@ footer ul {
     -moz-appearance: none;
     background: none;
     color: #c5c3c0;
+    border: none;
 }
 
 .form-select:hover {
