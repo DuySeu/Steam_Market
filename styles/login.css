@@ -1,0 +1,98 @@
+/* Bordered form */
+#login-section {
+    padding: 6% 25%;
+    width: 50%;
+}
+
+#login-h1 {
+    color: white;
+    font-weight: 900;
+}
+
+form {
+    background-color: #181a21;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#uname-label {
+    color: #1999e8;
+}
+
+#pwdnremember-label {
+    color: #adaeb0;
+}
+
+#remember-box {
+    background-color: #32353c;
+}
+
+.login-input {
+    background-color: #32353c;
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+  
+/* Set a style for all buttons */
+button {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+    color: white;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+    padding: 14px 20px;
+    margin: 8px 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+#submit-btn, #forget-pwd {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+    color: white;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+    padding: 15px;
+    margin: 8px 50px;
+    width: 50%;
+    text-decoration: none;
+    text-align: center;
+}
+  
+/* Add a hover effect for buttons */
+button:hover, #submit-btn:hover, #forget-pwd:hover {
+    background-position: 100% 0;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+  
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+  
+/* Change styles for span and cancel button on extra small screens */
+/* @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+} */
