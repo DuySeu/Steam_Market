@@ -23,12 +23,6 @@ form {
     color: #adaeb0;
 }
 
- {
-    background-color: #32353c;
-    color: #32353c;
-}
-
-
 .login-input {
     background-color: #32353c;
     color: white;
@@ -70,7 +64,9 @@ button {
     width: 50%;
     text-decoration: none;
     text-align: center;
+    font-size:large;
 }
+
   
 /* Add a hover effect for buttons */
 button:hover, #submit-btn:hover, #forget-pwd:hover {
