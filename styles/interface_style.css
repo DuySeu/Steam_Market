@@ -33,11 +33,14 @@ header ul {
 }
 
 header li {
-    /* float: left; */
     display: inline-block;
 }
 
-header a {
+#logo-link {
+    width: 20%;
+}
+
+.nav-links {
     display: block;
     padding: 8px 30px;
     color: #c5c3c0;
