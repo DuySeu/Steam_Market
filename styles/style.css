@@ -1,152 +1,165 @@
-.marketTabContainer{
-    position: relative;
-    height: 30px;
-    padding: 9px 10px 0 0;
-    margin-top: 30px;
-    left: 15%;
-    width: 70%;
+.marketTabContainer {
+  position: relative;
+  height: 30px;
+  padding: 9px 10px 0 0;
+  margin-top: 30px;
+  left: 15%;
+  width: 70%;
 }
 
-.marketTab{
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    bottom: 0;
-    font-size: 5px;
-    left: 0;
-    right: 0;
+.marketTab {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  bottom: 0;
+  font-size: 5px;
+  left: 0;
+  right: 0;
 }
 
-.marketTab button{
-    background-color: black;
-    cursor: pointer;
+.marketTab button {
+  background-color: black;
+  cursor: pointer;
 }
 
-#myList{
-    display: inline-block;
-    position: relative;
+#myList {
+  display: inline-block;
+  position: relative;
 }
 
-#myList span{
-    display: block;
-    line-height: 39px;
-    padding: 0 4px;
-    margin: 0px;
-    min-width: 195px;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: center;
-    color: white;
-  
+#myList span {
+  display: block;
+  line-height: 39px;
+  padding: 0 4px;
+  margin: 0px;
+  min-width: 195px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
 }
 
-#myHistory{
-    display: inline-block;
-    position: relative;
+#myHistory {
+  display: inline-block;
+  position: relative;
 }
 
-#myHistory span{
-    display: block;
-    line-height: 39px;
-    padding: 0 4px;
-    margin: 0px;
-    min-width: 195px;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: center;
-   color: white;
+#myHistory span {
+  display: block;
+  line-height: 39px;
+  padding: 0 4px;
+  margin: 0px;
+  min-width: 195px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
 }
 
 #myList:hover {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
 
-#myHistory:hover{
-    background-color: greenyellow;
+#myHistory:hover {
+  background-color: greenyellow;
 }
 
-.myListListContainer{
-    position: relative;
-    padding: 9px 15px 0 0;
-    margin-top: 30px;
-    left: 25%;
-    width: 50%;
+.myListListContainer {
+  position: relative;
+  padding: 9px 15px 0 0;
+  margin-top: 30px;
+  left: 25%;
+  width: 50%;
 }
 
 .myActiveListList {
-    
 }
 
-.mySellListings{
-
+.mySellListings {
 }
 
-.mySellListings>h3{
-    color: #fff;
-    text-align: center;
-    font-size: xx-large;
+.mySellListings > h3 {
+  color: #fff;
+  text-align: center;
+  font-size: xx-large;
 }
-.MySellListingsContent{
-padding: 1px 1px;
+.MySellListingsContent {
+  padding: 1px 1px;
 }
 
-
-.MySellListingsContent{
-    padding: 1px 1px;
+.MySellListingsContent {
+  padding: 1px 1px;
 }
 
 .myBuyOrders {
-
 }
-.myBuyOrders>h3{
-    color: #fff;
-    text-align: center;
-    font-size: xx-large;
+.myBuyOrders > h3 {
+  color: #fff;
+  text-align: center;
+  font-size: xx-large;
 }
-.myBuyOrdersContent{
-    background-color:  grey;
-    padding: 1px 1px;
+.myBuyOrdersContent {
+  background-color: grey;
+  padding: 1px 1px;
 }
 
 .myHistory {
-    
 }
 
-.historyHeader{
-    background-color: gray;
-    height: 41px;
-    font-size: small;
+.historyHeader {
+  background-color: gray;
+  height: 41px;
+  font-size: small;
 }
-.historyCate{
-    display: inline-block;
-    list-style-type: none;
-    padding: 10px 30px;
+.historyCate {
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px 30px;
 }
 
 div.polaroid {
-    width: 250px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-  }
-  #logo-link>img{
-    width: 80px;
-    height: 80px;
-  }
-  div.container {
-    padding: 10px;
-  }
-  .polaroid:hover{
-      box-shadow: 0 6px 20px 0 #67c1f5;
-      cursor: pointer;
-  }
-  .table{display: table; border-spacing: 20px;}
-#data-container{display: table-row;}
-#data-container>div{display: table-cell; border-radius: 10px;background-color: #fff;}
-  .cart:hover{background-color: #67c1f5}
-  .cart{background-color: #445468; color: white;font-family: sans-serif;width: 200px; height: 40px;}
-  .redeem{text-align: center;}
-  .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Điều này sẽ giữ khoảng cách giữa các sản phẩm */
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+#logo-link > img {
+  width: 80px;
+  height: 80px;
+}
+div.container {
+  padding: 10px;
+}
+.polaroid:hover {
+  box-shadow: 0 6px 20px 0 #67c1f5;
+  cursor: pointer;
+}
+.table {
+  display: table;
+  border-spacing: 20px;
+}
+#data-container {
+  display: table-row;
+}
+#data-container > div {
+  display: table-cell;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.cart:hover {
+  background-color: #67c1f5;
+}
+.cart {
+  background-color: #445468;
+  color: white;
+  font-family: sans-serif;
+  width: 200px;
+  height: 40px;
+}
+.redeem {
+  text-align: center;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Điều này sẽ giữ khoảng cách giữa các sản phẩm */
 }
