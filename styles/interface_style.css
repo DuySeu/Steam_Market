@@ -10,7 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background-color: #0f2034;
+    background-color: #171d25;
     color: #c5c3c0;
     padding: 10px;
     text-align: center;
@@ -57,32 +57,51 @@ header a:hover {
 footer {
     color: #657f95;
     background-color: #171d25;
+    padding: 20px 0;
+    font-size: 0.8em;
+}
+
+footer .logo {
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
+}
+
+footer div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer nav {
+    text-align: center;
+}
+
+footer ul {
+    padding: 0;
+    list-style-type: none;
+    display: inline-block; 
+    margin: 0;
+}
+
+footer li {
+    display: inline; 
+    margin-right: 10px;
+}
+
+footer li:last-child {
+    margin-right: 0; 
 }
 
 footer a {
     color: #c5c3c0;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-footer ul {
-    list-style-type: none;
-}
-
-.form-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: none;
-    color: #c5c3c0;
-}
-
-.form-select:hover {
-    color: #d9d8d6;
-}
-
-
-.form-select option {
-    background: #3d4450;
+footer a:hover {
+    color: #ffffff;
 }

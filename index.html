@@ -4,101 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/interface_style.css">
-    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Steam Market Login</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
-  const FAKE_DATA = [
-  
-  {
-    id: '65a696639adf3d5ee93ff226',
-    name: 'Reba Ballard',
-    image: 'images/case/case1.png',
-    quantity: 698,
-    buy_price: '$2.45',
-    sale_price: '$6.07',
-    container_series: '#472',
-  },
-  {
-    id: '65a69663829216ce7f903895',
-    name: 'Hall Camacho',
-    image: 'images/case/case2.png',
-    quantity: 684,
-    buy_price: '$6.41',
-    sale_price: '$5.94',
-    container_series: '#540',
-  },
-  {
-    id: '65a69663b4cfe34424df31c6',
-    name: 'Eula Kinney',
-    image: 'images/case/case3.png',
-    quantity: 866,
-    buy_price: '$5.16',
-    sale_price: '$4.58',
-    container_series: '#558',
-  },
-  {
-    id: '65a6966375dabdfa9fba140e',
-    name: 'Willis Gibbs',
-    image: 'images/case/case4.png',
-    quantity: 631,
-    buy_price: '$6.11',
-    sale_price: '$6.19',
-    container_series: '#921',
-  },
-  {
-    id: '65a6966316b70d25f3bef801',
-    name: 'Mattie Austin',
-    image: 'images/case/case5.png',
-    quantity: 537,
-    buy_price: '$3.07',
-    sale_price: '$3.52',
-    container_series: '#612',
-  },
-  {
-    id: '65a696639d484e73ecac5bc7',
-    name: 'Alana Walsh',
-    image: 'images/case/case6.png',
-    quantity: 793,
-    buy_price: '$3.72',
-    sale_price: '$5.57',
-    container_series: '#956',
-  },
-];
-        
-        function displayData() {
-            const container = document.getElementById('data-container');
-            FAKE_DATA.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.innerHTML = `
-                    <div class="row">
-                        <div class="polaroid">
-                        <img src="${item.image}" alt="${item.name}" style="width:100%">
-                        <hr style="width: 80%;position:relative;">
-                          <div class="container">
-                            <p>Quantity: ${item.quantity}</p>
-                            <p>Buy Price: ${item.buy_price}</p>
-                            <p>Sale Price: ${item.sale_price}</p>
-                            <p>Container Series: ${item.container_series}</p>
-                           </div>
-                            </div>
-
-                `;
-                container.appendChild(itemElement);
-            });
-        }
-
-        displayData();
-  });
-</script>
+<script src="scripts/display-fakedata.js"></script>
 <body>
     <header>
         <nav>
-            <a href="index.html" id="logo-link"><img src="images/logo.png" alt="logo" width="70%"></a>
+          <a href="index.html" id="logo-link"><img src="images/logo.png" alt="logo" width="15%"></a>
             <ul>
                 <li><a href="index.html" class="nav-links"><i class="bi bi-shop"></i> Store</a></li>
                 <li><a href="about.html" class="nav-links"><i class="bi bi-file-earmark-person"></i> About</a></li>
@@ -108,7 +23,7 @@
 
         <nav>
             <ul>
-                <li><a href="login.html"><i class="bi bi-box-arrow-in-right"></i> login</a></li>
+                <li><a href="login.html" class="nav-links"><i class="bi bi-box-arrow-in-right"></i> login</a></li>
                 <li>
                     <form action="" method="post">
                         <select id="languages" name="languages" class="form-select">
@@ -120,9 +35,9 @@
             </ul>
         </nav>
     </header>
-    
+
     <body>
-      <div id=""></div>
+
         <div class="myListListContainer">
             <div class="myActiveListList" id="textField1">
               <div class="mySellListings">
@@ -133,11 +48,24 @@
                       <input type="text" placeholder="Redeem Your Code">
                       <p><input type="submit" value="Redeem" class="cart" ></p>
                     </div>
-
                   </p>
                 </div>
+
+                <div class="marketTabContainer">
+                  <div class="marketTab">
+                    <button onclick="displayText1()" href="" id="myList"><span>My Active List</span></button>
+                    <button onclick="displayText2()" href="" id="myHistory"><span>My Market History</span></button>
+                    <button onclick="displayText2()" href="" id="myHistory"><span>Sell An Items</span></button>
+                </div>
+                </div>
+
+
+      <div class="products-container">
+                <div class="table">
+                    <div id="data-container"></div>
+                </div>
               </div>
-              
+      </div>      
               <div class="myBuyOrders">
                 <h3>My buy orders</h3>
                 <div class="myBuyOrdersContent"><p>You do not have any buy orders.</p></div>
@@ -157,8 +85,8 @@
     </body>
 
     <footer>
-        <div>
-            <img src="" alt="Group logo">
+        <div class="logo">
+            <a href="" id="logo-link"><img src="images/logo.png" alt="Group logo"></a>
         </div>
         <div> 
             <p>&copy; Group 1.7. All rights reserved. All trademarks are property of their respective owners in Vietnam and other countries.</p>
