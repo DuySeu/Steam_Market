@@ -107,18 +107,20 @@ div.polaroid {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
   }
-  
+  #logo-link>img{
+    width: 80px;
+    height: 80px;
+  }
   div.container {
     padding: 10px;
   }
   .polaroid:hover{
-      box-shadow: 0 6px 20px 0 grey;
+      box-shadow: 0 6px 20px 0 #67c1f5;
       cursor: pointer;
   }
   .table{display: table; border-spacing: 20px;}
-  .row{display: table-row}
-  .row>div{display: table-cell; border-radius: 10px;background-color: #fff;}
+#data-container{display: table-row}
+#data-container>div{display: table-cell; border-radius: 10px;background-color: #fff;}
   .cart:hover{background-color: #67c1f5}
   .cart{background-color: #445468; color: white;font-family: sans-serif;width: 200px; height: 40px;}
   .redeem{text-align: center;}
-  .redeem>input{width: 200px; height: 40px;}
