@@ -2,7 +2,10 @@
 
 fetch('./db.json')
   .then((response) => response.json())
-  .then(function (data) {
+  .then(data => showCase(data))
+  .catch((error) => console.error('Error fetching JSON:', error));
+
+  function showCase(data) {
     console.log(data);
     const container = document.getElementById('data-container');
     data.cases.forEach((item) => {
@@ -20,5 +23,4 @@ fetch('./db.json')
                   `;
       container.appendChild(itemElement);
     });
-  })
-  .catch((error) => console.error('Error fetching JSON:', error));
+  }
