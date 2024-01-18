@@ -3,45 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/interface_style.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="src/styles/interface_style.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
     <title>Steam Market Login</title>
   </head>
-  <script src="api/caseApi.js"></script> 
+  <script src="src/api/caseApi.js"></script> 
   <body>
     <header>
       <nav>
-        <a href="index.html" id="logo-link"><img src="images/logo.png" alt="logo" width="15%" /></a>
+        <a href="index.html" id="logo-link"><img src="public/logo.png" alt="logo" width="15%" /></a>
         <ul>
           <li>
             <a href="index.html" class="nav-links"><i class="bi bi-shop"></i> Store</a>
           </li>
           <li>
-            <a href="about.html" class="nav-links"
+            <a href="src/pages/about.html" class="nav-links"
               ><i class="bi bi-file-earmark-person"></i> About</a
             >
           </li>
           <li>
-            <a href="support.html" class="nav-links"
+            <a href="src/pages/support.html" class="nav-links"
               ><i class="bi bi-person-raised-hand"></i> Support</a
             >
           </li>
-        </ul>
-      </nav>
-
-      <nav>
-        <ul>
           <li>
-            <a href="login.html" class="nav-links"><i class="bi bi-box-arrow-in-right"></i>login</a>
+            <a href="src/pages/login.html" class="nav-links"><i class="bi bi-box-arrow-in-right"></i>login</a>
           </li>
-          <!-- <li>
-            <form action="" method="post">
-              <select id="languages" name="languages" class="form-select">
-                <option value="vietnamese">Vietnamese</option>
-                <option value="english">English</option>
-              </select>
-            </form>
-          </li> -->
         </ul>
       </nav>
     </header>
@@ -97,7 +84,7 @@
 
     <footer>
       <div class="logo">
-        <a href="" id="logo-link"><img src="images/logo.png" alt="Group logo" /></a>
+        <a href="" id="logo-link"><img src="public/logo.png" alt="Group logo" /></a>
       </div>
       <div>
         <p>
@@ -106,14 +93,14 @@
         </p>
         <p>
           Some geospatial data on this website is provided by
-          <a href="geogroup17.org">geogroup17.org</a>.
+          <a href="src/geogroup17.org">geogroup17.org</a>.
         </p>
         <nav>
           <ul>
-            <li><a href="privacy_agreement.html">Privacy Policy</a></li>
-            <li><a href="legal.html">Legal</a></li>
-            <li><a href="subscriber_agreement.html">Steam Subscriber Agreement</a></li>
-            <li><a href="cookie_preferences.html">Cookies</a></li>
+            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+            <li><a href="src/legal.html">Legal</a></li>
+            <li><a href="src/subscriber_agreement.html">Steam Subscriber Agreement</a></li>
+            <li><a href="src/cookie_preferences.html">Cookies</a></li>
           </ul>
         </nav>
       </div>

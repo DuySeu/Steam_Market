@@ -105,3 +105,8 @@ footer a {
 footer a:hover {
     color: #ffffff;
 }
+
+#logo-link > img {
+    width: 80px;
+    height: 80px;
+  }

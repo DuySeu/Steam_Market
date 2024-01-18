@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/interface_style.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="icon" href="../assets/images/steam_logo/steam-logo-black-transparent.png" />
+    <title>Steam Market Login</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../../index.html" id="logo-link"
+          ><img src="../../public/logo.png" alt="Steam logo" width="15%"
+        /></a>
+        <ul>
+          <li><a href="../../index.html" class="nav-links">Store</a></li>
+          <li><a href="about.html" class="nav-links">About</a></li>
+          <li><a href="support.html" class="nav-links">Support</a></li>
+          <li><a href="login.html" class="nav-links">login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="login-section">
+      <h1 id="login-h1">Log in</h1>
+      <form action="login-process.php" method="post">
+        <div class="container">
+          <label for="uname" id="uname-label"><b>LOG IN WITH ACCOUNT NAME</b></label>
+          <input type="text" name="uname" class="login-input" required />
+
+          <label for="psw" id="pwdnremember-label">Password</label>
+          <input type="password" name="psw" class="login-input" required />
+
+          <label id="pwdnremember-label">
+            <input type="checkbox" name="remember" id="remember-box pwdnremember-label" /> Remember
+            me
+          </label>
+
+          <div id="btn-container">
+            <input type="submit" value="Login" id="submit-btn" />
+            <a href="forgot_password.html" id="forget-pwd">Forgot Password?</a>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="logo">
+        <a href="" id="logo-link"><img src="../../public/logo.png" alt="Group logo" /></a>
+      </div>
+      <div>
+        <p>
+          &copy; Group 1.7. All rights reserved. All trademarks are property of their respective
+          owners in Vietnam and other countries.
+        </p>
+        <p>
+          Some geospatial data on this website is provided by
+          <a href="src/geogroup17.org">geogroup17.org</a>.
+        </p>
+        <nav>
+          <ul>
+            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+            <li><a href="src/legal.html">Legal</a></li>
+            <li><a href="src/subscriber_agreement.html">Steam Subscriber Agreement</a></li>
+            <li><a href="src/cookie_preferences.html">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
