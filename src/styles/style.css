@@ -132,6 +132,7 @@ div.container {
 .table {
   display: table;
   border-spacing: 20px;
+  text-decoration: none;
 }
 #data-container {
   display: table-row;
