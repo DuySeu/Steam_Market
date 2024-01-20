@@ -10,10 +10,10 @@ function showCase(data) {
   data.cases.forEach((item) => {
     const caseId = item.id;
     const itemElement = ` <li class="case_display"> 
-                            <a href="src/pages/case-detail.html?id=${caseId}" class="polaroid">
+                            <a href="src/pages/case-detail.html?id=${caseId}" class="container">
                               <img src="${item.image}" alt="${item.name}" style="width:100%">
                               <hr style="width: 80%;position:relative;">
-                              <div class="container">
+                              <div>
                                 <p>Quantity: ${item.quantity}</p>
                                 <p>Buy Price: ${item.buy_price}</p>
                                 <p>Sale Price: ${item.sale_price}</p>
