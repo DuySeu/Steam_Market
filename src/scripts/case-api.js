@@ -1,17 +1,16 @@
-const urlParams = new URLSearchParams(window.location.search);
-const caseID = urlParams.get('id');
+// const case_url = './db.json';
 
-console.log(caseID);
-
-fetch('../../db.json')
+fetch('./db.json')
   .then((response) => response.json())
-  .then(showCaseDetail)
+  .then(showCase)
   .catch((error) => console.error('Error fetching JSON:', error));
 
-function showCaseDetail(data) {
-  console.log(data.cases.find((item) => item.id === caseID));
-  const itemElement = ` <li class="case_display"> 
-                            <a href="src/pages/case_detail.html?id=${caseID}" class="polaroid">
+function showCase(data) {
+  console.log(data);
+  data.cases.forEach((item) => {
+    const caseId = item.id;
+    const itemElement = ` <li class="case_display"> 
+                            <a href="src/pages/case-detail.html?id=${caseId}" class="polaroid">
                               <img src="${item.image}" alt="${item.name}" style="width:100%">
                               <hr style="width: 80%;position:relative;">
                               <div class="container">
@@ -23,5 +22,6 @@ function showCaseDetail(data) {
                             </a>
                           </li>
                         `;
-  document.querySelector('#data-container').insertAdjacentHTML('beforeend', itemElement);
+    document.querySelector('#data-container').insertAdjacentHTML('beforeend', itemElement);
+  });
 }
