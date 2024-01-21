@@ -8,34 +8,24 @@
     <title>Steam Market Login</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html" id="logo-link"><img src="public/logo.png" alt="logo" width="15%" /></a>
-        <ul>
-          <li>
-            <a href="index.html" class="nav-links"><i class="bi bi-shop"></i> Store</a>
-          </li>
-          <li>
-            <a href="src/pages/about.html" class="nav-links"
-              ><i class="bi bi-file-earmark-person"></i> About</a
-            >
-          </li>
-          <li>
-            <a href="src/pages/support.html" class="nav-links"
-              ><i class="bi bi-person-raised-hand"></i> Support</a
-            >
-          </li>
-          <li>
-            <a href="src/pages/login.html" class="nav-links"
-              ><i class="bi bi-box-arrow-in-right"></i>login</a
-            >
-          </li>
+    <header id="header">
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle"/>
+        <label for="toggle" id="toggle-button">&#9776;</label>
+      </div>
+      
+      <nav id="nav-bar">
+        <a href="index.html" id="logo-link"><img src="public/logo.png" alt="Steam logo" width="15%" id="header-logo"/></a>
+        <ul id="menu">
+          <li><a href="index.html" class="nav-links">Store</a></li>
+          <li><a href="src/pages/about.html" class="nav-links">About</a></li>
+          <li><a href="src/pages/support.html" class="nav-links">Support</a></li>
+          <li><a href="src/pages/login.html" class="nav-links">login</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      
             <div class="marketTabContainer">
               <div class="marketTab">
                 <button onclick="displayText1()" href="" id="myList">
@@ -76,9 +66,9 @@
       </div>
     </main>
 
-    <footer>
+    <footer id="footer">
       <div class="logo">
-        <a href="" id="logo-link"><img src="public/logo.png" alt="Group logo" /></a>
+        <a href="" id="logo-link"><img src="../../public/logo.png" alt="Group logo" /></a>
       </div>
       <div>
         <p>

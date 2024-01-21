@@ -10,12 +10,15 @@
     <title>Steam Market Support</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../../index.html" id="logo-link"
-          ><img src="../../public/logo.png" alt="Steam logo" width="70%"
-        /></a>
-        <ul>
+    <header id="header">
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle"/>
+        <label for="toggle" id="toggle-button">&#9776;</label>
+      </div>
+      
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"><img src="../../public/logo.png" alt="Steam logo" width="15%" id="header-logo"/></a>
+        <ul id="menu">
           <li><a href="../../index.html" class="nav-links">Store</a></li>
           <li><a href="about.html" class="nav-links">About</a></li>
           <li><a href="support.html" class="nav-links">Support</a></li>
@@ -83,7 +86,7 @@
       </ul>
     </section>
 
-    <footer>
+    <footer id="footer">
       <div class="logo">
         <a href="" id="logo-link"><img src="../../public/logo.png" alt="Group logo" /></a>
       </div>

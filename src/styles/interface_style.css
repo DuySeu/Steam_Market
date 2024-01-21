@@ -33,7 +33,6 @@ body {
 }
 
 #menu li {
-  /* float: left; */
   display: inline-block;
 }
 
@@ -55,8 +54,14 @@ body {
 }
 
 @media only screen and (max-width: 909px) {
-  #nav-bar a {
-    text-align: center;
+  #header {
+    display: flex;
+    justify-content: start;
+    padding-left: 30px;
+  }
+
+  #nav-bar {
+    margin: 0 auto;
   }
 
   #header ul {
@@ -65,29 +70,6 @@ body {
 
   #togglable-menu {
     display: contents;
-  }
-  
-  /* Style the nav when the checkbox is checked */
-  #toggle:checked + #toggle-button + nav ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    position: fixed; /* Change to fixed positioning */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left edge of the viewport */
-    background-color: #171d25;
-    width: 50%;
-    z-index: 1;
-  }
-
-  #toggle:checked + #toggle-button + nav li {
-    display: block;
-    margin: 0;
-  }
-
-  #toggle:checked + #toggle-button + nav a {
-    padding: 15px;
   }
 }
 
