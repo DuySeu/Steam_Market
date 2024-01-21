@@ -9,12 +9,16 @@
     <title>Steam Market Login</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../../index.html" id="logo-link"
-          ><img src="../../public/logo.png" alt="Steam logo" width="15%"
-        /></a>
-        <ul>
+    <header id="header">
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle"/>
+        <label for="toggle" id="toggle-button">&#9776;</label>
+      </div>
+      
+
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"><img src="../../public/logo.png" alt="Steam logo" width="15%" id="header-logo"/></a>
+        <ul id="menu">
           <li><a href="../../index.html" class="nav-links">Store</a></li>
           <li><a href="about.html" class="nav-links">About</a></li>
           <li><a href="support.html" class="nav-links">Support</a></li>
@@ -26,7 +30,7 @@
     <section id="login-section">
       <h1 id="login-h1">Log in</h1>
       <form action="login-process.php" method="post">
-        <div class="container">
+        <div id="form-container">
           <label for="uname" id="uname-label"><b>LOG IN WITH ACCOUNT NAME</b></label>
           <input type="text" name="uname" class="login-input" required />
 
@@ -34,8 +38,7 @@
           <input type="password" name="psw" class="login-input" required />
 
           <label id="pwdnremember-label">
-            <input type="checkbox" name="remember" id="remember-box pwdnremember-label" /> Remember
-            me
+            <input type="checkbox" name="remember" id="remember-box pwdnremember-label" /> Remember me
           </label>
 
           <div id="btn-container">
@@ -46,7 +49,7 @@
       </form>
     </section>
 
-    <footer>
+    <footer id="footer">
       <div class="logo">
         <a href="" id="logo-link"><img src="../../public/logo.png" alt="Group logo" /></a>
       </div>

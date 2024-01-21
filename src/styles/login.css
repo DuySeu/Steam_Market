@@ -37,20 +37,6 @@ form {
 }
   
 /* Set a style for all buttons */
-button {
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
-    color: white;
-    cursor: pointer;
-    background-size: 200% 100%;
-    transition: background-position 0.3s ease;
-    padding: 14px 20px;
-    margin: 8px 0;
-    width: 100%;
-    text-decoration: none;
-}
-
 #submit-btn, #forget-pwd {
     border: none;
     border-radius: 20px;
@@ -60,7 +46,7 @@ button {
     background-size: 200% 100%;
     transition: background-position 0.3s ease;
     padding: 15px;
-    margin: 8px 50px;
+    margin: 8px 40px;
     width: 50%;
     text-decoration: none;
     text-align: center;
@@ -77,20 +63,112 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
     display: flex;
     justify-content: space-around;
 }
-  
-/* Add padding to containers */
-.container {
-    padding: 16px;
+
+
+/* Responsive styles */
+@media only screen and (max-width: 480px) {
+    #login-section {
+        padding: 5% 12%;
+        width: 72%;
+    }
+
+    #form-container {
+        margin: 5px;
+    }
+
+    #uname-label {
+        font-size: 10px;
+    }
+    
+    #pwdnremember-label {
+        font-size: 10px;
+    }
+
+    #submit-btn, #forget-pwd {
+        border-radius: 10px;
+        padding: 10px 8px;
+        margin: 8px 10px;
+        width: 50%;
+        font-size: 13px;
+    }
 }
 
-  
-/* Change styles for span and cancel button on extra small screens */
-/* @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+    #login-section {
+        padding: 5% 12%;
+        width: 72%;
     }
-    .cancelbtn {
-      width: 100%;
+
+    #form-container {
+        margin: 5px;
     }
-} */
+
+    #uname-label {
+        font-size: 13px;
+    }
+    
+    #pwdnremember-label {
+        font-size: 13px;
+    }
+
+    #submit-btn, #forget-pwd {
+        border-radius: 10px;
+        padding: 10px 8px;
+        margin: 8px 10px;
+        width: 50%;
+        font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1028px) {
+    #login-section {
+        padding: 5% 12%;
+        width: 72%;
+    }
+
+    #form-container {
+        margin: 5px;
+    }
+
+    #uname-label {
+        font-size: 13px;
+    }
+    
+    #pwdnremember-label {
+        font-size: 13px;
+    }
+
+    #submit-btn, #forget-pwd {
+        border-radius: 10px;
+        padding: 13px 8px;
+        margin: 8px 10px;
+        width: 50%;
+        font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 1029px) {
+    #login-section {
+        padding: 5% 12%;
+        width: 72%;
+    }
+
+    #form-container {
+        margin: 5px;
+    }
+
+    #uname-label {
+        font-size: large;
+    }
+    
+    #pwdnremember-label {
+        font-size: large;
+    }
+
+    #submit-btn, #forget-pwd {
+        border-radius: 10px;
+        padding: 13px 8px;
+        margin: 8px 10px;
+        width: 50%;
+    }
+}

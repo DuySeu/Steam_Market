@@ -59,3 +59,41 @@
 .faq-answer.active {
     display: block;
 }
+
+/* Responsive styles for Mobile devices */
+@media only screen and (max-width: 480px) {
+    
+}
+
+
+/* Responsive styles for iPads, Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    
+}
+
+/* Responsive styles for Small screens, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    
+}
+
+/* Responsive styles for Desktops, large screens */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    button {
+        padding: 14px 20px;
+        margin: 8px 0;
+    }
+    
+    #submit-btn, #forget-pwd {
+        padding: 15px;
+        margin: 8px 40px;
+        width: 50%;
+        text-decoration: none;
+        text-align: center;
+        font-size:large;
+    }
+}
+
+/* Responsive styles for Extra large screens, TV */
+/* @media only screen and (min-width: 1201px) {
+    
+} */
