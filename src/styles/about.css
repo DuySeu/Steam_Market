@@ -6,11 +6,10 @@
 button {
     width: 90%;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: space-around; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-align: center;
     font-weight: 100;
-    font-size: 16px; /* Font size */
     border: none;
     border-radius: 20px;
     background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
@@ -32,12 +31,21 @@ button:hover {
     color: #fafafa;
 }
 
-.box {
+#about-img {
+    width: 40%;
+}
+
+#button-img {
+    width: 20%;
+}
+
+#box {
     width: 30%;
     padding-right: 100px;
     padding-left: 100px;
 }
-.boxt{
+
+#boxt {
     width: 50%;
 }
 
@@ -45,7 +53,7 @@ button:hover {
     display: block;
     margin: 10% auto;
     align-items: center;
-    width: 25%;
+    width: 40%;
 }
 
 .status {
@@ -58,16 +66,94 @@ button:hover {
     display: flex;
     padding: 10px 0;
 }
-h1{
+
+h1 {
     font-size: 2vw;
 }
-p{
+
+p {
    font-size: 1vw !important;
 }
-@media (max-width: 1700px){
-.boxt{
-    display: none;
+
+@media only screen and (max-width: 555px) {
+    #about-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #box {
+        width: 100%;
+    }
+
+    #boxt{
+        width: 100%;
+    }
+
+    #box {
+        width: 100%;
+        padding: 5%;
+    }
+
+    button {
+        font-size: 3vw;
+        height: 20%;
+    }
+
+    h1 {
+        font-size: 4vw;
+    }
+
+    p {
+        font-size: 3vw !important;
+    }
+
+    #about-video {
+        margin-top: 20%;
+        width: 60%;
+    }
 }
 
+@media only screen and (min-width: 556px) and (max-width: 768px) {
+    #about-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #about-img {
+        width: 30%;
+    }
+
+    #button-img {
+        width: 10%;
+    }
+
+    #box {
+        width: 100%;
+    }
+
+    #boxt{
+        width: 100%;
+    }
+
+    #trading-now {
+        text-align: right;
+    }
+
+    button {
+        font-size: 3vw;
+        height: 20%;
+    }
+
+    h1 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 2vw !important;
+    }
+
+    #about-video {
+        margin-top: 20%;
+        width: 50%;
+    }
 }
-    
