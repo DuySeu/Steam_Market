@@ -1,5 +1,5 @@
 #support-section {
-    padding: 50px 300px;
+    padding: 3% 15%;
 }
 
 #support-h1 {
@@ -27,7 +27,6 @@
 .faq-list {
     list-style: none;
     padding: 10px;
-    /* max-width: 50%; */
     margin: 20px auto;
 }
 
