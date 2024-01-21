@@ -128,7 +128,7 @@
 .case_display:hover {
   box-shadow: 0 6px 20px 0 #67c1f5;
   border-radius: 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 #data-container {
   display: grid;
