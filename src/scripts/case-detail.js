@@ -17,7 +17,7 @@ function showCaseDetail(data) {
 <div class="case-container">
   <div class="nd-container">
   <div class="case-img">
-  <img src="${items.image}" alt="${items.name}" >
+  <img src="/${items.image}" alt="${items.name}" >
   </div>
 <div class="case-inf">
 <h2>${items.name}</h2>
