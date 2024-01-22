@@ -208,12 +208,12 @@ background-image: url(/src/assets/images/market_banner.jpg);
 width: 166px;
 height: 54px;
 text-align: center;
-margin: 3px 0;
+margin: 9px 0;
 color: rgba(255, 255, 255, 0.5);
 font-size: 26px;
 padding: 0 15px;
-margin-top: 16px;
-
+margin-top: 12px;
+border:none;
 }
 button:hover{
 color: white;
