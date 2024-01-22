@@ -23,6 +23,24 @@ function showCaseDetail(data) {
 <h2>${items.name}</h2>
 <p class="container-series">Container Series ${items.container_series}</p>
 <p>Contain one of the following:</p>
+    <p style="color: blue;">Five-SeveN | Scrawl</p>
+    <p style="color: blue;">MAC-10 | Ensnared</p>
+    <p style="color: blue;">MAG-7 | Foresight</p>
+    <p style="color: blue;">MP5-SD | Necro Jr.</p>
+    <p style="color: blue;">P2000 | Lifted Spirits</p>
+    <p style="color: blue;">SCAR-20 | Poultrygeist</p>
+    <p style="color: blue;">Sawed-Off | Spirit Board</p>
+    <p style="color:purple " >PP-Bizon | Space Cat</p>
+    <p style="color:purple " >G3SG1 | Dream Glade</p>
+    <p style="color:purple " >M4A1-S | Night Terror</p>
+    <p style="color:purple " > XM1014 | Zombie Offensive</p>
+    <p style="color:purple " >USP-S | Ticket to Hell</p>
+    <p style="color:purple " >Dual Berettas | Melondrama</p>
+    <p style="color: red; ">FAMAS | Rapid Eye Movement</p>
+    <p style="color: red; ">MP7 | Abyssal Apparition</p>
+    <p style="color: red; ">AK-47 | Nightwish</p>
+    <p style="color: red; ">MP9 | Starlight Protector</p>
+    <p style="color: yellow; ">or an Exceedingly Rare Special Item!</p>
 </div>
 </div>
 <div class="clear"></div>
