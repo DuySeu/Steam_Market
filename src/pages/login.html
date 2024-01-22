@@ -12,16 +12,26 @@
     <header id="header">
       <div id="togglable-menu">
         <input type="checkbox" id="toggle"/>
-        <label for="toggle" id="toggle-button">&#9776;</label>
+        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
       </div>
+
+      <div id="side-nav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="../../index.html" class="nav-links">STORE</a>
+          <a href="about.html" class="nav-links">ABOUT</a>
+          <a href="support.html" class="nav-links">SUPPORT</a>
+          <a href="login.html" class="nav-links">LOGIN</a>
+      </div>
+
+      <script src="../scripts/navbar.js"></script>
       
       <nav id="nav-bar">
-        <a href="../../index.html" id="logo-link"><img src="../../public/logo.png" alt="Steam logo" width="15%" id="header-logo"/></a>
+        <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
         <ul id="menu">
           <li><a href="../../index.html" class="nav-links">Store</a></li>
           <li><a href="about.html" class="nav-links">About</a></li>
           <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="login.html" class="nav-links">login</a></li>
+          <li><a href="login.html" class="nav-links">Login</a></li>
         </ul>
       </nav>
     </header>
@@ -50,7 +60,7 @@
 
     <footer id="footer">
       <div class="logo">
-        <a href="" id="logo-link"><img src="../../public/logo.png" alt="Group logo" /></a>
+        <a href="" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
       </div>
       <div>
         <p>
