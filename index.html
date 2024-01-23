@@ -11,7 +11,7 @@
   <body>
     <header id="header">
       <div id="togglable-menu">
-        <input type="checkbox" id="toggle"/>
+        <input type="checkbox" id="toggle" />
         <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
       </div>
 
@@ -24,9 +24,11 @@
       </div>
 
       <script src="src/scripts/navbar.js"></script>
-      
+
       <nav id="nav-bar">
-        <a href="index.html" id="logo-link"><img src="public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
+        <a href="index.html" id="logo-link"
+          ><img src="public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"
+        /></a>
         <ul id="menu">
           <li><a href="index.html" class="nav-links">Store</a></li>
           <li><a href="src/pages/about.html" class="nav-links">About</a></li>
@@ -37,44 +39,33 @@
     </header>
 
     <main>
-            <div class="marketTabContainer">
-              <div class="marketTab">
-                <button onclick="displayText1()" href="" id="myList">
-                  <span>My Active List</span>
-                </button>
-                <button onclick="displayText2()" href="" id="myHistory">
-                  <span>My Market History</span>
-                </button>
-                <button onclick="displayText2()" href="" id="myHistory">
-                  <span>Sell An Items</span>
-                </button>
-              </div>
-            </div>
-            <div class="container">
-              <div class="myActiveListList" id="textField1">
-                <div class="mySellListings">
-                  <h3>My Sell Listings</h3>
-                  <div class="myBuyOrdersContent"><p>You do not have any buy orders.</p></div>
-          </div>
-          <div class="myBuyOrders">
-            <h3>My buy orders</h3>
-            <div class="myBuyOrdersContent"><p>You do not have any buy orders.</p></div>
-          </div>
+      <div class="marketTabContainer">
+        <div class="marketTab">
+          <button onclick="displayText1()" href="" class="marketBtn">
+            <span>My Active Listings</span>
+          </button>
+          <button onclick="displayText2()" href="" class="marketBtn">
+            <span>My Market History</span>
+          </button>
+          <button onclick="displayText3()" href="" class="marketBtn">
+            <span>Sell An Items</span>
+          </button>
         </div>
-        <div class="myHistory" id="textField2" style="display: none">
-          <ul class="historyHeader">
-            <li style="padding-right: 40%" class="historyCate">NAME</li>
-            <li class="historyCate">LISTED ON</li>
-            <li class="historyCate">ACTED ON</li>
-            <li class="historyCate">WITH</li>
-            <li class="historyCate">PRICE</li>
-          </ul>
-          <div class="historyHeaderContent"></div>
+        <div class="container">
+          <div id="myActiveListing">
+            <a href="src/pages/login.html" style="text-decoration: none; color: white;">Login</a>
+            <span>to see, edit, or remove your Community Market listings.</span>
+          </div>
+          <div id="myMarketHistory" style="display: none">
+            <div class="myBuyOrders">
+              <div class="myBuyOrdersContent"><p>You don't have any history on the Community Market.</p></div>
+            </div>
+            <div class="historyHeaderContent"></div>
+          </div>
         </div>
       </div>
-      <div class="products-container">
-        <ul id="data-container"></ul>
-        
+      <div class="products">
+        <ul id="caseData"></ul>
       </div>
     </main>
 

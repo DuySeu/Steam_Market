@@ -1,34 +1,19 @@
 .marketTabContainer {
-  position: relative;
-  height: 30px;
-  padding: 9px 10px 0 0;
-  margin-top: 30px;
-  left: 15%;
-  width: 70%;
+  margin: 2em 20%;
 }
 
 .marketTab {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  bottom: 0;
-  font-size: 5px;
-  left: 0;
-  right: 0;
+  background: #171a21;
 }
 
-.marketTab button {
-  background-color: black;
+.marketBtn {
+  background: #171a21;
   cursor: pointer;
+  border: none;
+  padding: 0.2em 1rem;
 }
 
-#myList {
-  display: inline-block;
-  position: relative;
-}
-
-#myList span {
-  display: block;
+.marketBtn span {
   line-height: 39px;
   padding: 0 4px;
   margin: 0px;
@@ -39,64 +24,22 @@
   color: white;
 }
 
-#myHistory {
-  display: inline-block;
-  position: relative;
-}
-
-#myHistory span {
-  display: block;
-  line-height: 39px;
-  padding: 0 4px;
-  margin: 0px;
-  min-width: 195px;
-  font-size: 14px;
-  font-weight: 300;
-  text-align: center;
-  color: white;
-}
-
-#myList:hover {
+.marketBtn:hover {
   background-color: greenyellow;
 }
 
-#myHistory:hover {
-  background-color: greenyellow;
+.container {
+  background-color: #212c3d;
+  margin: 0.8rem 0;
+  text-decoration: none;
+  color: lightgrey;
 }
 
-.myListListContainer {
-  position: relative;
-  padding: 9px 15px 0 0;
-  margin-top: 30px;
-  left: 25%;
-  width: 50%;
-}
-
-.myActiveListList {
-}
-
-.mySellListings {
-}
-
-.mySellListings > h3 {
-  color: #fff;
-  text-align: center;
-  font-size: xx-large;
-}
-.MySellListingsContent {
-  padding: 1px 1px;
-}
-
-.MySellListingsContent {
-  padding: 1px 1px;
+#myActiveListing {
+  padding: 1em;
 }
 
 .myBuyOrders {
-}
-.myBuyOrders > h3 {
-  color: #fff;
-  text-align: center;
-  font-size: xx-large;
 }
 .myBuyOrdersContent {
   background-color: grey;
@@ -121,32 +64,17 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
-.container {
-  text-decoration: none;
-  color: white;
-}
 .case_display:hover {
   box-shadow: 0 6px 20px 0 #67c1f5;
   border-radius: 10px;
   /* background-color: #fff; */
 }
-#data-container {
+#caseData {
   display: grid;
   list-style: none;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   font-weight: bolder;
   gap: 2em;
-}
-.cart:hover {
-  background-color: #67c1f5;
-}
-.cart {
-  background-color: #445468;
-  color: white;
-  font-family: sans-serif;
-  width: 200px;
-  height: 40px;
-}
-.redeem {
-  text-align: center;
+  padding: 0;
+  margin: 0 2rem;
 }

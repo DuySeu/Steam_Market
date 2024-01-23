@@ -1,13 +1,19 @@
 function displayText1() {
-  var text1 = document.getElementById('textField1');
+  var text1 = document.getElementById('myActiveListing');
   text1.style.display = 'block';
-  var text2 = document.getElementById('textField2');
+  var text2 = document.getElementById('myMarketHistory');
   text2.style.display = 'none';
 }
 function displayText2() {
-  var Text2 = document.getElementById('textField2');
+  var Text2 = document.getElementById('myMarketHistory');
   Text2.style.display = 'block';
-  var Text1 = document.getElementById('textField1');
+  var Text1 = document.getElementById('myActiveListing');
+  Text1.style.display = 'none';
+}
+function displayText3() {
+  var Text2 = document.getElementById('myMarketHistory');
+  Text2.style.display = 'block';
+  var Text1 = document.getElementById('myActiveListing');
   Text1.style.display = 'none';
 }
 
@@ -27,7 +33,7 @@ function showCase(data) {
     const itemElement = ` <li class="case_display"> 
                             <a href="src/pages/case-detail.html?id=${caseId}" class="container">
                               <img src="${item.image}" alt="${item.name}" style="width:100%">
-                              <hr style="width: 80%;position:relative;">
+                              <hr style="width: 80%; margin: auto;">
                               <div>
                                 <p>Quantity: ${item.quantity}</p>
                                 <p>Buy Price: ${item.buy_price}</p>
@@ -37,6 +43,6 @@ function showCase(data) {
                             </a>
                           </li>
                         `;
-    document.querySelector('#data-container').insertAdjacentHTML('beforeend', itemElement);
+    document.querySelector('#caseData').insertAdjacentHTML('beforeend', itemElement);
   });
 }
