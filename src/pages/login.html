@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/interface_style.css" />
-    <link rel="stylesheet" href="../styles/login.css" />
-    <link rel="icon" href="../../public/logo.png" />
-    <title>Market Login</title>
+    <link rel="stylesheet" href="../styles/loginnregister.css" />
+    <link rel="icon" href="../../public/logo_transparent.png" />
+    <title>Cr1pt0 Market Login</title>
   </head>
   <body>
     <header id="header">
@@ -20,7 +20,7 @@
           <a href="../../index.html" class="nav-links">STORE</a>
           <a href="about.html" class="nav-links">ABOUT</a>
           <a href="support.html" class="nav-links">SUPPORT</a>
-          <a href="login.html" class="nav-links">LOGIN</a>
+          <a href="register.html" class="nav-links">Register</a>
       </div>
 
       <script src="../scripts/navbar.js"></script>
@@ -31,7 +31,7 @@
           <li><a href="../../index.html" class="nav-links">Store</a></li>
           <li><a href="about.html" class="nav-links">About</a></li>
           <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="login.html" class="nav-links">Login</a></li>
+          <li><a href="register.html" class="nav-links">Register</a></li>
         </ul>
       </nav>
     </header>
@@ -41,10 +41,10 @@
       <form action="login-process.php" method="post">
         <div id="form-container">
           <label for="uname" id="uname-label"><b>LOG IN WITH ACCOUNT NAME</b></label>
-          <input type="text" name="uname" class="login-input" required />
+          <input type="text" name="uname" pattern="[A-Za-z0-9]{1,30}" class="login-input" required />
 
           <label for="psw" id="pwdnremember-label">Password</label>
-          <input type="password" name="psw" class="login-input" required />
+          <input type="password" name="psw" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$" class="login-input" required />
 
           <label id="pwdnremember-label">
             <input type="checkbox" name="remember" id="remember-box pwdnremember-label" /> Remember me
@@ -55,8 +55,12 @@
             <a href="profile.html" id="forget-pwd">Login</a>
             <a href="profile.html" id="forget-pwd">Forgot Password?</a>
           </div>
+
+          <p id="register-or-login-link"><a href="register.html">New here? Register now!</a></p>
         </div>
       </form>
+
+      
     </section>
 
     <footer id="footer">
@@ -65,18 +69,18 @@
       </div>
       <div>
         <p>
-          &copy; Group 1.7. All rights reserved. All trademarks are property of their respective
+          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
           owners in Vietnam and other countries.
         </p>
         <p>
           Some geospatial data on this website is provided by
-          <a href="src/geogroup17.org">geogroup17.org</a>.
+          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
         </p>
         <nav>
           <ul>
             <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
             <li><a href="src/legal.html">Legal</a></li>
-            <li><a href="src/subscriber_agreement.html">Steam Subscriber Agreement</a></li>
+            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
             <li><a href="src/cookie_preferences.html">Cookies</a></li>
           </ul>
         </nav>

@@ -64,6 +64,14 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
     justify-content: space-around;
 }
 
+#register-or-login-link a {
+    color: #adaeb0;
+    text-decoration: none;
+}
+
+#register-or-login-link a:hover {
+    color: white;
+}
 
 /* Responsive styles */
 @media only screen and (max-width: 480px) {
