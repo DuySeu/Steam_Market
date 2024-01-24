@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/interface_style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="../../public/logo.png" />
+    <title>Market Login</title>
+  </head>
+  <body>
+    <header id="header">
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+      </div>
+
+      <div id="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../../index.html" class="nav-links">STORE</a>
+        <a href="about.html" class="nav-links">ABOUT</a>
+        <a href="support.html" class="nav-links">SUPPORT</a>
+        <a href="login.html" class="nav-links">LOGIN</a>
+      </div>
+
+      <script src="../scripts/navbar.js"></script>
+
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"
+          ><img
+            src="../../public/logo_transparent.png"
+            alt="Group 1.7 logo"
+            width="15%"
+            id="header-logo"
+        /></a>
+        <ul id="menu">
+          <li><a href="../../index.html" class="nav-links">Store</a></li>
+          <li><a href="about.html" class="nav-links">About</a></li>
+          <li><a href="support.html" class="nav-links">Support</a></li>
+          <li><a href="login.html" class="nav-links">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="subBanner">
+      <div class="subBannerContent">
+        <div>
+          <h1>Community Market</h1>
+          <p>Buy and sell items with community members for Steam Wallet funds.</p>
+        </div>
+        <div class="userInfo">
+          <p>Wallet balance 0₫</p>
+          <p>View Inventory</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="marketTabContainer">
+      <div style="background: #171a21">
+        <button onclick="displayText1()" href="" class="marketBtn">
+          <span>My Active Listings</span>
+        </button>
+        <button onclick="displayText2()" href="" class="marketBtn">
+          <span>My Market History</span>
+        </button>
+        <button onclick="displayText3()" href="" class="marketBtn">
+          <span>Sell An Items</span>
+        </button>
+      </div>
+      <div class="container">
+        <div id="myActiveListing">
+          <h4>My sell listings (0)</h4>
+          <p class="marketTab">
+            You are not selling any items on the Community Market. Sell items from your inventory,
+            or click the "Sell an item" button above.
+          </p>
+          <h4>My buy orders (0)</h4>
+          <p class="marketTab">You do not have any buy orders.</p>
+        </div>
+        <div id="myMarketHistory" style="display: none">
+          <p class="marketTab">You don't have any history on the Community Market.</p>
+          <!-- <div class="historyHeaderContent"></div> -->
+        </div>
+        <div id="sellAnItems" style="display: none">
+          <p class="marketTab">You don't have any history on the Community Market.</p>
+          <!-- <div class="historyHeaderContent"></div> -->
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="logo">
+        <a href="" id="logo-link"
+          ><img src="../../public/logo_transparent.png" alt="Group logo"
+        /></a>
+      </div>
+      <div>
+        <p>
+          &copy; Group 1.7. All rights reserved. All trademarks are property of their respective
+          owners in Vietnam and other countries.
+        </p>
+        <p>
+          Some geospatial data on this website is provided by
+          <a href="src/geogroup17.org">geogroup17.org</a>.
+        </p>
+        <nav>
+          <ul>
+            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+            <li><a href="src/legal.html">Legal</a></li>
+            <li><a href="src/subscriber_agreement.html">Steam Subscriber Agreement</a></li>
+            <li><a href="src/cookie_preferences.html">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+  <script src="../scripts/case-api.js"></script>
+</html>

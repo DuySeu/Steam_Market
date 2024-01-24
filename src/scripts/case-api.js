@@ -3,21 +3,25 @@ function displayText1() {
   text1.style.display = 'block';
   var text2 = document.getElementById('myMarketHistory');
   text2.style.display = 'none';
+  var text3 = document.getElementById('sellAnItems');
+  text3.style.display = 'none';
 }
 function displayText2() {
-  var Text2 = document.getElementById('myMarketHistory');
-  Text2.style.display = 'block';
   var Text1 = document.getElementById('myActiveListing');
   Text1.style.display = 'none';
+  var Text2 = document.getElementById('myMarketHistory');
+  Text2.style.display = 'block';
+  var text3 = document.getElementById('sellAnItems');
+  text3.style.display = 'none';
 }
 function displayText3() {
-  var Text2 = document.getElementById('myMarketHistory');
-  Text2.style.display = 'block';
-  var Text1 = document.getElementById('myActiveListing');
-  Text1.style.display = 'none';
+  var text1 = document.getElementById('myActiveListing');
+  text1.style.display = 'none';
+  var text2 = document.getElementById('myMarketHistory');
+  text2.style.display = 'none';
+  var text3 = document.getElementById('sellAnItems');
+  text3.style.display = 'block';
 }
-
-
 
 // const case_url = './db.json';
 

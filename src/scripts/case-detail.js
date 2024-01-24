@@ -8,12 +8,14 @@ fetch('../../db.json')
 
 function showCaseDetail(data) {
   const items = data.cases.find((item) => item.id === caseId);
-  
-  const caseDetail = `<div>
-  <div class="nd-header">
-  <h1 style="color: white ;">Community Market</h1>
-  <p>Buy and sell items with community members for Steam Wallet funds.</p>
-</div>
+
+  const caseDetail = 
+`<div class="subBanner">
+  <div style="margin: 2em 20%;">
+    <h1 style="color: white ;">Community Market</h1>
+    <p>Buy and sell items with community members for Steam Wallet funds.</p>
+  </div>
+  </div>
 <div class="case-container">
   <div class="nd-container">
   <div class="case-img">
@@ -137,11 +139,6 @@ function showCaseDetail(data) {
 
 hr{
   border: 0.5px solid black;
-}
-.nd-header{
-  background-image: url(/src/assets/images/market_banner.jpg);
-  padding: 20px 25%;
-  color: rgba(255, 255, 255, 0.7);
 }
 .case-container{
   padding: 15px;

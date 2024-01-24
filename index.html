@@ -40,7 +40,7 @@
 
     <main>
       <div class="marketTabContainer">
-        <div class="marketTab">
+        <div style="background: #171a21">
           <button onclick="displayText1()" href="" class="marketBtn">
             <span>My Active Listings</span>
           </button>
@@ -52,15 +52,13 @@
           </button>
         </div>
         <div class="container">
-          <div id="myActiveListing">
-            <a href="src/pages/login.html" style="text-decoration: none; color: white;">Login</a>
+          <div id="myActiveListing" class="marketTab">
+            <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
             <span>to see, edit, or remove your Community Market listings.</span>
           </div>
-          <div id="myMarketHistory" style="display: none">
-            <div class="myBuyOrders">
-              <div class="myBuyOrdersContent"><p>You don't have any history on the Community Market.</p></div>
-            </div>
-            <div class="historyHeaderContent"></div>
+          <div id="myMarketHistory" style="display: none" class="marketTab">
+            <p>You don't have any history on the Community Market.</p>
+            <!-- <div class="historyHeaderContent"></div> -->
           </div>
         </div>
       </div>
