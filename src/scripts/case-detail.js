@@ -123,103 +123,11 @@ function showCaseDetail(data) {
 
   </div>
   <div class="clear"></div>
-  
+  <div>
   <img src="/src/assets/images/graph/grp1.png" alt="" class="graph">
   <img src="/src/assets/images/graph/grp2.png" alt="" class="graph">
-
-</div>
-<style type="text/css">
-.clear{
-  clear: both;
-}
-*{
-  margin: 0;
-  color: rgba(255,255,255,0.7);
-}
-
-hr{
-  border: 0.5px solid black;
-}
-.case-container{
-  padding: 15px;
-  margin: 15px 25%;
-  background-color: rgba(0, 0 , 0, 0.4);
-  position: relative;
-  padding-bottom: 90px;
-}
-.nd-container{
-  position: relative;
-  height: 422px;
-  padding: 11px;
-  width: 100%;
-}
-.case-img{
-  position: absolute;
-  left: 0;
-  width: 50%;
-}
-.case-inf{
-  position: absolute;
-  right: 0;
-  width: 50%;
-}
-.case-inf h2{
-  color: white;
-  margin-bottom: 9px;
-}
-.container-series{
-  color: cyan;
-  margin-bottom: 3px;
-}
-.sell-buy-container{
-  position: relative;
-  height: 338px;
-  padding: 15px 0;
-}
-.buy , .sell{
-position: absolute;
-border: 1px solid black; 
-width: 40%;
-padding: 15px 0;
-text-align: center;
-}
-.buy{
-  left: 5%;
-}
-.sell{
-  right: 5%;
-}
-
-table{
-  margin: 12px auto;
-  text-align: center;
-}
-td, th{
-  width: 100px;
-}
-tr:nth-child(even){
-  background-color: rgba(0, 0, 0, 0.3);
-}
-button{
-background-image: url(/src/assets/images/market_banner.jpg);
-width: 166px;
-height: 54px;
-text-align: center;
-margin: 9px 0;
-color: rgba(255, 255, 255, 0.5);
-font-size: 26px;
-padding: 0 15px;
-margin-top: 12px;
-border:none;
-}
-button:hover{
-color: white;
-}
-.graph{
-  width:100%;
-}
-
-</style>       
+  </div>
+</div> 
                       </div>
                       `;
   document.querySelector('#main').insertAdjacentHTML('beforeend', caseDetail);
