@@ -172,7 +172,7 @@ tr:nth-child(even){
 }
 button{
 background-image: url(/src/assets/images/market_banner.jpg);
-width: 166px;
+width: 60%;
 height: 54px;
 text-align: center;
 margin: 9px 0;
@@ -193,25 +193,37 @@ h1 {
 }
 
 p, li {
- font-size:.8vw ;
+ font-size:.9vw ;
 }
 img{
   width: 100%;
 }
-@media only screen and  (max-width: 1024px) {
-  
-p , li{
-  font-size: 1.3vw;
-}
-h1{
-  font-size: 3vw ;
-}
-}
-@media only screen and  (min-width: 320px) {
+@media only screen and  (min-width: 1200px) {
+  .case-container{
+    width: 900px;
+  }
   p , li{
-    font-size: 12px;
+    font-size: 14px;
   }
-  h1{
-    font-size: 20px ;
+  
+}
+@media only screen and  (min-width: 500px) and (max-width: 1200px)  {
+  .case-container{
+    width: 700px;
   }
+p , li{
+  font-size:1.3vw ;
+}
+
+}
+
+@media only screen and  (max-width: 500px) {
+  .case-container{
+    width: 500px;
+  }
+  p , li{
+    font-size: 2.5vw;
+  }
+  
+  
 }

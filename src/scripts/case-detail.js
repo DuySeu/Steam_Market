@@ -10,12 +10,7 @@ function showCaseDetail(data) {
   const items = data.cases.find((item) => item.id === caseId);
 
   const caseDetail = 
-`<div class="subBanner">
-  <div style="margin: 2em 20%;">
-    <h1 style="color: white ;">Community Market</h1>
-    <p>Buy and sell items with community members for Steam Wallet funds.</p>
-  </div>
-  </div>
+`
 <div class="case-container">
   <div class="nd-container">
   <div class="case-img">
