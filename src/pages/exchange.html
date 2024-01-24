@@ -16,12 +16,12 @@
       </div>
 
       <div id="side-nav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="../../index.html" class="nav-links">STORE</a>
-          <a href="about.html" class="nav-links">ABOUT</a>
-          <a href="support.html" class="nav-links">SUPPORT</a>
-          <a href="exchange.html" class="nav-links">Exchange</a>
-          <a href="login.html" class="nav-links">LOGIN</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../../index.html" class="nav-links">STORE</a>
+        <a href="about.html" class="nav-links">ABOUT</a>
+        <a href="support.html" class="nav-links">SUPPORT</a>
+        <a href="exchange.html" class="nav-links">Exchange</a>
+        <a href="login.html" class="nav-links">LOGIN</a>
       </div>
 
       <script src="../scripts/navbar.js"></script>
@@ -38,44 +38,48 @@
       </nav>
     </header>
 
-    <div id="exchange-section">
-        <table>
-            <thead>
+    <main>
+      <h1 id="support-h1">Cr1pt0 Market - Exchange currency</h1>
+      <div id="exchange-section">
+        <table id="crypto-table">
+          <thead>
+            <tr>
+              <th class="crypto-header">Fiat currency (US Dollar)</th>
+              <th class="crypto-header">Cryptocurrency (Cr1pt0c01n)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <form action="" method="get">
               <tr>
-                <th>Fiat currency</th>
-                <th>Cryptocurrency (Cr1pt0c01n)</th>
+                <td class="crypto-data first-data">$800</td>
+                <td class="crypto-data first-data"><input type="submit" value="400 CC" class="buy"></td>
               </tr>
-            </thead>
-            <tbody>
-                <form action="">
-                    <tr>
-                        <td>$800</td>
-                        <td><input type="submit" value="400 CC" class="buy"></td>
-                    </tr>
-                    <tr>
-                        <td>$1,400</td>
-                        <td><input type="submit" value="800 CC" class="buy"></td>
-                    </tr>
-                    <tr>
-                        <td>$3,400</td>
-                        <td><input type="submit" value="1,700 CC" class="buy"></td>
-                    </tr>
-                    <tr>
-                        <td>$9,000</td>
-                        <td><input type="submit" value="4,500 CC" class="buy"></td>
-                    </tr>
-                    <tr>
-                        <td>$20,000</td>
-                        <td><input type="submit" value="10,000 CC" class="buy"></td>
-                    </tr>
-                    <tr>
-                        <td>$45,000</td>
-                        <td><input type="submit" value="22,500 CC" class="buy"></td>
-                    </tr>
-                </form>
-                </tbody>
-          </table>
-    </div>
+              <tr>
+                <td class="crypto-data">$1,400</td>
+                <td class="crypto-data"><input type="submit" value="800 CC" class="buy"></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$3,400</td>
+                <td class="crypto-data"><input type="submit" value="1,700 CC" class="buy"></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$9,000</td>
+                <td class="crypto-data"><input type="submit" value="4,500 CC" class="buy"></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$20,000</td>
+                <td class="crypto-data"><input type="submit" value="10,000 CC" class="buy"></td>
+              </tr>
+              <tr>
+                <td class="crypto-data last-data">$45,000</td>
+                <td class="crypto-data last-data"><input type="submit" value="22,500 CC" class="buy"></td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    
 
     <footer id="footer">
       <div class="logo">
