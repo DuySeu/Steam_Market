@@ -1,5 +1,3 @@
-
-
 .marketTabContainer {
   margin: 2em 20%;
 }
@@ -38,17 +36,6 @@
   color: lightgrey;
 }
 
-.historyHeader {
-  background-color: gray;
-  height: 41px;
-  font-size: small;
-}
-.historyCate {
-  display: inline-block;
-  list-style-type: none;
-  padding: 10px 30px;
-}
-
 .case_display {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -66,16 +53,6 @@
   gap: 2em;
   padding: 0;
   margin: 0 2rem;
-}
-.subBanner {
-  background-color: #46602a;
-  padding: 1rem;
-  color: white;
-}
-.subBannerContent {
-  display: flex;
-  color: white;
-  margin: 0 20%;
 }
 .main-profile-bg {
   background-image: url(../../public/profile-bg.png);
@@ -97,13 +74,14 @@
   text-decoration: none;
   color: lightgray;
 }
+.profile-link:hover {
+  text-decoration: underline;
+  color: white;
+}
 
 .case-container hr{
   border: 0.5px solid black;
 }
-
-
-  
 
 .case-container {
   color: rgba(255, 255, 255, 0.7);
