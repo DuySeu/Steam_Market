@@ -96,13 +96,10 @@
   color: lightgray;
 }
 
-hr{
+.case-container hr{
   border: 0.5px solid black;
 }
-.subBanner{
-  height: 100px;
 
-}
 
 .case-container {
   padding: 15px;
@@ -163,17 +160,17 @@ hr{
   right: 5%;
 }
 
-table{
+.case-container table{
   margin: 12px auto;
   text-align: center;
 }
-td, th{
+.case-container td,.case-container th{
   width: 100px;
 }
-tr:nth-child(even){
+.case-container tr:nth-child(even){
   background-color: rgba(0, 0, 0, 0.3);
 }
-button{
+.case-container button{
 background-image: url(/src/assets/images/market_banner.jpg);
 width: 60%;
 height: 54px;
@@ -185,27 +182,27 @@ padding: 0 15px;
 margin-top: 12px;
 border:none;
 }
-button:hover{
+.case-container button:hover{
 color: white;
 }
 .graph{
   width:100%;
 }
-h1 {
+.case-container h1 {
   font-size: 2vw;
 }
 
-p, li {
+.case-container p,.case-container  li {
  font-size:.9vw ;
 }
-img{
-  width: 100%;
+.case-container img{
+  width: 80%;
 }
 @media only screen and (min-width: 1200px) {
   .case-container {
     width: 900px;
   }
-  p , li{
+  .case-container p , .case-container  li{
     font-size: 14px;
   }
   
@@ -214,7 +211,7 @@ img{
   .case-container {
     width: 700px;
   }
-p , li{
+  .case-container p ,.case-container  li{
   font-size:1.3vw ;
 }
 
@@ -224,7 +221,7 @@ p , li{
   .case-container {
     width: 500px;
   }
-  p , li{
+  .case-container p ,.case-container li{
     font-size: 2.5vw;
   }
   
