@@ -37,12 +37,11 @@ function showCase(data) {
     const itemElement = ` <li class="case_display"> 
                             <a href="src/pages/case-detail.html?id=${caseId}" class="container">
                               <img src="${item.image}" alt="${item.name}" style="width:100%">
+                              <p>${item.name}</p>
                               <hr style="width: 80%; margin: auto;">
                               <div>
                                 <p>Quantity: ${item.quantity}</p>
-                                <p>Buy Price: ${item.buy_price}</p>
-                                <p>Sale Price: ${item.sale_price}</p>
-                                <p>Container Series: ${item.container_series}</p>
+                                <p>Price: ${item.buy_price}</p>
                               </div>
                             </a>
                           </li>
