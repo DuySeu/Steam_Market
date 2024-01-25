@@ -10,7 +10,7 @@ function showCaseDetail(data) {
   const items = data.cases.find((item) => item.id === caseId);
 
   const caseDetail = 
-`
+`<div class="case-detail-page">
 <div class="case-container">
   <div class="nd-container">
   <div class="case-img">
@@ -122,7 +122,7 @@ function showCaseDetail(data) {
   <img src="/src/assets/images/graph/grp1.png" alt="" class="graph">
   <img src="/src/assets/images/graph/grp2.png" alt="" class="graph">
   </div>
-</div> 
+</div> </div>
                       </div>
                       `;
   document.querySelector('#main').insertAdjacentHTML('beforeend', caseDetail);
