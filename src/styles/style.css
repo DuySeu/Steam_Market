@@ -65,109 +65,115 @@
   padding: 0;
   margin: 0 2rem;
 }
-.subBanner{
-  background-color:#46602a;
+.subBanner {
+  background-color: #46602a;
   padding: 1rem;
   color: white;
-  
 }
-.subBannerContent{
+.subBannerContent {
   display: flex;
   color: white;
-  margin: 2em 20%;
+  margin: 0 20%;
 }
-.userInfo{
-  background-color: #171a21;
-  margin-left: 2rem;
-  padding: 0 1rem;
+.main-profile-bg {
+  background-image: url(../../public/profile-bg.png);
 }
-main {
-  margin-bottom: 50px;
+.profile-bg {
+  background-color: #1b2838;
+  margin: 0 15rem;
 }
-.clear{
-  clear: both;
+.profile-header {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+  color: white;
 }
-*{
-  
-  margin: 0;
-  color: rgba(255,255,255,0.7);
+.user-wallet {
+  color: white;
+}
+.profile-link {
+  text-decoration: none;
+  color: lightgray;
 }
 
-.case-container hr{
+hr{
   border: 0.5px solid black;
 }
+.subBanner{
+  height: 100px;
 
+}
 
-.case-container{
+.case-container {
   padding: 15px;
   margin: 15px auto;
-  background-color: rgba(0, 0 , 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: relative;
   padding-bottom: 90px;
   width: 700px;
   display: flex;
   flex-wrap: wrap;
 }
-.case-container .nd-container{
+.nd-container{
   position: relative;
   height: 422px;
   padding: 11px;
   width: 100%;
 }
-.case-text{
+.case-text {
   height: 74px;
-
 }
-.case-img{
+.case-img {
   position: absolute;
   left: 0;
   width: 50%;
 }
-.case-inf{
+.case-inf {
   position: absolute;
   right: 0;
   width: 50%;
 }
-.case-inf h2{
+.case-inf h2 {
   color: white;
   margin-bottom: 9px;
 }
-.container-series{
+.container-series {
   color: cyan;
   margin-bottom: 3px;
 }
-.sell-buy-container{
+.sell-buy-container {
   position: relative;
   height: 338px;
   padding: 15px 0;
   margin-top: 30px;
   width: 100%;
 }
-.buy , .sell{
-position: absolute;
-border: 1px solid black; 
-width: 40%;
-padding: 15px 0;
-text-align: center;
+.buy,
+.sell {
+  position: absolute;
+  border: 1px solid black;
+  width: 40%;
+  padding: 15px 0;
+  text-align: center;
 }
-.buy{
+.buy {
   left: 5%;
 }
-.sell{
+.sell {
   right: 5%;
 }
 
-.case-container table{
+table{
   margin: 12px auto;
   text-align: center;
 }
-.case-container td, th{
+td, th{
   width: 100px;
 }
-.case-container tr:nth-child(even){
+tr:nth-child(even){
   background-color: rgba(0, 0, 0, 0.3);
 }
-.case-container button{
+button{
 background-image: url(/src/assets/images/market_banner.jpg);
 width: 60%;
 height: 54px;
@@ -179,46 +185,46 @@ padding: 0 15px;
 margin-top: 12px;
 border:none;
 }
-.case-container button:hover{
+button:hover{
 color: white;
 }
-.case-container .graph{
+.graph{
   width:100%;
 }
-.case-container h1 {
+h1 {
   font-size: 2vw;
 }
 
-.case-container p,.case-container li {
+p, li {
  font-size:.9vw ;
 }
-.case-container img{
-  width: 80%;
+img{
+  width: 100%;
 }
-@media only screen and  (min-width: 1200px) {
-  .case-container{
+@media only screen and (min-width: 1200px) {
+  .case-container {
     width: 900px;
   }
-  .case-container p ,.case-container li{
+  p , li{
     font-size: 14px;
   }
   
 }
-@media only screen and  (min-width: 500px) and (max-width: 1200px)  {
-  .case-container{
+@media only screen and (min-width: 500px) and (max-width: 1200px) {
+  .case-container {
     width: 700px;
   }
-  .case-container p , .case-container li{
+p , li{
   font-size:1.3vw ;
 }
 
 }
 
-@media only screen and  (max-width: 500px) {
-  .case-container{
+@media only screen and (max-width: 500px) {
+  .case-container {
     width: 500px;
   }
-  .case-container p ,.case-container li{
+  p , li{
     font-size: 2.5vw;
   }
   
