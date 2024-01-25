@@ -197,7 +197,7 @@ margin: 9px 0;
 color: rgba(255, 255, 255, 0.5);
 font-size: 26px;
 padding: 0 15px;
-margin-top: 12px;
+margin-top: 12px !important;
 margin: 0;
 border:none;
 }
