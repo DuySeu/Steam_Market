@@ -1,90 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/interface_style.css" />
-    <link rel="stylesheet" href="../styles/about.css" />
-    <link rel="icon" href="../../public/logo_transparent.png" />
-    <title>About Cr1pt0 Market</title>
-  </head>
-  <body>
-    <header id="header">
-      <div id="togglable-menu">
-        <input type="checkbox" id="toggle"/>
-        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-      </div>
 
-      <div id="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../../index.html" class="nav-links">STORE</a>
-        <a href="about.html" class="nav-links">ABOUT</a>
-        <a href="support.html" class="nav-links">SUPPORT</a>
-        <a href="exchange.html" class="nav-links">Exchange</a>
-        <a href="login.html" class="nav-links">LOGIN</a>
-      </div>
+<head>
+  <!-- Metadata for character set and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <script src="../scripts/navbar.js"></script>
-      
-      <nav id="nav-bar">
-        <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
-        <ul id="menu">
-          <li><a href="../../index.html" class="nav-links">Store</a></li>
-          <li><a href="about.html" class="nav-links">About</a></li>
-          <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="exchange.html" class="nav-links">Exchange</a></li>
-          <li><a href="login.html" class="nav-links">Login</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Stylesheets and favicon -->
+  <link rel="stylesheet" href="../styles/interface_style.css" />
+  <link rel="stylesheet" href="../styles/about.css" />
+  <link rel="icon" href="../../public/logo_transparent.png" />
 
-    <div id="about-section">
-      <div id="box">
-        <img src="../../public/logo_transparent.png" alt="" id="about-img"/>
-        <h1>Steam Market is the ultimate destination for earning and trading.</h1>
-        <div id="user-status">
-          <div>
-            <p class="status"><img src="../assets/images/online_dot.png" alt="Online dot" width="3%" class="dots"/>ONLINE</p>
-            <p>25,093,365</p>
-          </div>
-          <div>
-            <p class="status" id="trading-now"><img src="../assets/images/trading_now_dot.png" alt="Trading now dot" width="3%" class="dots"/>TRADING NOW</p>
-            <p id="trading-now">7,248,413</p>
-          </div>
-        </div>
-        <a href="login.html" id="join-button">JOIN THE MARKET<img src="../../public/logo_transparent.png" alt="" id="button-img"/></a>
-      </div>
+  <!-- Title of the page -->
+  <title>About Cr1pt0 Market</title>
+</head>
 
-      <div id="boxt">
-        <video autoplay muted loop id="about-video">
-          <source src="../assets/videos/yippee.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+<body>
+  <!-- Header Section -->
+  <header id="header">
+    <!-- Toggleable menu icon -->
+    <div id="togglable-menu">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
     </div>
 
-    <footer id="footer">
-      <div class="logo">
-        <a href="" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
+    <!-- Side Navigation Bar -->
+    <div id="side-nav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="../../index.html" class="nav-links">STORE</a>
+      <a href="about.html" class="nav-links">ABOUT</a>
+      <a href="support.html" class="nav-links">SUPPORT</a>
+      <a href="exchange.html" class="nav-links">EXCHANGE</a>
+      <a href="login.html" class="nav-links">LOGIN</a>
+    </div>
+
+    <!-- External JavaScript file for Side Navigation Bar functionality -->
+    <script src="../scripts/navbar.js"></script>
+
+    <!-- Main Navigation Bar -->
+    <nav id="nav-bar">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo" /></a>
+      <ul id="menu">
+        <li><a href="../../index.html" class="nav-links">Store</a></li>
+        <li><a href="about.html" class="nav-links">About</a></li>
+        <li><a href="support.html" class="nav-links">Support</a></li>
+        <li><a href="exchange.html" class="nav-links">Exchange</a></li>
+        <li><a href="login.html" class="nav-links">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Body Section -->
+  <div id="about-section">
+    <!-- Main content box with image, text, and user status -->
+    <div id="box">
+      <img src="../../public/logo_transparent.png" alt="" id="about-img" />
+      <h1 id="about-h1">Steam Market is the ultimate destination for earning and trading.</h1>
+
+      <!-- User status section with online and trading now information -->
+      <div id="user-status">
+        <div>
+          <p class="status about-p"><img src="../assets/images/online_dot.png" alt="Online dot" width="3%" class="dots" />ONLINE</p>
+          <p class="about-p">25,093,365</p>
+        </div>
+        <div>
+          <p class="status about-p" id="trading-now"><img src="../assets/images/trading_now_dot.png" alt="Trading now dot" width="3%" class="dots" />TRADING NOW</p>
+          <p class="about-p" id="trading-now">7,248,413</p>
+        </div>
       </div>
-      <div>
-        <p>
-          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
-          owners in Vietnam and other countries.
-        </p>
-        <p>
-          Some geospatial data on this website is provided by
-          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
-        </p>
-        <nav>
-          <ul>
-            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
-            <li><a href="src/legal.html">Legal</a></li>
-            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
-            <li><a href="src/cookie_preferences.html">Cookies</a></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
-  </body>
+
+      <!-- Button to join the market (log in) -->
+      <a href="login.html" id="join-button">JOIN THE MARKET<img src="../../public/logo_transparent.png" alt="" id="button-img" /></a>
+    </div>
+
+    <!-- Video box on the right side -->
+    <div id="boxt">
+      <video autoplay muted loop id="about-video">
+        <source src="../assets/videos/yippee.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="logo">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
+    </div>
+
+    <!-- Copyright and additional information -->
+    <div>
+      <p>
+        &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective owners in Vietnam and other countries.
+      </p>
+      <p>
+        Some geospatial data on this website is provided by <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
+      </p>
+
+      <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
+      <nav>
+        <ul>
+          <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+          <li><a href="src/legal.html">Legal</a></li>
+          <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
+          <li><a href="src/cookie_preferences.html">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+
 </html>
