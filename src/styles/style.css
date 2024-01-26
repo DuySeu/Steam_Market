@@ -61,10 +61,12 @@
 
 .main-profile-bg {
   background-image: url(../../public/profile-bg.png);
+  display: flex;
+  justify-content: center;
 }
 .profile-bg {
   background-color: #1b2838;
-  margin: 0 15rem;
+  width: 70%;
 }
 .profile-header {
   display: flex;
@@ -236,148 +238,33 @@
 
 
 /* Styling for login and register form */
-#selling-form {
+#sellAnItems {
   background-color: #212c3d;
   padding: 1rem;
   border-radius: 10px;
 }
 
 .sell-input {
+  width: 90%;
   background-color: #32353c;
   color: white;
   border: none;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
   border-radius: 10px;
 }
 
-.login-and-forget-pwd {
-  display: flex;
-  justify-content: space-around;
+.submit-form {
+  display: flex; 
+  justify-content: center;
+}
+.sell-btn {
   border: none;
   border-radius: 20px;
   background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
   color: white;
   padding: 0.7rem 4em;
   text-decoration: none;
-  text-align: center;
   font-size: large;
 }
 
-#register-or-login-link a {
-  color: #adaeb0;
-  text-decoration: none;
-}
-
-#register-or-login-link a:hover {
-  color: white;
-}
-
-
-/* Media query for responsiveness on smaller screens */
-/* @media only screen and (max-width: 480px) {
-  #login-section {
-      padding: 5% 12%;
-      width: 72%;
-  }
-
-  #form-container {
-      margin: 5px;
-  }
-
-  #uname-label {
-      font-size: 10px;
-  }
-  
-  .pwd-and-remember-label {
-      font-size: 10px;
-  }
-
-  #submit-btn, #forget-pwd {
-      border-radius: 10px;
-      padding: 10px 8px;
-      margin: 8px 10px;
-      width: 50%;
-      font-size: 13px;
-  }
-} */
-
-/* @media only screen and (min-width: 481px) and (max-width: 640px) {
-  #login-section {
-      padding: 5% 12%;
-      width: 72%;
-  }
-
-  #form-container {
-      margin: 5px;
-  }
-
-  #uname-label {
-      font-size: 13px;
-  }
-  
-  .pwd-and-remember-label {
-      font-size: 13px;
-  }
-
-  #submit-btn, #forget-pwd {
-      border-radius: 10px;
-      padding: 10px 8px;
-      margin: 8px 10px;
-      width: 50%;
-      font-size: medium;
-  }
-} */
-
-/* @media only screen and (min-width: 641px) and (max-width: 1028px) {
-  #login-section {
-      padding: 5% 12%;
-      width: 72%;
-  }
-
-  #form-container {
-      margin: 5px;
-  }
-
-  #uname-label {
-      font-size: 13px;
-  }
-  
-  .pwd-and-remember-label {
-      font-size: 13px;
-  }
-
-  #submit-btn, .login-and-forget-pwd {
-      border-radius: 10px;
-      padding: 13px 8px;
-      margin: 8px 10px;
-      width: 50%;
-      font-size: medium;
-  }
-} */
-
-/* @media only screen and (min-width: 1029px) {
-  #login-section {
-      padding: 5% 12%;
-      width: 72%;
-  }
-
-  #form-container {
-      margin: 5px;
-  }
-
-  #uname-label {
-      font-size: large;
-  }
-  
-  .pwd-and-remember-label {
-      font-size: large;
-  }
-
-  #submit-btn, .login-and-forget-pwd {
-      border-radius: 10px;
-      padding: 13px 8px;
-      margin: 8px 10px;
-      width: 50%;
-  }
-} */
