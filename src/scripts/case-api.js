@@ -34,7 +34,7 @@ function showCase(data) {
   console.log(data);
   data.cases.forEach((item) => {
     const caseId = item.id;
-    const itemElement = ` <li class="case_display"> 
+    const itemElement = ` <li class="case-display"> 
                             <a href="src/pages/case-detail.html?id=${caseId}" class="container">
                               <img src="${item.image}" alt="${item.name}" style="width:100%">
                               <p>${item.name}</p>

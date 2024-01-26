@@ -1,125 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/interface_style.css" />
-    <link rel="stylesheet" href="../styles/support.css" />
-    <link rel="icon" href="../../public/logo_transparent.png" />
-    <title>Cr1pt0 Market Support</title>
-  </head>
-  <body>
-    <header id="header">
-      <div id="togglable-menu">
-        <input type="checkbox" id="toggle"/>
-        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-      </div>
 
-      <div id="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../../index.html" class="nav-links">STORE</a>
-        <a href="about.html" class="nav-links">ABOUT</a>
-        <a href="support.html" class="nav-links">SUPPORT</a>
-        <a href="exchange.html" class="nav-links">Exchange</a>
-        <a href="login.html" class="nav-links">LOGIN</a>
-      </div>
+<head>
+  <!-- Metadata for character set and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <script src="../scripts/navbar.js"></script>
-      
-      <nav id="nav-bar">
-        <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
-        <ul id="menu">
-          <li><a href="../../index.html" class="nav-links">Store</a></li>
-          <li><a href="about.html" class="nav-links">About</a></li>
-          <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="exchange.html" class="nav-links">Exchange</a></li>
-          <li><a href="login.html" class="nav-links">Login</a></li>
+  <!-- Stylesheets and favicon -->
+  <link rel="stylesheet" href="../styles/interface_style.css" />
+  <link rel="stylesheet" href="../styles/support.css" />
+  <link rel="icon" href="../../public/logo_transparent.png" />
+
+  <!-- Title of the page -->
+  <title>Cr1pt0 Market Support</title>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div id="header">
+    <!-- Toggleable menu icon -->
+    <div id="togglable-menu">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+    </div>
+
+    <!-- Side Navigation Bar -->
+    <div id="side-nav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="../../index.html" class="nav-links">STORE</a>
+      <a href="about.html" class="nav-links">ABOUT</a>
+      <a href="support.html" class="nav-links">SUPPORT</a>
+      <a href="exchange.html" class="nav-links">EXCHANGE</a>
+      <a href="login.html" class="nav-links">LOGIN</a>
+    </div>
+
+    <!-- External JavaScript file for Side Navigation Bar functionality -->
+    <script src="../scripts/navbar.js"></script>
+
+    <!-- Main Navigation Bar -->
+    <nav id="nav-bar">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo" /></a>
+      <ul id="menu">
+        <li><a href="../../index.html" class="nav-links">Store</a></li>
+        <li><a href="about.html" class="nav-links">About</a></li>
+        <li><a href="support.html" class="nav-links">Support</a></li>
+        <li><a href="exchange.html" class="nav-links">Exchange</a></li>
+        <li><a href="login.html" class="nav-links">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Body Section -->
+  <section id="support-section">
+    <h1 id="support-h1">Cr1pt0 Market support</h1>
+    <p id="help">What do you need help with?</p>
+
+    <!-- FAQ Search box -->
+    <div class="faq-search">
+      <input type="text" id="search-input" placeholder="Search for an issue..." />
+    </div>
+
+    <!-- FAQ List -->
+    <ul class="faq-list">
+      <!-- FAQ Item 1 -->
+      <li class="faq-item">
+        <div class="faq-question">What is the purpose of this website?</div>
+        <div class="faq-answer">
+          This website facilitates the trading of in-game items using blockchain technology,
+          providing a secure and transparent platform for users to exchange items.
+        </div>
+      </li>
+
+      <!-- FAQ Item 2 -->
+      <li class="faq-item">
+        <div class="faq-question">How does blockchain technology enhance item trading?</div>
+        <div class="faq-answer">
+          Blockchain ensures transparent and tamper-proof transactions. Each item trade is
+          recorded on the blockchain, providing a decentralized and secure ledger for all
+          participants.
+        </div>
+      </li>
+
+      <!-- FAQ Item 3 -->
+      <li class="faq-item">
+        <div class="faq-question">Is there a fee for using the trading platform?</div>
+        <div class="faq-answer">
+          Yes, there might be a small transaction fee associated with using our platform. This fee
+          helps maintain and improve the services we provide, ensuring a smooth trading
+          experience.
+        </div>
+      </li>
+
+      <!-- FAQ Item 4 -->
+      <li class="faq-item">
+        <div class="faq-question">How can I deposit items for trading?</div>
+        <div class="faq-answer">
+          To deposit items, log in to your account, navigate to the deposit section, and follow
+          the provided instructions. Ensure that you comply with the item eligibility criteria for
+          successful deposits.
+        </div>
+      </li>
+
+      <!-- FAQ Item 5 -->
+      <li class="faq-item">
+        <div class="faq-question">What security measures are in place to protect my items?</div>
+        <div class="faq-answer">
+          We employ robust security protocols, including encryption and multi-factor
+          authentication, to safeguard your items. Additionally, the use of blockchain ensures the
+          integrity of transactions and ownership.
+        </div>
+      </li>
+
+      <!-- FAQ Item 6 -->
+      <li class="faq-item">
+        <div class="faq-question">Can I withdraw real currency from the platform?</div>
+        <div class="faq-answer">
+          At the moment, our platform focuses on in-game item trading. We do not support direct
+          withdrawal of real currency. You can, however, trade your items for other valuable
+          in-game items.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer Section -->
+  <div id="footer">
+    <div class="logo">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
+    </div>
+
+    <!-- Copyright and additional information -->
+    <div>
+      <p>
+        &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective owners in Vietnam and other countries.
+      </p>
+      <p>
+        Some geospatial data on this website is provided by <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
+      </p>
+
+      <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
+      <nav>
+        <ul>
+          <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+          <li><a href="src/legal.html">Legal</a></li>
+          <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
+          <li><a href="src/cookie_preferences.html">Cookies</a></li>
         </ul>
       </nav>
-    </header>
-
-    <section id="support-section">
-      <h1 id="support-h1">Cr1pt0 Market support</h1>
-      <p id="help">What do you need help with?</p>
-
-      <div class="faq-search">
-        <input type="text" id="searchInput" placeholder="Search for an issue..." />
-      </div>
-
-      <ul class="faq-list">
-        <li class="faq-item">
-          <div class="faq-question">What is the purpose of this website?</div>
-          <div class="faq-answer">
-            This website facilitates the trading of in-game items using blockchain technology,
-            providing a secure and transparent platform for users to exchange items.
-          </div>
-        </li>
-        <li class="faq-item">
-          <div class="faq-question">How does blockchain technology enhance item trading?</div>
-          <div class="faq-answer">
-            Blockchain ensures transparent and tamper-proof transactions. Each item trade is
-            recorded on the blockchain, providing a decentralized and secure ledger for all
-            participants.
-          </div>
-        </li>
-        <li class="faq-item">
-          <div class="faq-question">Is there a fee for using the trading platform?</div>
-          <div class="faq-answer">
-            Yes, there might be a small transaction fee associated with using our platform. This fee
-            helps maintain and improve the services we provide, ensuring a smooth trading
-            experience.
-          </div>
-        </li>
-        <li class="faq-item">
-          <div class="faq-question">How can I deposit items for trading?</div>
-          <div class="faq-answer">
-            To deposit items, log in to your account, navigate to the deposit section, and follow
-            the provided instructions. Ensure that you comply with the item eligibility criteria for
-            successful deposits.
-          </div>
-        </li>
-        <li class="faq-item">
-          <div class="faq-question">What security measures are in place to protect my items?</div>
-          <div class="faq-answer">
-            We employ robust security protocols, including encryption and multi-factor
-            authentication, to safeguard your items. Additionally, the use of blockchain ensures the
-            integrity of transactions and ownership.
-          </div>
-        </li>
-        <li class="faq-item">
-          <div class="faq-question">Can I withdraw real currency from the platform?</div>
-          <div class="faq-answer">
-            At the moment, our platform focuses on in-game item trading. We do not support direct
-            withdrawal of real currency. You can, however, trade your items for other valuable
-            in-game items.
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <footer id="footer">
-      <div class="logo">
-        <a href="" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
-      </div>
-      <div>
-        <p>
-          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
-          owners in Vietnam and other countries.
-        </p>
-        <p>
-          Some geospatial data on this website is provided by
-          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
-        </p>
-        <nav>
-          <ul>
-            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
-            <li><a href="src/legal.html">Legal</a></li>
-            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
-            <li><a href="src/cookie_preferences.html">Cookies</a></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </div>
+  
+  <!-- Support JavaScript file -->
   <script src="../scripts/support.js"></script>
+</body>
+
 </html>

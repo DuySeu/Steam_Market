@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata for character set and responsive design -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets and favicon -->
     <link rel="stylesheet" href="src/styles/interface_style.css" />
     <link rel="stylesheet" href="src/styles/style.css" />
     <link rel="icon" href="public/logo_transparent.png" />
+
+    <!-- Title of the page -->
     <title>Cr1pt0 Market, The Ultimate Online Market Platform</title>
   </head>
+
   <body>
-    <header id="header">
+    <!-- Header Section -->
+    <div id="header">
+      <!-- Toggleable menu icon -->
       <div id="togglable-menu">
-        <input type="checkbox" id="toggle"/>
+        <input type="checkbox" id="toggle" />
         <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
       </div>
 
+      <!-- Side Navigation Bar -->
       <div id="side-nav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.html" class="nav-links">STORE</a>
-          <a href="src/pages/about.html" class="nav-links">ABOUT</a>
-          <a href="src/pages/support.html" class="nav-links">SUPPORT</a>
-          <a href="src/pages/exchange.html" class="nav-links">EXCHANGE</a>
-          <a href="src/pages/login.html" class="nav-links">LOGIN</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html" class="nav-links">STORE</a>
+        <a href="src/pages/about.html" class="nav-links">ABOUT</a>
+        <a href="src/pages/support.html" class="nav-links">SUPPORT</a>
+        <a href="src/pages/exchange.html" class="nav-links">EXCHANGE</a>
+        <a href="src/pages/login.html" class="nav-links">LOGIN</a>
       </div>
 
-      <script src="scripts/navbar.js"></script>
-      
+      <!-- External JavaScript file for Side Navigation Bar functionality -->
+      <script src="src/scripts/navbar.js"></script>
+
+      <!-- Main Navigation Bar -->
       <nav id="nav-bar">
-        <a href="index.html" id="logo-link"><img src="public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
+        <a href="index.html" id="logo-link"
+          ><img src="public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"
+        /></a>
         <ul id="menu">
           <li><a href="index.html" class="nav-links">STORE</a></li>
           <li><a href="src/pages/about.html" class="nav-links">ABOUT</a></li>
@@ -36,41 +49,66 @@
           <li><a href="src/pages/login.html" class="nav-links">LOGIN</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
 
-    <main>
-      <div class="marketTabContainer">
+    <div id="main">
+      <div class="market-tab-container">
         <div style="background: #171a21">
-          <button onclick="displayText1()" href="" class="marketBtn">
-            <span>My Active Listings</span>
+          <button onclick="displayText1()" href="" class="market-btn">
+            My Active Listings
           </button>
-          <button onclick="displayText2()" href="" class="marketBtn">
-            <span>My Market History</span>
+          <button onclick="displayText2()" href="" class="market-btn">
+            My Market History
           </button>
-          <button onclick="displayText3()" href="" class="marketBtn">
-            <span>Sell An Items</span>
+          <button onclick="displayText3()" href="" class="market-btn">
+            Sell An Items
           </button>
         </div>
         <div class="container">
-          <div id="myActiveListing" class="marketTab">
-            <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
-            <span>to see, edit, or remove your Community Market listings.</span>
+          <div id="my-active-listing" class="market-tab">
+            <p>
+              <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
+              to see, edit, or remove your Cr1pt0 Market listings.
+            </p>
           </div>
-          <div id="myMarketHistory" style="display: none" class="marketTab">
-            <p>You don't have any history on the Community Market.</p>
-            <!-- <div class="historyHeaderContent"></div> -->
+          <div id="my-market-history" style="display: none" class="marketTab">
+            <p>You don't have any history on the Cr1pt0 Market.</p>
+          </div>
+          <div id="sell-an-items" style="display: none" class="marketTab">
+            <p>
+              You need to
+              <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
+              to do that.
+            </p>
           </div>
         </div>
       </div>
       <div class="products">
-        <ul id="caseData"></ul>
+        <div class="case-nav">
+          <a href="#">Popular Items</a>
+          <a href="#">Newly Listed</a>
+          <a href="#">Recently sold</a>
+          <input
+            type="text"
+            id="my-search"
+            onkeyup="searchFunction()"
+            placeholder="Search.."
+            style="font-size: 17px"
+          />
+        </div>
+        <ul id="case-data"></ul>
       </div>
-    </main>
+    </div>
 
-    <footer id="footer">
+    <!-- Footer Section -->
+    <div id="footer">
       <div class="logo">
-        <a href="" id="logo-link"><img src="public/logo_transparent.png" alt="Group logo" /></a>
+        <a href="index.html" id="logo-link"
+          ><img src="public/logo_transparent.png" alt="Group logo"
+        /></a>
       </div>
+
+      <!-- Copyright and additional information -->
       <div>
         <p>
           &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
@@ -80,6 +118,8 @@
           Some geospatial data on this website is provided by
           <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
         </p>
+
+        <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
         <nav>
           <ul>
             <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
@@ -89,7 +129,10 @@
           </ul>
         </nav>
       </div>
-    </footer>
+    </div>
+
+    <!-- Support JavaScript file -->
+    <script src="src/scripts/case-api.js"></script>
+    <script src="src/scripts/search-menu.js"></script>
   </body>
-  <script src="src/scripts/case-api.js"></script>
 </html>

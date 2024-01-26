@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata for character set and responsive design -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets and favicon -->
     <link rel="stylesheet" href="../styles/interface_style.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="icon" href="../../public/logo.png" />
-    <title>Market Login</title>
+    <link rel="icon" href="../../public/logo_transparent.png" />
+
+    <!-- Title of the page -->
+    <title>Cr1pt0 Market Profile</title>
   </head>
+
   <body>
-    <header id="header">
+    <!-- Header Section -->
+    <div id="header">
+      <!-- Toggleable menu icon -->
       <div id="togglable-menu">
         <input type="checkbox" id="toggle" />
         <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
       </div>
 
+      <!-- Side Navigation Bar -->
       <div id="side-nav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="../../index.html" class="nav-links">STORE</a>
         <a href="about.html" class="nav-links">ABOUT</a>
         <a href="support.html" class="nav-links">SUPPORT</a>
-        <a href="exchange.html" class="nav-links">Exchange</a>
-        <a href="profile.html" class="nav-links">Profile</a>
+        <a href="exchange.html" class="nav-links">EXCHANGE</a>
+        <a href="profile.html" class="nav-links">PROFILE</a>
       </div>
 
+      <!-- External JavaScript file for Side Navigation Bar functionality -->
       <script src="../scripts/navbar.js"></script>
 
+      <!-- Main Navigation Bar -->
       <nav id="nav-bar">
         <a href="../../index.html" id="logo-link"
           ><img
@@ -42,7 +53,7 @@
           <li><a href="profile.html" class="nav-links">Profile</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
 
     <div class="main-profile-bg">
       <div class="profile-bg">
@@ -67,8 +78,8 @@
             </h2>
           </div>
         </div>
-      <hr>
-        <div class="marketTabContainer">
+        <hr />
+        <div class="market-tab-container">
           <div style="background: #171a21">
             <button onclick="displayText1()" href="" class="marketBtn">
               <span>My Active Listings</span>
@@ -81,17 +92,17 @@
             </button>
           </div>
           <div class="container">
-            <div id="myActiveListing">
+            <div id="my-active-listing">
               <h4>My sell listings (0)</h4>
-              <p class="marketTab">
+              <p class="market-tab">
                 You are not selling any items on the Community Market. Sell items from your
                 inventory, or click the "Sell an item" button above.
               </p>
               <h4>My buy orders (0)</h4>
-              <p class="marketTab">You do not have any buy orders.</p>
+              <p class="market-tab">You do not have any buy orders.</p>
             </div>
-            <div id="myMarketHistory" style="display: none">
-              <p class="marketTab">You don't have any history on the Community Market.</p>
+            <div id="my-market-history" style="display: none">
+              <p class="market-tab">You don't have any history on the Community Market.</p>
               <!-- <div class="historyHeaderContent"></div> -->
             </div>
             <div id="sellAnItems" style="display: none">
@@ -102,31 +113,38 @@
       </div>
     </div>
 
-    <footer id="footer">
+    <!-- Footer Section -->
+    <div id="footer">
       <div class="logo">
-        <a href="" id="logo-link"
+        <a href="../../index.html" id="logo-link"
           ><img src="../../public/logo_transparent.png" alt="Group logo"
         /></a>
       </div>
+
+      <!-- Copyright and additional information -->
       <div>
         <p>
-          &copy; Group 1.7. All rights reserved. All trademarks are property of their respective
+          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
           owners in Vietnam and other countries.
         </p>
         <p>
           Some geospatial data on this website is provided by
-          <a href="src/geogroup17.org">geogroup17.org</a>.
+          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
         </p>
+
+        <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
         <nav>
           <ul>
             <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
             <li><a href="src/legal.html">Legal</a></li>
-            <li><a href="src/subscriber_agreement.html">Steam Subscriber Agreement</a></li>
+            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
             <li><a href="src/cookie_preferences.html">Cookies</a></li>
           </ul>
         </nav>
       </div>
-    </footer>
+    </div>
+
+    <!-- Support JavaScript file -->
+    <script src="../scripts/case-api.js"></script>
   </body>
-  <script src="../scripts/case-api.js"></script>
 </html>

@@ -1,3 +1,4 @@
+/* Styling for the body of all pages */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -5,6 +6,8 @@ body {
   background-color: #1b2838;
 }
 
+
+/* Styling for the header of all pages */
 #header {
   display: flex;
   justify-content: space-between;
@@ -16,6 +19,7 @@ body {
   text-align: center;
 }
 
+/* Styling for the main navidation bar of all pages */
 #nav-bar {
   margin: 15px;
   font-weight: bold;
@@ -49,26 +53,26 @@ body {
   color: white;
 }
 
+
+/* Styling for the side navidation bar of all pages */
 #toggle, #togglable-menu {
   display: none;
 }
 
-/* The side navigation menu */
 #side-nav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
   padding-top: 15px;
   background-color: #060709;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  overflow-x: hidden;
+  transition: 0.5s;
   list-style-type: none;
 }
 
-/* The navigation menu links */
 #side-nav a {
   padding: 20px 8px 20px 40px;
   text-decoration: none;
@@ -79,13 +83,11 @@ body {
   width: 30%;
 }
 
-/* When you mouse over the navigation links, change their color */
 #side-nav a:hover {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-#side-nav .closebtn {
+.closebtn {
   position: absolute;
   top: 0;
   right: 5px;
@@ -94,30 +96,11 @@ body {
   padding-right: 0;
 }
 
-@media only screen and (max-width: 909px) {
-  #header {
-    display: flex;
-    justify-content: start;
-    padding-left: 30px;
-  }
-
-  #nav-bar {
-    margin: 0 auto;
-  }
-
-  #header ul {
-    display: none;
-  }
-
-  #togglable-menu {
-    display: contents;
-  }
+#main {
+  padding: 1rem 0;
 }
 
-.main-content {
-  padding: 20px;
-}
-
+/* Styling for the footer of all pages */
 #footer {
   color: #657f95;
   background-color: #171d25;
@@ -173,4 +156,26 @@ body {
 #logo-link > img {
   width: 80px;
   height: 80px;
+}
+
+
+/* Media query for responsiveness on a smaller screen */
+@media only screen and (max-width: 909px) {
+  #header {
+    display: flex;
+    justify-content: start;
+    padding-left: 30px;
+  }
+
+  #nav-bar {
+    margin: 0 auto;
+  }
+
+  #header ul {
+    display: none;
+  }
+
+  #togglable-menu {
+    display: contents;
+  }
 }

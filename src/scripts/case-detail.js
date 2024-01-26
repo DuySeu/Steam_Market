@@ -125,5 +125,5 @@ function showCaseDetail(data) {
 </div> </div>
                       </div>
                       `;
-  document.querySelector('#main').insertAdjacentHTML('beforeend', caseDetail);
+  document.querySelector('#case-detail').insertAdjacentHTML('beforeend', caseDetail);
 }

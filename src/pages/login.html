@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/interface_style.css" />
-    <link rel="stylesheet" href="../styles/loginnregister.css" />
-    <link rel="icon" href="../../public/logo_transparent.png" />
-    <title>Cr1pt0 Market Login</title>
-  </head>
-  <body>
-    <header id="header">
-      <div id="togglable-menu">
-        <input type="checkbox" id="toggle"/>
-        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-      </div>
 
-      <div id="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../../index.html" class="nav-links">STORE</a>
-        <a href="about.html" class="nav-links">ABOUT</a>
-        <a href="support.html" class="nav-links">SUPPORT</a>
-        <a href="exchange.html" class="nav-links">Exchange</a>
-        <a href="register.html" class="nav-links">RESGISTER</a>
-      </div>
+<head>
+  <!-- Metadata for character set and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <script src="../scripts/navbar.js"></script>
-      
-      <nav id="nav-bar">
-        <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo"/></a>
-        <ul id="menu">
-          <li><a href="../../index.html" class="nav-links">Store</a></li>
-          <li><a href="about.html" class="nav-links">About</a></li>
-          <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="exchange.html" class="nav-links">Exchange</a></li>
-          <li><a href="register.html" class="nav-links">Register</a></li>
+  <!-- Stylesheets and favicon -->
+  <link rel="stylesheet" href="../styles/interface_style.css" />
+  <link rel="stylesheet" href="../styles/loginnregister.css" />
+  <link rel="icon" href="../../public/logo_transparent.png" />
+
+  <!-- Title of the page -->
+  <title>Cr1pt0 Market Login</title>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div id="header">
+    <!-- Toggleable menu icon -->
+    <div id="togglable-menu">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+    </div>
+
+    <!-- Side Navigation Bar -->
+    <div id="side-nav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="../../index.html" class="nav-links">STORE</a>
+      <a href="about.html" class="nav-links">ABOUT</a>
+      <a href="support.html" class="nav-links">SUPPORT</a>
+      <a href="exchange.html" class="nav-links">EXCHANGE</a>
+      <a href="register.html" class="nav-links">RESGISTER</a>
+    </div>
+
+    <!-- External JavaScript file for Side Navigation Bar functionality -->
+    <script src="../scripts/navbar.js"></script>
+
+    <!-- Main Navigation Bar -->
+    <nav id="nav-bar">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group 1.7 logo" width="15%" id="header-logo" /></a>
+      <ul id="menu">
+        <li><a href="../../index.html" class="nav-links">Store</a></li>
+        <li><a href="about.html" class="nav-links">About</a></li>
+        <li><a href="support.html" class="nav-links">Support</a></li>
+        <li><a href="exchange.html" class="nav-links">Exchange</a></li>
+        <li><a href="register.html" class="nav-links">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Body Section -->
+  <section id="login-section">
+    <h1 id="login-h1">Log in</h1>
+
+    <!-- Login form -->
+    <form action="login-process.php" method="post" id="loginnresgiter-form">
+      <div id="form-container">
+        <label for="uname" id="uname-label"><b>LOG IN WITH ACCOUNT NAME</b></label>
+        <input type="text" name="uname" pattern="[A-Za-z0-9]{1,30}" class="login-input" required />
+
+        <label for="psw" class="pwd-and-remember-label">Password</label>
+        <input type="password" name="psw" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$" class="login-input" required />
+
+        <!-- Remember me checkbox -->
+        <label class="pwd-and-remember-label">
+          <input type="checkbox" name="remember" id="remember-box" class="pwd-and-remember-label" /> Remember me
+        </label>
+
+        <!-- Buttons for login and forgot password -->
+        <div id="btn-container">
+          <a href="profile.html" class="login-and-forget-pwd">Login</a>
+          <a href="profile.html" class="login-and-forget-pwd">Forgot Password?</a>
+        </div>
+
+        <!-- Link to register if not registered -->
+        <p id="register-or-login-link"><a href="register.html">New here? Register now!</a></p>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <div id="footer">
+    <div class="logo">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
+    </div>
+
+    <!-- Copyright and additional information -->
+    <div>
+      <p>
+        &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective owners in Vietnam and other countries.
+      </p>
+      <p>
+        Some geospatial data on this website is provided by <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
+      </p>
+
+      <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
+      <nav>
+        <ul>
+          <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+          <li><a href="src/legal.html">Legal</a></li>
+          <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
+          <li><a href="src/cookie_preferences.html">Cookies</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
+  </div>
+</body>
 
-    <section id="login-section">
-      <h1 id="login-h1">Log in</h1>
-      <form action="login-process.php" method="post">
-        <div id="form-container">
-          <label for="uname" id="uname-label"><b>LOG IN WITH ACCOUNT NAME</b></label>
-          <input type="text" name="uname" pattern="[A-Za-z0-9]{1,30}" class="login-input" required />
-
-          <label for="psw" id="pwdnremember-label">Password</label>
-          <input type="password" name="psw" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$" class="login-input" required />
-
-          <label id="pwdnremember-label">
-            <input type="checkbox" name="remember" id="remember-box pwdnremember-label" /> Remember me
-          </label>
-
-          <div id="btn-container">
-            <!-- <input type="submit" value="Login" id="submit-btn" /> -->
-            <a href="profile.html" id="forget-pwd">Login</a>
-            <a href="profile.html" id="forget-pwd">Forgot Password?</a>
-          </div>
-
-          <p id="register-or-login-link"><a href="register.html">New here? Register now!</a></p>
-        </div>
-      </form>
-
-      
-    </section>
-
-    <footer id="footer">
-      <div class="logo">
-        <a href="" id="logo-link"><img src="../../public/logo_transparent.png" alt="Group logo" /></a>
-      </div>
-      <div>
-        <p>
-          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
-          owners in Vietnam and other countries.
-        </p>
-        <p>
-          Some geospatial data on this website is provided by
-          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
-        </p>
-        <nav>
-          <ul>
-            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
-            <li><a href="src/legal.html">Legal</a></li>
-            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
-            <li><a href="src/cookie_preferences.html">Cookies</a></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
-  </body>
 </html>

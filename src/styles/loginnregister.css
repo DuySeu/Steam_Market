@@ -1,15 +1,19 @@
-/* Bordered form */
+/* Styling for the body section */
 #login-section {
     padding: 6% 25%;
     width: 50%;
 }
 
+
+/* Styling for the headings of the page */
 #login-h1 {
     color: white;
     font-weight: 900;
 }
 
-form {
+
+/* Styling for login and register form */
+#loginnresgiter-form {
     background-color: #181a21;
     padding: 2%;
     border-radius: 10px;
@@ -19,7 +23,7 @@ form {
     color: #1999e8;
 }
 
-#pwdnremember-label {
+.pwd-and-remember-label {
     color: #adaeb0;
 }
 
@@ -36,8 +40,8 @@ form {
     font-size: 20px;
 }
   
-/* Set a style for all buttons */
-#submit-btn, #forget-pwd {
+/* Styling for the submit and forgot password buttons */
+#submit-btn, .login-and-forget-pwd {
     border: none;
     border-radius: 20px;
     background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
@@ -53,9 +57,7 @@ form {
     font-size:large;
 }
 
-  
-/* Add a hover effect for buttons */
-button:hover, #submit-btn:hover, #forget-pwd:hover {
+#submit-btn:hover, .login-and-forget-pwd:hover {
     background-position: 100% 0;
 }
 
@@ -73,7 +75,8 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
     color: white;
 }
 
-/* Responsive styles */
+
+/* Media query for responsiveness on smaller screens */
 @media only screen and (max-width: 480px) {
     #login-section {
         padding: 5% 12%;
@@ -88,7 +91,7 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
         font-size: 10px;
     }
     
-    #pwdnremember-label {
+    .pwd-and-remember-label {
         font-size: 10px;
     }
 
@@ -115,7 +118,7 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
         font-size: 13px;
     }
     
-    #pwdnremember-label {
+    .pwd-and-remember-label {
         font-size: 13px;
     }
 
@@ -142,11 +145,11 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
         font-size: 13px;
     }
     
-    #pwdnremember-label {
+    .pwd-and-remember-label {
         font-size: 13px;
     }
 
-    #submit-btn, #forget-pwd {
+    #submit-btn, .login-and-forget-pwd {
         border-radius: 10px;
         padding: 13px 8px;
         margin: 8px 10px;
@@ -169,11 +172,11 @@ button:hover, #submit-btn:hover, #forget-pwd:hover {
         font-size: large;
     }
     
-    #pwdnremember-label {
+    .pwd-and-remember-label {
         font-size: large;
     }
 
-    #submit-btn, #forget-pwd {
+    #submit-btn, .login-and-forget-pwd {
         border-radius: 10px;
         padding: 13px 8px;
         margin: 8px 10px;

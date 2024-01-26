@@ -1,88 +1,80 @@
-
-
-.marketTabContainer {
-  margin: 2em 20%;
+.market-tab-container {
+  margin: 0 20%;
 }
-
-.marketTab {
+.market-tab {
   background-color: #212c3d;
   padding: 1em;
 }
-
-.marketBtn {
+.market-btn {
   background: #171a21;
   cursor: pointer;
   border: none;
-  padding: 0.2em 1rem;
-}
-
-.marketBtn span {
-  line-height: 39px;
-  padding: 0 4px;
-  margin: 0px;
-  min-width: 195px;
-  font-size: 14px;
-  font-weight: 300;
-  text-align: center;
+  padding: 1rem 2rem;
   color: white;
 }
-
-.marketBtn:hover {
+.market-btn:hover {
   background-color: greenyellow;
 }
 
 .container {
-  /* background-color: #212c3d; */
   margin: 0.8rem 0;
   text-decoration: none;
   color: lightgrey;
 }
 
-.historyHeader {
-  background-color: gray;
-  height: 41px;
-  font-size: small;
-}
-.historyCate {
-  display: inline-block;
-  list-style-type: none;
-  padding: 10px 30px;
-}
-
-.case_display {
+.case-display {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
-.case_display:hover {
+.case-display:hover {
   box-shadow: 0 6px 20px 0 #67c1f5;
   border-radius: 10px;
-  /* background-color: #fff; */
 }
-#caseData {
+.products {
+  margin: 3rem;
+}
+#case-data {
   display: grid;
   list-style: none;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   font-weight: bolder;
   gap: 2em;
   padding: 0;
-  margin: 0 2rem;
 }
-.subBanner {
-  background-color: #46602a;
-  padding: 1rem;
-  color: white;
-}
-.subBannerContent {
+/* Add a black background color to the top navigation bar */
+.case-nav {
   display: flex;
-  color: white;
-  margin: 0 20%;
+  background-color: #171a21;
 }
+
+/* Style the links inside the navigation bar */
+.case-nav a {
+  color: white;
+  padding: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.case-nav a:hover {
+  background-color: greenyellow;
+}
+
+#my-search {
+  /* font-size: large; */
+  margin: 5px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
 .main-profile-bg {
   background-image: url(../../public/profile-bg.png);
+  display: flex;
+  justify-content: center;
 }
 .profile-bg {
   background-color: #1b2838;
-  margin: 0 15rem;
+  width: 70%;
 }
 .profile-header {
   display: flex;
@@ -97,13 +89,14 @@
   text-decoration: none;
   color: lightgray;
 }
-
-.case-container hr{
-  border: 0.5px solid black;
+.profile-link:hover {
+  text-decoration: underline;
+  color: white;
 }
 
-
-  
+.case-container hr {
+  border: 0.5px solid black;
+}
 
 .case-container {
   color: rgba(255, 255, 255, 0.7);
@@ -116,7 +109,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-.nd-container{
+.nd-container {
   position: relative;
   height: 422px;
   padding: 11px;
@@ -141,13 +134,13 @@
 }
 .case-inf h2 {
   color: white;
-  margin: 0 ;
+  margin: 0;
   margin-bottom: 9px;
 }
 .container-series {
   color: cyan;
   margin-bottom: 3px;
-  margin: 0 ;
+  margin: 0;
 }
 .sell-buy-container {
   position: relative;
@@ -155,8 +148,7 @@
   padding: 15px 0;
   margin-top: 60px !important;
   width: 100%;
-  margin: 0  ;
-  
+  margin: 0;
 }
 .buy,
 .sell {
@@ -176,37 +168,37 @@
   margin: 0;
 }
 
-.case-container table{
+.case-container table {
   margin: 12px auto;
   text-align: center;
 }
-.case-container td,.case-container th{
+.case-container td,
+.case-container th {
   width: 100px;
   margin: 0%;
 }
-.case-container tr:nth-child(even){
+.case-container tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.3);
   margin: 0;
 }
-.case-container button{
-background-image: url(/src/assets/images/market_banner.jpg);
-width: 60%;
-height: 54px;
-text-align: center;
-margin: 9px 0;
-color: rgba(255, 255, 255, 0.5);
-font-size: 26px;
-padding: 0 15px;
-margin-top: 12px !important;
-margin: 0;
-border:none;
+.case-container button {
+  background-image: url(/src/assets/images/market_banner.jpg);
+  width: 60%;
+  height: 54px;
+  text-align: center;
+  margin: 9px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 26px;
+  padding: 0 15px;
+  margin-top: 12px !important;
+  margin: 0;
+  border: none;
 }
-.case-container button:hover{
-color: white;
-
+.case-container button:hover {
+  color: white;
 }
-.graph{
-  width:100% !important;
+.graph {
+  width: 100% !important;
   margin: 0;
 }
 .case-container h1 {
@@ -214,11 +206,12 @@ color: white;
   margin: 0;
 }
 
-.case-container p,.case-container  li {
- font-size:.9vw ;
- margin: 0;
+.case-container p,
+.case-container li {
+  font-size: 0.9vw;
+  margin: 0;
 }
-.case-container img{
+.case-container img {
   width: 80%;
   margin: 0;
 }
@@ -226,28 +219,58 @@ color: white;
   .case-container {
     width: 900px;
   }
-  .case-container p , .case-container  li{
+  .case-container p,
+  .case-container li {
     font-size: 14px;
   }
-  
 }
 @media only screen and (min-width: 500px) and (max-width: 1200px) {
   .case-container {
     width: 700px;
   }
-  .case-container p ,.case-container  li{
-  font-size:1.3vw ;
-}
-
+  .case-container p,
+  .case-container li {
+    font-size: 1.3vw;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .case-container {
     width: 500px;
   }
-  .case-container p ,.case-container li{
+  .case-container p,
+  .case-container li {
     font-size: 2.5vw;
   }
-  
-  
+}
+
+/* Styling for login and register form */
+#sell-an-items {
+  background-color: #212c3d;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.sell-input {
+  width: 90%;
+  background-color: #32353c;
+  color: white;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.submit-form {
+  display: flex;
+  justify-content: center;
+}
+.sell-btn {
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+  color: white;
+  padding: 0.7rem 4em;
+  text-decoration: none;
+  font-size: large;
 }

@@ -1,21 +1,28 @@
+/* Styling for the page heading in the support section */
 #support-h1 {
     color: #f2fffc;
     padding: 3% 15%;
     margin: auto;
 }
 
+
+/* Styling for the exchange section */
 #exchange-section {
     margin: auto;
     color: #fafafa;
     width: 90%;
 }
 
+
+/* Styling for the cryptocurrency table */
 #crypto-table {
     width: 50%;
     border-collapse: collapse;
     margin: 20px auto;
 }
 
+
+/* Styling for headers and data cells in the currency exchange table */
 .crypto-header, .crypto-data {
     border: 2px solid rgba(250, 250, 250, 0.25);
     padding: 50px;
@@ -34,17 +41,19 @@
     width: 10%;
 }
 
-.last-data {
-    border-bottom: none;
-}
-
 .first-data {
     border-top: none;
 }
 
+.last-data {
+    border-bottom: none;
+}
+
+
+/* Styling for the buy button */
 .buy {
     font-size: 20px;
-    background-color: #1b2838;
+    background-color: #171d25;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     border: none;
@@ -57,6 +66,8 @@
     box-shadow: 0 6px 20px 0 #67c1f5;
 }
 
+
+/* Media query for responsiveness on a smaller screen */
 @media only screen and (max-width: 540px) {
     .crypto-header, .crypto-data {
         padding: 10px;

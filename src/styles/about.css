@@ -1,4 +1,42 @@
-/* About page styles */
+/* Styling for the body section */
+#about-section {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: #fafafa;
+}
+
+
+/* Styling for the content box on the left */
+#box {
+    width: 30%;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+#about-img {
+    width: 40%;
+}
+
+#about-h1 {
+    font-size: 2vw;
+}
+
+.about-p {
+   font-size: 1vw;
+}
+
+#user-status {
+    display: flex;
+    padding: 10px 0;
+}
+
+.status {
+    font-size: 10px;
+    font-weight: bold;
+    color: #969798;
+}
+
 .dots {
     padding-bottom: 2px;
 }
@@ -6,8 +44,8 @@
 #join-button {
     width: 90%;
     display: flex;
-    justify-content: space-around; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
     font-weight: 100;
     border: none;
@@ -25,27 +63,12 @@
     background-position: 100% 0;
 }
 
-#about-section {
-    padding: 50px;
-    display: flex;
-    justify-content: space-around;
-    color: #fafafa;
-}
-
-#about-img {
-    width: 40%;
-}
-
 #button-img {
     width: 20%;
 }
 
-#box {
-    width: 30%;
-    padding-right: 100px;
-    padding-left: 100px;
-}
 
+/* Styling for the video box on the right */
 #boxt {
     width: 50%;
 }
@@ -57,33 +80,12 @@
     width: 40%;
 }
 
-.status {
-    font-size: 10px;
-    font-weight: bold;
-    color: #969798;
-}
 
-#user-status {
-    display: flex;
-    padding: 10px 0;
-}
-
-h1 {
-    font-size: 2vw;
-}
-
-p {
-   font-size: 1vw !important;
-}
-
+/* Media query for responsiveness on smaller screens */
 @media only screen and (max-width: 555px) {
     #about-section {
         display: flex;
         flex-wrap: wrap;
-    }
-
-    #box {
-        width: 100%;
     }
 
     #boxt{
@@ -95,17 +97,17 @@ p {
         padding: 5%;
     }
 
-    button {
+    #join-button {
         font-size: 3vw;
         height: 20%;
     }
 
-    h1 {
+    #about-h1 {
         font-size: 4vw;
     }
 
-    p {
-        font-size: 3vw !important;
+    .about-p {
+        font-size: 3vw;
     }
 
     #about-video {
@@ -140,17 +142,17 @@ p {
         text-align: right;
     }
 
-    button {
+    #join-button {
         font-size: 3vw;
         height: 20%;
     }
 
-    h1 {
+    #about-h1 {
         font-size: 3vw;
     }
 
-    p {
-        font-size: 2vw !important;
+    .about-p {
+        font-size: 2vw;
     }
 
     #about-video {
