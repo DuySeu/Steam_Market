@@ -87,7 +87,7 @@ body {
   color: #f1f1f1;
 }
 
-#side-nav .closebtn {
+.closebtn {
   position: absolute;
   top: 0;
   right: 5px;
@@ -96,6 +96,9 @@ body {
   padding-right: 0;
 }
 
+#main {
+  padding: 1rem 0;
+}
 
 /* Styling for the footer of all pages */
 #footer {
