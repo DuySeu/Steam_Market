@@ -16,7 +16,7 @@
 
   <body>
     <!-- Header Section -->
-    <header id="header">
+    <div id="header">
       <!-- Toggleable menu icon -->
       <div id="togglable-menu">
         <input type="checkbox" id="toggle" />
@@ -53,7 +53,7 @@
           <li><a href="profile.html" class="nav-links">Profile</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
 
     <div class="main-profile-bg">
       <div class="profile-bg">
@@ -79,7 +79,7 @@
           </div>
         </div>
         <hr />
-        <div class="marketTabContainer">
+        <div class="market-tab-container">
           <div style="background: #171a21">
             <button onclick="displayText1()" href="" class="marketBtn">
               <span>My Active Listings</span>
@@ -92,20 +92,20 @@
             </button>
           </div>
           <div class="container">
-            <div id="myActiveListing">
+            <div id="my-active-listing">
               <h4>My sell listings (0)</h4>
-              <p class="marketTab">
+              <p class="market-tab">
                 You are not selling any items on the Community Market. Sell items from your
                 inventory, or click the "Sell an item" button above.
               </p>
               <h4>My buy orders (0)</h4>
-              <p class="marketTab">You do not have any buy orders.</p>
+              <p class="market-tab">You do not have any buy orders.</p>
             </div>
-            <div id="myMarketHistory" style="display: none">
-              <p class="marketTab">You don't have any history on the Community Market.</p>
+            <div id="my-market-history" style="display: none">
+              <p class="market-tab">You don't have any history on the Community Market.</p>
               <!-- <div class="historyHeaderContent"></div> -->
             </div>
-            <div id="sellAnItems" style="display: none">
+            <div id="sell-an-items" style="display: none">
               <form action="#" method="post" id="selling-form">
                 <div id="form-container">
                   <label for="uname">Item name</label>
@@ -127,7 +127,7 @@
     </div>
 
     <!-- Footer Section -->
-    <footer id="footer">
+    <div id="footer">
       <div class="logo">
         <a href="../../index.html" id="logo-link"
           ><img src="../../public/logo_transparent.png" alt="Group logo"
@@ -155,7 +155,7 @@
           </ul>
         </nav>
       </div>
-    </footer>
+    </div>
 
     <!-- Support JavaScript file -->
     <script src="../scripts/case-api.js"></script>
