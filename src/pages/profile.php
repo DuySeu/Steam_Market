@@ -102,8 +102,60 @@
               <p class="market-tab">You do not have any buy orders.</p>
             </div>
             <div id="my-market-history" style="display: none">
-              <p class="market-tab">You don't have any history on the Community Market.</p>
-              <!-- <div class="historyHeaderContent"></div> -->
+            <?php
+              $name = array("Dreams & Nightmares Case",
+                            "Fracture Case" );
+              $date = array("25 Jan",
+                            "27 Jan");
+              $buyer = array("摄魂天狼",
+                            "Двухсотый Opera");              
+              $price = array("1.697CC",
+                              "1.178CC");   
+              $img = array("/Steam_Market/src/assets/images/case/case1.png",
+                          "/Steam_Market/src/assets/images/case/case2.png"); 
+              $length = count($name);
+              
+
+              if($name == null) {  ?>
+               <p class = "history-note">You don't have any history on the Community Market.</p>
+              <?php }  
+              else {?>
+               
+                
+                 <div class="history-head-container">
+                  <img src="src/assets/images/case/case2.png" alt="">
+            <div class="history-head"  style="width:40% !important; text-align: left !important;">NAME</div>
+            <div class="history-head" >ACTED ON</div>
+            <div class="history-head" >WITH</div>
+            <div class="history-head" >PRICE</div>
+            </div>
+            <div class="clear"></div>
+            <?php
+            $i=0;
+                while($i < $length) {
+                  ?>
+                
+                <div class="history-deal">
+                
+                <div class="history-body" style=" width:40% !important  ; text-align: left !important;">
+                <img class="history-img" src="<?php echo $img[$i]?>" alt="">
+                <p style="font-size:9px;"><?php echo $name[$i]?></p></div>
+                <div  class="history-body"><?php echo $date[$i]?></div>
+                <div  class="history-body"><?php echo $buyer[$i]?></div>
+                <div  class="history-body"><?php echo $price[$i]?></div>
+              
+              
+                </div>
+                <div class="clear"></div>
+
+             <?php
+              $i++;
+             };
+            };
+            ?>
+
+          
+          
             </div>
             <div id="sellAnItems" style="display: none">
               

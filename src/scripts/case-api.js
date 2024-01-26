@@ -1,25 +1,25 @@
 function displayText1() {
-  var text1 = document.getElementById('myActiveListing');
+  var text1 = document.getElementById('my-active-listing');
   text1.style.display = 'block';
-  var text2 = document.getElementById('myMarketHistory');
+  var text2 = document.getElementById('my-market-history');
   text2.style.display = 'none';
-  var text3 = document.getElementById('sellAnItems');
+  var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'none';
 }
 function displayText2() {
-  var Text1 = document.getElementById('myActiveListing');
+  var Text1 = document.getElementById('my-active-listing');
   Text1.style.display = 'none';
-  var Text2 = document.getElementById('myMarketHistory');
+  var Text2 = document.getElementById('my-market-history');
   Text2.style.display = 'block';
-  var text3 = document.getElementById('sellAnItems');
+  var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'none';
 }
 function displayText3() {
-  var text1 = document.getElementById('myActiveListing');
+  var text1 = document.getElementById('my-active-listing');
   text1.style.display = 'none';
-  var text2 = document.getElementById('myMarketHistory');
+  var text2 = document.getElementById('my-market-history');
   text2.style.display = 'none';
-  var text3 = document.getElementById('sellAnItems');
+  var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'block';
 }
 
