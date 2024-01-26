@@ -16,7 +16,7 @@
 
   <body>
     <!-- Header Section -->
-    <header id="header">
+    <div id="header">
       <!-- Toggleable menu icon -->
       <div id="togglable-menu">
         <input type="checkbox" id="toggle" />
@@ -49,32 +49,32 @@
           <li><a href="src/pages/login.html" class="nav-links">LOGIN</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
 
     <div id="main">
-      <div class="marketTabContainer">
+      <div class="market-tab-container">
         <div style="background: #171a21">
-          <button onclick="displayText1()" href="" class="marketBtn">
+          <button onclick="displayText1()" href="" class="market-btn">
             My Active Listings
           </button>
-          <button onclick="displayText2()" href="" class="marketBtn">
+          <button onclick="displayText2()" href="" class="market-btn">
             My Market History
           </button>
-          <button onclick="displayText3()" href="" class="marketBtn">
+          <button onclick="displayText3()" href="" class="market-btn">
             Sell An Items
           </button>
         </div>
         <div class="container">
-          <div id="myActiveListing" class="marketTab">
+          <div id="my-active-listing" class="market-tab">
             <p>
               <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
               to see, edit, or remove your Cr1pt0 Market listings.
             </p>
           </div>
-          <div id="myMarketHistory" style="display: none" class="marketTab">
+          <div id="my-market-history" style="display: none" class="marketTab">
             <p>You don't have any history on the Cr1pt0 Market.</p>
           </div>
-          <div id="sellAnItems" style="display: none" class="marketTab">
+          <div id="sell-an-items" style="display: none" class="marketTab">
             <p>
               You need to
               <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
@@ -90,18 +90,18 @@
           <a href="#">Recently sold</a>
           <input
             type="text"
-            id="mySearch"
+            id="my-search"
             onkeyup="searchFunction()"
             placeholder="Search.."
             style="font-size: 17px"
           />
         </div>
-        <ul id="caseData"></ul>
+        <ul id="case-data"></ul>
       </div>
     </div>
 
     <!-- Footer Section -->
-    <footer id="footer">
+    <div id="footer">
       <div class="logo">
         <a href="index.html" id="logo-link"
           ><img src="public/logo_transparent.png" alt="Group logo"
@@ -129,7 +129,7 @@
           </ul>
         </nav>
       </div>
-    </footer>
+    </div>
 
     <!-- Support JavaScript file -->
     <script src="src/scripts/case-api.js"></script>
