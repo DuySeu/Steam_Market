@@ -42,21 +42,29 @@
   padding: 0;
 }
 /* Add a black background color to the top navigation bar */
-.topnav {
+.case-nav {
   display: flex;
   background-color: #171a21;
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.case-nav a {
   color: white;
   padding: 1rem;
+  margin-right: 1rem;
   text-decoration: none;
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.case-nav a:hover {
   background-color: greenyellow;
+}
+
+#mySearch {
+  /* font-size: large; */
+  margin: 5px;
+  border-radius: 10px;
+  padding: 0 10px;
 }
 
 .main-profile-bg {
@@ -236,7 +244,6 @@
   }
 }
 
-
 /* Styling for login and register form */
 #sellAnItems {
   background-color: #212c3d;
@@ -255,7 +262,7 @@
 }
 
 .submit-form {
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
 .sell-btn {
@@ -267,4 +274,3 @@
   text-decoration: none;
   font-size: large;
 }
-
