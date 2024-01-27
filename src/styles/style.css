@@ -223,33 +223,158 @@ hr {
   width: 80%;
   margin: 0;
 }
-@media only screen and (min-width: 1200px) {
-  .case-container {
-    width: 900px;
+
+@media only screen and (max-width: 480px) {
+  .market-tab-container {
+    margin: auto !important; 
   }
-  .case-container p,
-  .case-container li {
-    font-size: 14px;
+#case-data {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Make grid full width */
   }
+
+.products {
+    margin: 1rem; /* Reduce margin for the products container */
+  }
+
+.case-nav a,
+.market-btn
+ {  
+    width: 100%; /* Full width for each tab */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for better presentation */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+.case-nav {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center-align items for better presentation */
+  background-color: #171a21;
 }
-@media only screen and (min-width: 500px) and (max-width: 1200px) {
-  .case-container {
-    width: 700px;
+
+/* Style for the individual tabs */
+.case-nav a {
+  width: 100%; /* Full width for each tab */
+  text-align: center; /* Center text within each tab */
+  padding: 1rem; /* Padding for tap targets */
+  margin: 0; /* Remove margins */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* New style for the search bar to make it full width */
+#my-search {
+  width: 100%; /* Full width to match the tabs above */
+  margin-top: 0.5rem; /* Add some space above the search bar */
+  padding: 0.8rem; /* Appropriate padding for the search input */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .market-tab-container {
+    margin: auto !important; 
   }
-  .case-container p,
-  .case-container li {
-    font-size: 1.3vw;
+
+    #case-data {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Make grid full width */
+    }
+
+  .products {
+      margin: 1rem; /* Reduce margin for the products container */
+    }
+
+  .case-nav a,
+  .market-btn
+   {
+    width: 100%; /* Full width for each tab */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for better presentation */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+  .case-nav {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for better presentation */
+    background-color: #171a21;
+  }
+  
+  /* Style for the individual tabs */
+  .case-nav a {
+    width: 100%; 
+    text-align: center; 
+    padding: 1rem; 
+    margin: 0; 
+    box-sizing: border-box; 
+  }
+  
+  /* New style for the search bar to make it full width */
+  #my-search {
+    width: 100%; 
+    margin-top: 0.5rem; 
+    padding: 0.8rem; 
+    box-sizing: border-box; 
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .case-container {
-    width: 500px;
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .market-tab-container {
+    margin: auto !important; 
   }
-  .case-container p,
-  .case-container li {
-    font-size: 2.5vw;
+
+  #case-data {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* Two columns for wider screens */
   }
+
+  .products {
+      margin: 2rem; /* Adjust margin for the products container */
+  }
+
+  .profile-bg {
+    width: 90%; /* Adjust profile backgrounds for tablet width */
+  }
+  .case-nav {
+    justify-content: center; /* Center items in the nav */
+  }
+}
+  
+@media only screen and (min-width: 769px) and (max-width: 1920px) {
+  .market-tab-container {
+      margin: auto !important; /* Original margin for desktop screens */
+  }
+
+  #case-data {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Multiple columns for grid */
+  }
+
+  .products {
+      margin: 3rem; /* Original margin for the products container */
+  }
+
+  .profile-bg {
+      width: 70%; /* Original width for profile backgrounds */
+  }
+  
+}
+
+.profile-bg {
+  width: 100%; /* Full width for profile backgrounds */
+}
+
+#my-search {
+  width: 100%; 
+  margin-top: 0.5rem; 
+  padding: 0.8rem; 
+  box-sizing: border-box; 
+}
+
+
+#sell-an-items .sell-input,
+.sell-btn {
+  width: calc(100% - 2rem); /* Full width minus margin for inputs and buttons */
+  margin: 0.5rem; /* Adjust margin */
+  padding: 0.5rem; /* Adjust padding */
 }
 
 /* Styling for login and register form */
@@ -282,13 +407,5 @@ hr {
   text-decoration: none;
   font-size: large;
 }
-@media only screen and (max-width: 1270px) {
-  .market-tab-container {
-    margin: auto !important;
-  }
-}
-@media only screen and (max-width: 780px) {
-  .profile-bg {
-    width: 90%;
-  }
-}
+
+

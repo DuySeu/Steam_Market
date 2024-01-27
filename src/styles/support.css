@@ -65,3 +65,68 @@
 .faq-question:hover {
     background-color: #67c1f5;
 }
+
+
+/*Media query for responsiveness on mobile phones*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    #support-section {
+        padding: 5%; 
+    }
+
+    #header-logo {
+        width: 50%; 
+    }
+
+    .faq-question, .faq-answer {
+        padding: 15px; 
+    }
+
+    #nav-bar ul {
+        display: none; 
+    }
+
+    #togglable-menu {
+        display: block; 
+    }
+}
+
+
+/* Media query for responsiveness on tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #support-section {
+        padding: 4%; 
+    }
+
+    #header-logo {
+        width: 30%; 
+    }
+
+    .faq-question, .faq-answer {
+        padding: 12px; 
+    }
+}
+
+
+
+/* Media query for responsiveness on desktop computers */
+@media only screen and (min-width: 769px) and (max-width: 1920px) {
+    #support-section {
+        padding: 3% 15%; 
+    }
+
+    #header-logo {
+        width: 15%; 
+    }
+
+    .faq-question, .faq-answer {
+        padding: 10px; 
+    }
+
+    #nav-bar ul {
+        display: block; 
+    }
+
+    #togglable-menu {
+        display: none; 
+    }
+}
