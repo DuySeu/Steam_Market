@@ -153,12 +153,24 @@
              };
             };
             ?>
-
-          
-          
             </div>
-            <div id="sellAnItems" style="display: none">
-              
+            <div id="sell-an-items" style="display: none">
+              <form action="login-process.php" method="post">
+                <div id="form-container">
+                  <label for="itemName"><b>Item Name</b></label>
+                  <input type="text" name="itemName" class="sell-input" />
+
+                  <label for="containerSeries"><b>Container Series</b></label>
+                  <input type="text" name="containerSeries"class="sell-input" />
+
+                  <label for="quantity"><b>Quantity</b></label>
+                  <input type="text" name="quantity"class="sell-input" />
+
+                  <div class="submit-form">
+                    <a href="profile.html" class="sell-btn">Login</a>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
