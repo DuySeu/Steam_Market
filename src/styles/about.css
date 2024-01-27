@@ -82,38 +82,8 @@
 
 
 /* Media query for responsiveness on smaller screens */
-@media only screen and (max-width: 555px) {
-    #about-section {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    #boxt{
-        width: 100%;
-    }
-
-    #box {
-        width: 100%;
-        padding: 5%;
-    }
-
-    #join-button {
-        font-size: 3vw;
-        height: 20%;
-    }
-
-    #about-h1 {
-        font-size: 4vw;
-    }
-
-    .about-p {
-        font-size: 3vw;
-    }
-
-    #about-video {
-        margin-top: 20%;
-        width: 60%;
-    }
+/* @media only screen and (max-width: 555px) {
+    
 }
 
 @media only screen and (min-width: 556px) and (max-width: 768px) {
@@ -159,4 +129,81 @@
         margin-top: 20%;
         width: 50%;
     }
+} */
+
+/* Media query for responsiveness on mobile phones */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    #about-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #video-box {
+        width: 100%;
+    }
+
+    #content-box {
+        width: 100%;
+        padding: 5%;
+    }
+
+    #join-button {
+        font-size: 3vw;
+        height: 20%;
+        width: 100%;
+    }
+
+    #about-h1 {
+        font-size: 4vw;
+    }
+
+    .about-p {
+        font-size: 3vw;
+    }
+
+    #about-video {
+        margin-top: 20%;
+        width: 80%;
+    }
+}
+
+/* Media query for responsiveness on tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #about-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #video-box {
+        width: 100%;
+    }
+
+    #content-box {
+        width: 100%;
+        padding: 5%;
+    }
+
+    #join-button {
+        font-size: 3vw;
+        height: 20%;
+        width: 100%;
+    }
+
+    #about-h1 {
+        font-size: 4vw;
+    }
+
+    .about-p {
+        font-size: 3vw;
+    }
+
+    #about-video {
+        margin-top: 20%;
+        width: 80%;
+    }
+}
+
+/* Media query for responsiveness on desktop computers */
+@media only screen and (min-width: 769px) and (max-width: 1920px) {
+
 }
