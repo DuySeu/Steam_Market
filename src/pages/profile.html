@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Metadata for character set and responsive design -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Stylesheets and favicon -->
-    <link rel="stylesheet" href="../styles/interface_style.css" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="icon" href="../../public/logo_transparent.png" />
+<head>
+  <!-- Metadata for character set and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Title of the page -->
-    <title>Cr1pt0 Market Profile</title>
-  </head>
+  <!-- Stylesheets and favicon -->
+  <link rel="stylesheet" href="../styles/interface_style.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="icon" href="../../public/logo_transparent.png" />
 
-  <body>
-    <!-- Header Section -->
-    <div id="header">
-      <!-- Toggleable menu icon -->
-      <div id="togglable-menu">
-        <input type="checkbox" id="toggle" />
-        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-      </div>
+  <!-- Title of the page -->
+  <title>Cr1pt0 Market Profile</title>
+</head>
 
-      <!-- Side Navigation Bar -->
-      <div id="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../../index.html" class="nav-links">STORE</a>
-        <a href="about.html" class="nav-links">ABOUT</a>
-        <a href="support.html" class="nav-links">SUPPORT</a>
-        <a href="exchange.html" class="nav-links">EXCHANGE</a>
-        <a href="profile.html" class="nav-links">PROFILE</a>
-      </div>
-
-      <!-- External JavaScript file for Side Navigation Bar functionality -->
-      <script src="../scripts/navbar.js"></script>
-
-      <!-- Main Navigation Bar -->
-      <nav id="nav-bar">
-        <a href="../../index.html" id="logo-link"
-          ><img
-            src="../../public/logo_transparent.png"
-            alt="Group 1.7 logo"
-            width="15%"
-            id="header-logo"
-        /></a>
-        <ul id="menu">
-          <li><a href="../../index.html" class="nav-links">Store</a></li>
-          <li><a href="about.html" class="nav-links">About</a></li>
-          <li><a href="support.html" class="nav-links">Support</a></li>
-          <li><a href="exchange.html" class="nav-links">Exchange</a></li>
-          <li><a href="profile.html" class="nav-links">Profile</a></li>
-        </ul>
-      </nav>
+<body>
+  <!-- Header Section -->
+  <div id="header">
+    <!-- Toggleable menu icon -->
+    <div id="togglable-menu">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
     </div>
+
+    <!-- Side Navigation Bar -->
+    <div id="side-nav">
+      <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
+      <a href="../../index.html" class="nav-links">STORE</a>
+      <a href="about.html" class="nav-links">ABOUT</a>
+      <a href="support.html" class="nav-links">SUPPORT</a>
+      <a href="exchange.html" class="nav-links">EXCHANGE</a>
+      <a href="profile.html" class="nav-links">PROFILE</a>
+    </div>
+
+    <!-- External JavaScript file for Side Navigation Bar functionality -->
+    <script src="../scripts/navbar.js"></script>
+
+    <!-- Main Navigation Bar -->
+    <nav id="nav-bar">
+      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo" width="15%" id="header-logo" /></a>
+      <ul id="menu">
+        <li><a href="../../index.html" class="nav-links">Store</a></li>
+        <li><a href="about.html" class="nav-links">About</a></li>
+        <li><a href="support.html" class="nav-links">Support</a></li>
+        <li><a href="exchange.html" class="nav-links">Exchange</a></li>
+        <li><a href="profile.html" class="nav-links">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
 
     <div class="main-profile-bg">
       <div class="profile-bg">
@@ -136,9 +131,9 @@
 
     <!-- Footer Section -->
     <div id="footer">
-      <div class="logo">
+      <div id="logo">
         <a href="../../index.html" id="logo-link"
-          ><img src="../../public/logo_transparent.png" alt="Group logo"
+          ><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo"
         /></a>
       </div>
 

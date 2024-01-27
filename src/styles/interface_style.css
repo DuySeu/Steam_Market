@@ -87,7 +87,7 @@ body {
   color: #f1f1f1;
 }
 
-.closebtn {
+#close-button {
   position: absolute;
   top: 0;
   right: 5px;
@@ -108,7 +108,7 @@ body {
   font-size: 0.8em;
 }
 
-#footer .logo {
+#logo {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
