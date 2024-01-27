@@ -81,13 +81,13 @@
         <hr />
         <div class="market-tab-container">
           <div style="background: #171a21">
-            <button onclick="displayText1()" href="" class="marketBtn">
+            <button onclick="displayText1()" href="" class="market-btn">
               <span>My Active Listings</span>
             </button>
-            <button onclick="displayText2()" href="" class="marketBtn">
+            <button onclick="displayText2()" href="" class="market-btn">
               <span>My Market History</span>
             </button>
-            <button onclick="displayText3()" href="" class="marketBtn">
+            <button onclick="displayText3()" href="" class="market-btn">
               <span>Sell An Items</span>
             </button>
           </div>
@@ -95,14 +95,14 @@
             <div id="my-active-listing">
               <h4>My sell listings (0)</h4>
               <p class="market-tab">
-                You are not selling any items on the Community Market. Sell items from your
+                You are not selling any items on the Cr1pt0 Market. Sell items from your
                 inventory, or click the "Sell an item" button above.
               </p>
               <h4>My buy orders (0)</h4>
               <p class="market-tab">You do not have any buy orders.</p>
             </div>
             <div id="my-market-history" style="display: none">
-            <?php
+              <?php
               $name = array("Dreams & Nightmares Case",
                             "Fracture Case" );
               $date = array("25 Jan",
@@ -117,38 +117,43 @@
               
 
               if($name == null) {  ?>
-               <p class = "history-note">You don't have any history on the Community Market.</p>
+              <p class="history-note">You don't have any history on the Community Market.</p>
               <?php }  
               else {?>
-               
-                
-                 <div class="history-head-container">
-                  <img src="src/assets/images/case/case2.png" alt="">
-            <div class="history-head"  style="width:40% !important; text-align: left !important;">NAME</div>
-            <div class="history-head" >ACTED ON</div>
-            <div class="history-head" >WITH</div>
-            <div class="history-head" >PRICE</div>
-            </div>
-            <div class="clear"></div>
-            <?php
+
+              <div class="history-head-container">
+                <img src="src/assets/images/case/case2.png" alt="" />
+                <div
+                  class="history-head"
+                  style="width: 40% !important; text-align: left !important"
+                >
+                  NAME
+                </div>
+                <div class="history-head">ACTED ON</div>
+                <div class="history-head">WITH</div>
+                <div class="history-head">PRICE</div>
+              </div>
+              <div class="clear"></div>
+              <?php
             $i=0;
                 while($i < $length) {
                   ?>
-                
-                <div class="history-deal">
-                
-                <div class="history-body" style=" width:40% !important  ; text-align: left !important;">
-                <img class="history-img" src="<?php echo $img[$i]?>" alt="">
-                <p style="font-size:9px;"><?php echo $name[$i]?></p></div>
-                <div  class="history-body"><?php echo $date[$i]?></div>
-                <div  class="history-body"><?php echo $buyer[$i]?></div>
-                <div  class="history-body"><?php echo $price[$i]?></div>
-              
-              
-                </div>
-                <div class="clear"></div>
 
-             <?php
+              <div class="history-deal">
+                <div
+                  class="history-body"
+                  style="width: 40% !important  ; text-align: left !important"
+                >
+                  <img class="history-img" src="<?php echo $img[$i]?>" alt="" />
+                  <p style="font-size: 9px"><?php echo $name[$i]?></p>
+                </div>
+                <div class="history-body"><?php echo $date[$i]?></div>
+                <div class="history-body"><?php echo $buyer[$i]?></div>
+                <div class="history-body"><?php echo $price[$i]?></div>
+              </div>
+              <div class="clear"></div>
+
+              <?php
               $i++;
              };
             };
@@ -161,10 +166,10 @@
                   <input type="text" name="itemName" class="sell-input" />
 
                   <label for="containerSeries"><b>Container Series</b></label>
-                  <input type="text" name="containerSeries"class="sell-input" />
+                  <input type="text" name="containerSeries" class="sell-input" />
 
                   <label for="quantity"><b>Quantity</b></label>
-                  <input type="text" name="quantity"class="sell-input" />
+                  <input type="text" name="quantity" class="sell-input" />
 
                   <div class="submit-form">
                     <a href="profile.html" class="sell-btn">Login</a>
