@@ -7,7 +7,7 @@ function marketHistory(data) {
   console.log(data);
   data.cases.forEach((item) => {
     const itemElement = `      
-    <td class="history-body">
+    <td>
       <img width="15%" src="/${item.image}" alt="${item.name}" />
       <p>${item.name}</p>
     </td>
