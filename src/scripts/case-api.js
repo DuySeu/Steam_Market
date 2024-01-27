@@ -46,6 +46,6 @@ function showCase(data) {
                             </a>
                           </li>
                         `;
-    document.querySelector('#caseData').insertAdjacentHTML('beforeend', itemElement);
+    document.querySelector('#case-data').insertAdjacentHTML('beforeend', itemElement);
   });
 }
