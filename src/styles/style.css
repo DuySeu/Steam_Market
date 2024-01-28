@@ -75,7 +75,7 @@
 
 #my-search {
   margin: 5px;
-  padding: 0.8rem; 
+  padding: 0.8rem;
   box-sizing: border-box;
   background-color: #324965;
   border: 1px solid black;
@@ -96,13 +96,20 @@
 
 .profile-header {
   display: flex;
-  justify-content: space-around;
-  padding-top: 1em;
+  padding: 1em;
   color: white;
+  justify-content: space-evenly;
+}
+.user-ava {
+  width: 15%;
+}
+.user-info {
+  display: flex;
 }
 
 .user-wallet {
   color: white;
+  margin: 1em 3em;
 }
 
 .profile-link {
@@ -237,149 +244,10 @@ hr {
   margin: 0;
 }
 
-@media only screen and (max-width: 480px) {
-  .market-tab-container {
-    margin: auto !important; 
-  }
-#case-data {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Make grid full width */
-  }
-
-.products {
-    margin: 1rem; /* Reduce margin for the products container */
-  }
-
-.case-nav a,
-.market-button
- {  
-    width: 100%; /* Full width for each tab */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items for better presentation */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  }
-.case-nav {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center-align items for better presentation */
-  background-color: #171a21;
-}
-
-/* Style for the individual tabs */
-.case-nav a {
-  width: 100%; /* Full width for each tab */
-  text-align: center; /* Center text within each tab */
-  padding: 1rem; /* Padding for tap targets */
-  margin: 0; /* Remove margins */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* New style for the search bar to make it full width */
 #my-search {
-  width: 100%; /* Full width to match the tabs above */
-  margin-top: 0.5rem; /* Add some space above the search bar */
-  padding: 0.8rem; /* Appropriate padding for the search input */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  margin-top: 0.5rem;
 }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .market-tab-container {
-    margin: auto !important; 
-  }
-
-    #case-data {
-      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Make grid full width */
-    }
-
-  .products {
-      margin: 1rem; /* Reduce margin for the products container */
-    }
-
-  .case-nav a,
-  .market-button
-   {
-    width: 100%; /* Full width for each tab */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items for better presentation */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    }
-  .case-nav {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items for better presentation */
-    background-color: #171a21;
-  }
-  
-  /* Style for the individual tabs */
-  .case-nav a {
-    width: 100%; 
-    text-align: center; 
-    padding: 1rem; 
-    margin: 0; 
-    box-sizing: border-box; 
-  }
-  
-  /* New style for the search bar to make it full width */
-  #my-search {
-    width: 100%; 
-    margin-top: 0.5rem; 
-    padding: 0.8rem; 
-    box-sizing: border-box; 
-  }
-}
-
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .market-tab-container {
-    margin: auto !important; 
-  }
-
-  #case-data {
-      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* Two columns for wider screens */
-  }
-
-  .products {
-      margin: 2rem; /* Adjust margin for the products container */
-  }
-
-  .profile-bg {
-    width: 90%; /* Adjust profile backgrounds for tablet width */
-  }
-  .case-nav {
-    justify-content: center; /* Center items in the nav */
-  }
-}
-  
-@media only screen and (min-width: 769px) and (max-width: 1920px) {
-  .market-tab-container {
-      margin: auto !important; /* Original margin for desktop screens */
-  }
-
-  #case-data {
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Multiple columns for grid */
-  }
-
-  .products {
-      margin: 3rem; /* Original margin for the products container */
-  }
-
-  .profile-bg {
-      width: 70%; /* Original width for profile backgrounds */
-  }
-  
-}
-
-.profile-bg {
-  width: 100%; /* Full width for profile backgrounds */
-}
-
-#my-search {
-  width: 100%; 
-  margin-top: 0.5rem; 
-}
-
 
 #sell-an-items .sell-input,
 .sell-button {
@@ -417,6 +285,5 @@ hr {
   padding: 0.7rem 4em;
   text-decoration: none;
   font-size: large;
+  text-align: center;
 }
-
-

@@ -1,276 +1,378 @@
 /* Media query for responsiveness on mobile phones */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-    /* Styling for the About page  */
-    /* -------------------------- */
-    #about-section {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  /* Styling for the Index page  */
+  /* -------------------------- */
+  .market-tab-container {
+    margin: auto !important;
+  }
 
-    #video-box {
-        width: 100%;
-    }
+  #case-data {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Make grid full width */
+  }
 
-    #content-box {
-        width: 100%;
-        padding: 5%;
-    }
+  .products {
+    margin: 1rem; /* Reduce margin for the products container */
+  }
 
-    #join-button {
-        font-size: 1em;
-        height: 20%;
-        width: 100%;
-    }
+  .case-nav a,
+  .market-button {
+    width: 100%; /* Full width for each tab */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for better presentation */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  .case-nav {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for better presentation */
+    background-color: #171a21;
+  }
 
-    #about-h1 {
-        font-size: 2em;
-    }
+  /* Style for the individual tabs */
+  .case-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-    .about-p {
-        font-size: 1em;
-    }
+  /* New style for the search bar to make it full width */
+  #my-search {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    box-sizing: border-box;
+  }
+  /* Styling for the About page  */
+  /* -------------------------- */
 
-    #button-img {
-        width: 4em;
-    }
+  #about-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    #about-video {
-        margin-top: 20%;
-        width: 80%;
-    }
+  #video-box {
+    width: 100%;
+  }
 
+  #content-box {
+    width: 100%;
+    padding: 5%;
+  }
 
+  #join-button {
+    font-size: 1em;
+    height: 20%;
+    width: 100%;
+  }
 
-    /* Styling for the Support page  */
-    /* -------------------------- */
-    #support-section {
-        padding: 5%; 
-    }
+  #about-h1 {
+    font-size: 2em;
+  }
 
-    #header-logo {
-        width: 50%; 
-    }
+  .about-p {
+    font-size: 1em;
+  }
 
-    .faq-question, .faq-answer {
-        padding: 15px; 
-    }
+  #button-img {
+    width: 4em;
+  }
 
+  #about-video {
+    margin-top: 20%;
+    width: 80%;
+  }
 
+  /* Styling for the Support page  */
+  /* -------------------------- */
+  #support-section {
+    padding: 5%;
+  }
 
-    /* Styling for the Exchange page  */
-    /* -------------------------- */
-    .crypto-header, .crypto-data {
-        padding: 0.7em;
-    }
+  #header-logo {
+    width: 50%;
+  }
 
-    #exchange-h1 {
-        font-size: 1.5em;
-    }
-    
-    #crypto-table {
-        width: 90%;
-    }
+  .faq-question,
+  .faq-answer {
+    padding: 15px;
+  }
 
-    .crypto-header {
-        font-size: 1.2em;
-    }
+  /* Styling for the Exchange page  */
+  /* -------------------------- */
+  .crypto-header,
+  .crypto-data {
+    padding: 0.7em;
+  }
 
+  #exchange-h1 {
+    font-size: 1.5em;
+  }
 
+  #crypto-table {
+    width: 90%;
+  }
 
-    /* Styling for the Login and Register page  */
-    /* -------------------------- */
-    #login-section {
-        padding: 5% 12%;
-        width: 72%;
-    }
+  .crypto-header {
+    font-size: 1.2em;
+  }
 
-    #login-h1 {
-        font-size: 2em;
-    }
+  /* Styling for the Login and Register page  */
+  /* -------------------------- */
+  #login-section {
+    padding: 5% 12%;
+    width: 72%;
+  }
 
-    #form-container {
-        margin: 0;
-    }
+  #login-h1 {
+    font-size: 2em;
+  }
 
-    #uname-label {
-        font-size: 1em;
-    }
-    
-    .pwd-and-remember-label {
-        font-size: 1em;
-    }
+  #form-container {
+    margin: 0;
+  }
 
-    #submit-btn, #forget-pwd {
-        border-radius: 10px;
-        padding: 10px 8px;
-        margin: 8px 10px;
-        width: 50%;
-        font-size: 13px;
-    }
+  #uname-label {
+    font-size: 1em;
+  }
 
-    #submit-btn, .login-and-forget-pwd {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 1em 0.5em;
-        font-size: 1em;
-    }
+  .pwd-and-remember-label {
+    font-size: 1em;
+  }
+
+  #submit-btn,
+  #forget-pwd {
+    border-radius: 10px;
+    padding: 10px 8px;
+    margin: 8px 10px;
+    width: 50%;
+    font-size: 13px;
+  }
+
+  #submit-btn,
+  .login-and-forget-pwd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0.5em;
+    font-size: 1em;
+  }
+
+  /* Styling for the Profile page  */
+  /* -------------------------- */
+  .profile-bg {
+    width: 100%; /* Adjust profile backgrounds for tablet width */
+    padding: 2rem;
+  }
+  .profile-header {
+    display: block;
+  }
+  .user-ava {
+    width: 35%;
+  }
+  .user-wallet {
+    margin: 0.5rem;
+    font-size: smaller;
+  }
 }
 
 /* Media query for responsiveness on tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    /* Styling for the About page  */
-    /* -------------------------- */
-    #about-section {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  /* Styling for the Index page  */
+  /* -------------------------- */
+  .market-tab-container {
+    margin: auto !important;
+  }
 
-    #video-box {
-        width: 100%;
-    }
+  #case-data {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* Two columns for wider screens */
+  }
 
-    #content-box {
-        width: 100%;
-        padding: 5%;
-    }
+  .products {
+    margin: 2rem; /* Adjust margin for the products container */
+  }
 
-    #join-button {
-        font-size: 1em;
-        height: 15%;
-        width: 100%;
-    }
+  .case-nav {
+    justify-content: center; /* Center items in the nav */
+  }
 
-    #about-h1 {
-        font-size: 3em;
-    }
+  /* Styling for the About page  */
+  /* -------------------------- */
+  #about-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .about-p {
-        font-size: 1em;
-    }
+  #video-box {
+    width: 100%;
+  }
 
-    #about-video {
-        margin-top: 20%;
-        width: 80%;
-    }
+  #content-box {
+    width: 100%;
+    padding: 5%;
+  }
 
+  #join-button {
+    font-size: 1em;
+    height: 15%;
+    width: 100%;
+  }
 
+  #about-h1 {
+    font-size: 3em;
+  }
 
-    /* Styling for the Support page  */
-    /* -------------------------- */
-    #support-section {
-        padding: 4%; 
-    }
+  .about-p {
+    font-size: 1em;
+  }
 
-    #header-logo {
-        width: 30%; 
-    }
+  #about-video {
+    margin-top: 20%;
+    width: 80%;
+  }
 
-    .faq-question, .faq-answer {
-        padding: 12px; 
-    }
+  /* Styling for the Support page  */
+  /* -------------------------- */
+  #support-section {
+    padding: 4%;
+  }
 
+  #header-logo {
+    width: 30%;
+  }
 
+  .faq-question,
+  .faq-answer {
+    padding: 12px;
+  }
 
-    /* Styling for the Exchange page  */
-    /* -------------------------- */
-    #crypto-table {
-        width: 90%;
-    }
+  /* Styling for the Exchange page  */
+  /* -------------------------- */
+  #crypto-table {
+    width: 90%;
+  }
 
-    .crypto-header {
-        font-size: 1.2em;
-    }
+  .crypto-header {
+    font-size: 1.2em;
+  }
 
+  /* Styling for the Login and Register page  */
+  /* -------------------------- */
+  #login-section {
+    padding: 5% 12%;
+    width: 72%;
+  }
 
+  #login-h1 {
+    font-size: 2em;
+  }
 
-    /* Styling for the Login and Register page  */
-    /* -------------------------- */
-    #login-section {
-        padding: 5% 12%;
-        width: 72%;
-    }
+  #form-container {
+    margin: 1em 0;
+  }
 
-    #login-h1 {
-        font-size: 2em;
-    }
+  #uname-label,
+  .pwd-and-remember-label,
+  #register-or-login-link {
+    font-size: 1em;
+  }
 
-    #form-container {
-        margin: 1em 0;
-    }
+  #submit-btn,
+  .login-and-forget-pwd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: 1em 0.5em;
+  }
 
-    #uname-label, .pwd-and-remember-label, #register-or-login-link {
-        font-size: 1em;
-    }
-
-    #submit-btn, .login-and-forget-pwd {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5em;
-        margin: 1em 0.5em;
-    }
+  /* Styling for the Profile page  */
+  /* -------------------------- */
+  .profile-bg {
+    width: 100%; /* Adjust profile backgrounds for tablet width */
+    padding: 2rem;
+  }
+  .user-wallet {
+    color: white;
+    margin: 1em;
+    font-size: small;
+  }
+  .profile-header{
+    padding: 0;
+  }
 }
 
 /* Media query for responsiveness on desktop computers */
 @media only screen and (min-width: 769px) and (max-width: 1920px) {
-    /* Styling for the About page  */
-    /* -------------------------- */
-    #about-h1 {
-        font-size: 2em;
-    }
-    
-    .about-p {
-        font-size: 1em;
-    }
+  /* Styling for the Index page  */
+  /* -------------------------- */
 
-    .status {
-        font-size: 1em;
-        font-weight: bold;
-        color: #969798;
-    }
+  #case-data {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Multiple columns for grid */
+  }
 
-    #join-button {
-        font-size: 1.5em;
-        height: 5em;
-        padding: 2%;
-    }
+  .products {
+    margin: 3rem; /* Original margin for the products container */
+  }
 
-    #button-img {
-        width: 4em;
-    }
+  .profile-bg {
+    width: 70%; /* Original width for profile backgrounds */
+  }
+  /* Styling for the About page  */
+  /* -------------------------- */
+  #about-h1 {
+    font-size: 2em;
+  }
 
-    #about-video {
-        width: 20em;
-    }
+  .about-p {
+    font-size: 1em;
+  }
 
+  .status {
+    font-size: 1em;
+    font-weight: bold;
+    color: #969798;
+  }
 
+  #join-button {
+    font-size: 1.5em;
+    height: 5em;
+    padding: 2%;
+  }
 
-    /* Styling for the Support page  */
-    /* -------------------------- */
-    #header-logo {
-        width: 15%; 
-    }
+  #button-img {
+    width: 4em;
+  }
 
-    .faq-question, .faq-answer {
-        padding: 10px; 
-    }
+  #about-video {
+    width: 20em;
+  }
 
+  /* Styling for the Support page  */
+  /* -------------------------- */
+  #header-logo {
+    width: 15%;
+  }
 
+  .faq-question,
+  .faq-answer {
+    padding: 10px;
+  }
 
-    /* Styling for the Exchange page  */
-    /* -------------------------- */
-    #crypto-table {
-        width: 90%;
-    }
+  /* Styling for the Exchange page  */
+  /* -------------------------- */
+  #crypto-table {
+    width: 90%;
+  }
 
-
-
-    /* Styling for the Login and Register page  */
-    /* -------------------------- */
-    #submit-btn, .login-and-forget-pwd {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
+  /* Styling for the Login and Register page  */
+  /* -------------------------- */
+  #submit-btn,
+  .login-and-forget-pwd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Metadata for character set and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <!-- Metadata for character set and responsive design -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Stylesheets and favicon -->
+    <link rel="stylesheet" href="../styles/interface_style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/subpages-responsive.css" />
+    <link rel="icon" href="../../public/logo_transparent.png" />
 
-  <!-- Stylesheets and favicon -->
-  <link rel="stylesheet" href="../styles/interface_style.css" />
-  <link rel="stylesheet" href="../styles/style.css" />
-  <link rel="icon" href="../../public/logo_transparent.png" />
+    <!-- Title of the page -->
+    <title>Cr1pt0 Market Profile</title>
+  </head>
 
-  <!-- Title of the page -->
-  <title>Cr1pt0 Market Profile</title>
-</head>
+  <body>
+    <!-- Header Section -->
+    <div id="header">
+      <!-- Toggleable menu icon -->
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+      </div>
 
-<body>
-  <!-- Header Section -->
-  <div id="header">
-    <!-- Toggleable menu icon -->
-    <div id="togglable-menu">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+      <!-- Side Navigation Bar -->
+      <div id="side-nav">
+        <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
+        <a href="../../index.html">STORE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="support.html">SUPPORT</a>
+        <a href="exchange.html">EXCHANGE</a>
+        <a href="profile.html">PROFILE</a>
+      </div>
+
+      <!-- External JavaScript file for Side Navigation Bar functionality -->
+      <script src="../scripts/navbar.js"></script>
+
+      <!-- Main Navigation Bar -->
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"
+          ><img
+            src="../../public/logo_transparent.png"
+            alt="Cr1pt0 Market logo"
+            width="15%"
+            id="header-logo"
+        /></a>
+        <ul id="menu">
+          <li><a href="../../index.html" class="main-nav-links">Store</a></li>
+          <li><a href="about.html" class="main-nav-links">About</a></li>
+          <li><a href="support.html" class="main-nav-links">Support</a></li>
+          <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
+          <li><a href="profile.html" class="main-nav-links">Profile</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <!-- Side Navigation Bar -->
-    <div id="side-nav">
-      <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
-      <a href="../../index.html">STORE</a>
-      <a href="about.html">ABOUT</a>
-      <a href="support.html">SUPPORT</a>
-      <a href="exchange.html">EXCHANGE</a>
-      <a href="profile.html">PROFILE</a>
-    </div>
-
-    <!-- External JavaScript file for Side Navigation Bar functionality -->
-    <script src="../scripts/navbar.js"></script>
-
-    <!-- Main Navigation Bar -->
-    <nav id="nav-bar">
-      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo" width="15%" id="header-logo" /></a>
-      <ul id="menu">
-        <li><a href="../../index.html" class="main-nav-links">Store</a></li>
-        <li><a href="about.html" class="main-nav-links">About</a></li>
-        <li><a href="support.html" class="main-nav-links">Support</a></li>
-        <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
-        <li><a href="profile.html" class="main-nav-links">Profile</a></li>
-      </ul>
-    </nav>
-  </div>
 
     <div class="main-profile-bg">
       <div class="profile-bg">
         <div class="profile-header">
-          <img src="../../public/logo.png" alt="user logo" width="15%" />
+          <img src="../../public/logo.png" alt="user logo" class="user-ava" />
           <div class="user-info">
-            <h2>Group 1.7</h2>
-            <p>Ha Noi, Viet Nam</p>
-          </div>
-          <div class="user-wallet">
-            <h2>
-              <a href="exchange.html" class="profile-link">Wallet balance:</a>
-              <p>0CC</p>
-            </h2>
-          </div>
-          <div class="user-wallet">
-            <h2>
-              <a href="#" class="profile-link">View Inventory</a>
-            </h2>
-            <h2>
-              <a href="#" class="profile-link">Edit profile</a>
-            </h2>
+            <div class="user-wallet">
+              <h3>Group 1.7</h3>
+              <p>Ha Noi, Viet Nam</p>
+            </div>
+            <div class="user-wallet">
+              <h3>
+                <a href="exchange.html" class="profile-link">Wallet balance:</a>
+                <p>0CC</p>
+              </h3>
+            </div>
+            <div class="user-wallet">
+              <h3>
+                <a href="#" class="profile-link">View Inventory</a>
+              </h3>
+              <h3>
+                <a href="#" class="profile-link">Edit profile</a>
+              </h3>
+            </div>
           </div>
         </div>
         <hr />
@@ -97,7 +105,7 @@
               <p class="market-tab">You do not have any buy orders.</p>
             </div>
             <div id="market-history" style="display: none">
-              <table style="width: 100%;">
+              <table style="width: 100%">
                 <tr id="my-history">
                   <th class="history-head">NAME</th>
                   <th class="history-head">ACTED ON</th>
