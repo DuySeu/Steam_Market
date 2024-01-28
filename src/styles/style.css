@@ -1,22 +1,26 @@
 .clear {
   clear: both;
 }
+
 .market-tab-container {
   margin: 0 20%;
 }
+
 .market-tab {
   background-color: #212c3d;
   padding: 1em;
 }
-.market-btn {
+
+.market-button {
   background: #171a21;
   cursor: pointer;
   border: none;
   padding: 1rem 2rem;
   color: white;
 }
-.market-btn:hover {
-  background-color: greenyellow;
+
+.market-button:hover {
+  background-color: #688f3e;
 }
 
 .container {
@@ -49,6 +53,7 @@
   gap: 2em;
   padding: 0;
 }
+
 /* Add a black background color to the top navigation bar */
 .case-nav {
   display: flex;
@@ -65,14 +70,17 @@
 
 /* Change the color of links on hover */
 .case-nav a:hover {
-  background-color: greenyellow;
+  background-color: #688f3e;
 }
 
 #my-search {
-  /* font-size: large; */
   margin: 5px;
-  border-radius: 10px;
-  padding: 0 10px;
+  padding: 0.8rem; 
+  box-sizing: border-box;
+  background-color: #324965;
+  border: 1px solid black;
+  color: #ffffff;
+  box-shadow: 1px 1px 5px #324965;
 }
 
 .main-profile-bg {
@@ -80,23 +88,28 @@
   display: flex;
   justify-content: center;
 }
+
 .profile-bg {
   background-color: #1b2838;
   width: 70%;
 }
+
 .profile-header {
   display: flex;
   justify-content: space-around;
   padding-top: 1em;
   color: white;
 }
+
 .user-wallet {
   color: white;
 }
+
 .profile-link {
   text-decoration: none;
   color: lightgray;
 }
+
 .profile-link:hover {
   text-decoration: underline;
   color: white;
@@ -237,7 +250,7 @@ hr {
   }
 
 .case-nav a,
-.market-btn
+.market-button
  {  
     width: 100%; /* Full width for each tab */
     display: flex;
@@ -284,7 +297,7 @@ hr {
     }
 
   .case-nav a,
-  .market-btn
+  .market-button
    {
     width: 100%; /* Full width for each tab */
     display: flex;
@@ -365,13 +378,11 @@ hr {
 #my-search {
   width: 100%; 
   margin-top: 0.5rem; 
-  padding: 0.8rem; 
-  box-sizing: border-box; 
 }
 
 
 #sell-an-items .sell-input,
-.sell-btn {
+.sell-button {
   width: calc(100% - 2rem); /* Full width minus margin for inputs and buttons */
   margin: 0.5rem; /* Adjust margin */
   padding: 0.5rem; /* Adjust padding */
@@ -398,7 +409,7 @@ hr {
   display: flex;
   justify-content: center;
 }
-.sell-btn {
+.sell-button {
   border: none;
   border-radius: 20px;
   background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);

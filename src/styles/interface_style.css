@@ -40,16 +40,16 @@ body {
   display: inline-block;
 }
 
-#nav-bar a {
+.main-nav-links {
   display: block;
-  padding: 8px 30px;
+  padding: 1em 3em;
   color: #c5c3c0;
   text-decoration: none;
   transition: font-size 0.2s;
   line-height: 30px;
 }
 
-#nav-bar a:hover {
+.main-nav-links:hover {
   color: white;
 }
 
@@ -99,6 +99,29 @@ body {
 #main {
   padding: 1rem 0;
 }
+
+
+/* Styling for the Custom scrollbar of all pages */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #355885;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #171d25;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3644; 
+}
+
 
 /* Styling for the footer of all pages */
 #footer {
@@ -159,8 +182,9 @@ body {
 }
 
 
-/* Media query for responsiveness on a smaller screen */
-@media only screen and (max-width: 909px) {
+
+/* Media query for responsiveness on mobile phones */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   #header {
     display: flex;
     justify-content: start;
@@ -177,5 +201,33 @@ body {
 
   #togglable-menu {
     display: contents;
+  }
+}
+
+/* Media query for responsiveness on tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  #header {
+    display: flex;
+    justify-content: start;
+    padding-left: 30px;
+  }
+
+  #nav-bar {
+    margin: 0 auto;
+  }
+
+  #header ul {
+    display: none;
+  }
+
+  #togglable-menu {
+    display: contents;
+  }
+}
+
+/* Media query for responsiveness on desktop computers */
+@media only screen and (min-width: 769px) and (max-width: 1920px) {
+  .main-nav-links {
+    padding: 1em 1.6em;
   }
 }

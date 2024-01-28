@@ -1,0 +1,308 @@
+/* Styling for the About page  */
+/* -------------------------- */
+/* Styling for the body section */
+#about-section {
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
+    color: #fafafa;
+}
+
+
+/* Styling for the content box on the left */
+#content-box {
+    width: 40%;
+    padding: 0 5%;
+}
+
+#about-img {
+    width: 10em;
+}
+
+#about-h1 {
+    font-size: 2vw;
+}
+
+.about-p {
+   font-size: 2em;
+}
+
+#user-status {
+    display: flex;
+    padding: 10px 0;
+}
+
+.status {
+    font-size: 2em;
+    font-weight: bold;
+    color: #969798;
+}
+
+.dots {
+    padding-bottom: 2px;
+}
+
+#join-button {
+    width: 90%;
+    height: 4em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-weight: 100;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+    color: white;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#join-button:hover {
+    background-position: 100% 0;
+}
+
+#button-img {
+    width: 3em;
+}
+
+
+/* Styling for the video box on the right */
+#video-box {
+    width: 50%;
+}
+
+#about-video {
+    display: block;
+    margin: 10% auto;
+    align-items: center;
+    width: 40%;
+    border-radius: 3em;
+}
+
+
+
+/* Styling for the Support page  */
+/* -------------------------- */
+/* Styling for the body section */
+#support-section {
+    padding: 3% 10%;
+}
+
+
+/* Styling for the headings of the page */
+#support-h1 {
+    color: #f2fffc;
+    margin: auto;
+    font-size: 2em;
+}
+
+
+/* Styling for the search box */
+.faq-search {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    background-color: #324965;
+    border: 1px solid black;
+    color: #ffffff;
+    font-size: large;
+    width: 100%;
+    height: 50px;
+    box-shadow: 1px 1px 5px #324965;
+}
+
+
+/* Styling for questions and answers list */
+.faq-list {
+    list-style: none;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    background-color: #445468;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #0b1726;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.faq-question:hover {
+    background-color: #67c1f5;
+}
+
+
+
+/* Styling for the Exchange page  */
+/* -------------------------- */
+/* Styling for the page heading in the support section */
+#exchange-h1 {
+    color: #f2fffc;
+    padding: 3% 15%;
+    margin: auto;
+    font-size: 2em;
+}
+
+
+/* Styling for the exchange section */
+#exchange-section {
+    margin: auto;
+    color: #fafafa;
+    width: 90%;
+}
+
+
+/* Styling for the cryptocurrency table */
+#crypto-table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+
+/* Styling for headers and data cells in the currency exchange table */
+.crypto-header, .crypto-data {
+    border: 2px solid rgba(250, 250, 250, 0.25);
+    padding: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    border-right: none; /* Remove right border */
+    border-left: none;
+}
+
+.crypto-header {
+    background-color: #171d25;
+    border: none;
+}
+
+.crypto-data {
+    width: 10%;
+}
+
+.first-data {
+    border-top: none;
+}
+
+.last-data {
+    border-bottom: none;
+}
+
+
+/* Styling for the buy button */
+.buy {
+    font-size: 20px;
+    background-color: #171d25;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    border: none;
+    color: #fafafa;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.buy:hover {
+    box-shadow: 0 6px 20px 0 #67c1f5;
+}
+
+
+
+/* Styling for the Login and Register page  */
+/* -------------------------- */
+/* Styling for the body section */
+#login-section {
+    padding: 6% 25%;
+    width: 50%;
+}
+
+
+/* Styling for the headings of the page */
+#login-h1 {
+    color: white;
+    font-weight: 900;
+}
+
+
+/* Styling for login and register form */
+#loginnresgiter-form {
+    background-color: #181a21;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+#uname-label {
+    color: #1999e8;
+}
+
+.pwd-and-remember-label {
+    color: #adaeb0;
+}
+
+.login-input {
+    background-color: #32353c;
+    color: white;
+    width: 100%;
+    padding: 1em 1em;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+  
+/* Styling for the submit and forgot password buttons */
+#submit-btn, .login-and-forget-pwd {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
+    color: white;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+    padding: 15px;
+    margin: 2em 1em;
+    width: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size:large;
+}
+
+#submit-btn:hover, .login-and-forget-pwd:hover {
+    background-position: 100% 0;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#register-or-login-link a {
+    color: #adaeb0;
+    text-decoration: none;
+}
+
+#register-or-login-link a:hover {
+    color: white;
+}
