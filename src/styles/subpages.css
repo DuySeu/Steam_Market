@@ -20,11 +20,11 @@
 }
 
 #about-h1 {
-    font-size: 2vw;
+    font-size: 2em;
 }
 
 .about-p {
-   font-size: 2em;
+   font-size: 1em;
 }
 
 #user-status {
@@ -33,7 +33,7 @@
 }
 
 .status {
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
     color: #969798;
 }
@@ -44,7 +44,6 @@
 
 #join-button {
     width: 90%;
-    height: 4em;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -57,8 +56,10 @@
     cursor: pointer;
     background-size: 200% 100%;
     transition: background-position 0.3s ease;
-    font-size: 2em;
     text-decoration: none;
+    font-size: 1.5em;
+    height: 5em;
+    padding: 2%;
 }
 
 #join-button:hover {
@@ -66,7 +67,7 @@
 }
 
 #button-img {
-    width: 3em;
+    width: 4em;
 }
 
 
@@ -79,7 +80,7 @@
     display: block;
     margin: 10% auto;
     align-items: center;
-    width: 40%;
+    width: 20em;
     border-radius: 3em;
 }
 
@@ -91,7 +92,6 @@
 #support-section {
     padding: 3% 10%;
 }
-
 
 /* Styling for the headings of the page */
 #support-h1 {
@@ -176,7 +176,7 @@
 
 /* Styling for the cryptocurrency table */
 #crypto-table {
-    width: 70%;
+    width: 90%;
     border-collapse: collapse;
     margin: 20px auto;
 }
@@ -232,8 +232,7 @@
 /* -------------------------- */
 /* Styling for the body section */
 #login-section {
-    padding: 6% 25%;
-    width: 50%;
+    padding: 3rem 10%;
 }
 
 
@@ -274,6 +273,9 @@
   
 /* Styling for the submit and forgot password buttons */
 #submit-btn, .login-and-forget-pwd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 20px;
     background: linear-gradient(to right, #2b75ff 0%, #2b75ff 0, #07beff 50%, #07beff 100%);
