@@ -63,9 +63,10 @@
 /* Style the links inside the navigation bar */
 .case-nav a {
   color: white;
-  padding: 1rem;
-  margin-right: 1rem;
+  padding: 1em;
   text-decoration: none;
+  width: 25%;
+  text-align: center;
 }
 
 /* Change the color of links on hover */
@@ -73,14 +74,12 @@
   background-color: #688f3e;
 }
 
-#my-search {
-  margin: 5px;
-  padding: 0.8rem;
-  box-sizing: border-box;
+#case-search {
+  width: 80%;
+  margin: 0.5rem;
   background-color: #324965;
-  border: 1px solid black;
+  border: none;
   color: #ffffff;
-  box-shadow: 1px 1px 5px #324965;
 }
 
 .main-profile-bg {
@@ -242,11 +241,6 @@ hr {
 .case-container img {
   width: 80%;
   margin: 0;
-}
-
-#my-search {
-  width: 100%;
-  margin-top: 0.5rem;
 }
 
 #sell-an-items .sell-input,
