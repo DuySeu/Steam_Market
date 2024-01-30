@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Metadata for character set and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <!-- Metadata for character set and responsive design -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Stylesheets and favicon -->
+    <link rel="stylesheet" href="../styles/interface_style.css" />
+    <link rel="stylesheet" href="../styles/subpages.css" />
+    <link rel="stylesheet" href="../styles/subpages-responsive.css" />
+    <link rel="icon" href="../../public/logo_transparent.png" />
 
-  <!-- Stylesheets and favicon -->
-  <link rel="stylesheet" href="../styles/interface_style.css" />
-  <link rel="stylesheet" href="../styles/subpages.css">
-  <link rel="stylesheet" href="../styles/subpages-responsive.css">
-  <link rel="icon" href="../../public/logo_transparent.png" />
+    <!-- Title of the page -->
+    <title>Cr1pt0 Market - Currency Exchange</title>
+  </head>
 
-  <!-- Title of the page -->
-  <title>Cr1pt0 Market - Currency Exchange</title>
-</head>
+  <body>
+    <!-- Header Section -->
+    <div id="header">
+      <!-- Toggleable menu icon -->
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+      </div>
 
-<body>
-  <!-- Header Section -->
-  <div id="header">
-    <!-- Toggleable menu icon -->
-    <div id="togglable-menu">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-    </div>
+      <!-- Side Navigation Bar -->
+      <div id="side-nav">
+        <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
+        <a href="../../index.html">STORE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="support.html">SUPPORT</a>
+        <a href="exchange.html">EXCHANGE</a>
+        <a href="login.html">LOGIN</a>
+      </div>
 
-    <!-- Side Navigation Bar -->
-    <div id="side-nav">
-      <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
-      <a href="../../index.html">STORE</a>
-      <a href="about.html">ABOUT</a>
-      <a href="support.html">SUPPORT</a>
-      <a href="exchange.html">EXCHANGE</a>
-      <a href="login.html">LOGIN</a>
-    </div>
-
-    <!-- External JavaScript file for Side Navigation Bar functionality -->
-    <script src="../scripts/navbar.js"></script>
-
-    <!-- Main Navigation Bar -->
-    <nav id="nav-bar">
-      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo" width="15%" id="header-logo" /></a>
-      <ul id="menu">
-        <li><a href="../../index.html" class="main-nav-links">Store</a></li>
-        <li><a href="about.html" class="main-nav-links">About</a></li>
-        <li><a href="support.html" class="main-nav-links">Support</a></li>
-        <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
-        <li><a href="login.html" class="main-nav-links">Login</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Body Section -->
-  <section>
-    <h1 id="exchange-h1">Cr1pt0 Market - Exchange currency</h1>
-
-    <div id="exchange-section">
-      <table id="crypto-table">
-        <thead>
-          <tr>
-            <th class="crypto-header">Fiat currency (US Dollar)</th>
-            <th class="crypto-header">Cryptocurrency (Cr1pt0c01n)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Form for currency exchange buttons -->
-          <form action="exchange-process.php" method="get">
-            <tr>
-              <td class="crypto-data first-data">$800</td>
-              <td class="crypto-data first-data"><input type="submit" value="400 CC" class="buy"></td>
-            </tr>
-            <tr>
-              <td class="crypto-data">$1,400</td>
-              <td class="crypto-data"><input type="submit" value="800 CC" class="buy"></td>
-            </tr>
-            <tr>
-              <td class="crypto-data">$3,400</td>
-              <td class="crypto-data"><input type="submit" value="1,700 CC" class="buy"></td>
-            </tr>
-            <tr>
-              <td class="crypto-data">$9,000</td>
-              <td class="crypto-data"><input type="submit" value="4,500 CC" class="buy"></td>
-            </tr>
-            <tr>
-              <td class="crypto-data">$20,000</td>
-              <td class="crypto-data"><input type="submit" value="10,000 CC" class="buy"></td>
-            </tr>
-            <tr>
-              <td class="crypto-data last-data">$45,000</td>
-              <td class="crypto-data last-data"><input type="submit" value="22,500 CC" class="buy"></td>
-            </tr>
-          </form>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <div id="footer">
-    <div id="logo">
-      <a href="../../index.html" id="logo-link"><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo" /></a>
-    </div>
-
-    <!-- Copyright and additional information -->
-    <div>
-      <p>
-        &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective owners in Vietnam and other countries.
-      </p>
-      <p>
-        Some geospatial data on this website is provided by <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
-      </p>
-
-      <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
-      <nav>
-        <ul>
-          <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
-          <li><a href="src/legal.html">Legal</a></li>
-          <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
-          <li><a href="src/cookie_preferences.html">Cookies</a></li>
+      <!-- Main Navigation Bar -->
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"
+          ><img
+            src="../../public/logo_transparent.png"
+            alt="Cr1pt0 Market logo"
+            width="15%"
+            id="header-logo"
+        /></a>
+        <ul id="menu">
+          <li><a href="../../index.html" class="main-nav-links">Store</a></li>
+          <li><a href="about.html" class="main-nav-links">About</a></li>
+          <li><a href="support.html" class="main-nav-links">Support</a></li>
+          <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
+          <li><a href="login.html" class="main-nav-links">Login</a></li>
         </ul>
       </nav>
     </div>
-  </div>
-</body>
 
+    <!-- Body Section -->
+    <section>
+      <h1 id="exchange-h1">Cr1pt0 Market - Exchange currency</h1>
+
+      <div id="exchange-section">
+        <table id="crypto-table">
+          <thead>
+            <tr>
+              <th class="crypto-header">Fiat currency (US Dollar)</th>
+              <th class="crypto-header">Cryptocurrency (Cr1pt0c01n)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Form for currency exchange buttons -->
+            <form action="exchange-process.php" method="get">
+              <tr>
+                <td class="crypto-data first-data">$800</td>
+                <td class="crypto-data first-data">
+                  <input type="submit" value="400 CC" class="buy" />
+                </td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$1,400</td>
+                <td class="crypto-data"><input type="submit" value="800 CC" class="buy" /></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$3,400</td>
+                <td class="crypto-data"><input type="submit" value="1,700 CC" class="buy" /></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$9,000</td>
+                <td class="crypto-data"><input type="submit" value="4,500 CC" class="buy" /></td>
+              </tr>
+              <tr>
+                <td class="crypto-data">$20,000</td>
+                <td class="crypto-data"><input type="submit" value="10,000 CC" class="buy" /></td>
+              </tr>
+              <tr>
+                <td class="crypto-data last-data">$45,000</td>
+                <td class="crypto-data last-data">
+                  <input type="submit" value="22,500 CC" class="buy" />
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div id="footer">
+      <div id="logo">
+        <a href="../../index.html" id="logo-link"
+          ><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo"
+        /></a>
+      </div>
+
+      <!-- Copyright and additional information -->
+      <div>
+        <p>
+          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
+          owners in Vietnam and other countries.
+        </p>
+        <p>
+          Some geospatial data on this website is provided by
+          <a href="src/cr1pt0market.org">Cr1pt0market.org</a>.
+        </p>
+
+        <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
+        <nav>
+          <ul>
+            <li><a href="src/privacy_agreement.html">Privacy Policy</a></li>
+            <li><a href="src/legal.html">Legal</a></li>
+            <li><a href="src/subscriber_agreement.html">Cr1pt0 Market Subscriber Agreement</a></li>
+            <li><a href="src/cookie_preferences.html">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+  <!-- External JavaScript file for Side Navigation Bar functionality -->
+  <script src="../scripts/transition.js"></script>
 </html>
