@@ -177,7 +177,7 @@
     font-size: smaller;
   }
   /* Case-detail*/
-.case-container p{
+.case-container p .case-container li{
   font-size: 3vw;
 
 }
@@ -311,7 +311,7 @@
     padding: 0;
   }
 /* Case-detail*/
-.case-container p{
+.case-container p, .case-container li{
   font-size: 2vw;
 
 }
