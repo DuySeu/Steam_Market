@@ -177,7 +177,7 @@
     font-size: smaller;
   }
   /* Case-detail*/
-.case-container p .case-container li{
+.case-container p, .case-container li{
   font-size: 3vw;
 
 }
