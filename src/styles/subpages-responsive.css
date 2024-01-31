@@ -176,6 +176,14 @@
     margin: 0.5rem;
     font-size: smaller;
   }
+  /* Case-detail*/
+.case-container p{
+  font-size: 3vw;
+
+}
+.case-container h2{
+  font-size: 4vw;
+}
 }
 
 /* Media query for responsiveness on tablets */
@@ -302,4 +310,12 @@
   .profile-header{
     padding: 0;
   }
+/* Case-detail*/
+.case-container p{
+  font-size: 2vw;
+
+}
+.case-container h2{
+  font-size: 3vw;
+}
 }
