@@ -184,6 +184,13 @@
 .case-container h2{
   font-size: 4vw;
 }
+.case-img, .case-inf{
+  position: relative;
+  width: 100%;
+}
+.nd-container{
+  height: auto;
+}
 }
 
 /* Media query for responsiveness on tablets */
