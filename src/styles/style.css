@@ -2,6 +2,10 @@
   clear: both;
 }
 
+#main {
+  padding: 1rem 0;
+}
+
 .market-tab-container {
   margin: 0 20%;
 }
