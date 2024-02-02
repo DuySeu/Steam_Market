@@ -122,12 +122,13 @@
   /* Styling for the Login and Register page  */
   /* -------------------------- */
   #login-section {
-    padding: 5% 12%;
-    width: 72%;
+    padding: 1em 0;
+    width: 100%;
   }
 
   #login-h1 {
     font-size: 2em;
+    text-align: center;
   }
 
   #form-container {
@@ -164,10 +165,11 @@
   /* -------------------------- */
   .profile-bg {
     width: 100%; /* Adjust profile backgrounds for tablet width */
-    padding: 2rem;
+    padding: 1em;
   }
   .profile-header {
-    display: block;
+    display: grid;
+    justify-items: center;
   }
   .user-ava {
     width: 35%;
@@ -213,6 +215,13 @@
     justify-content: center; /* Center items in the nav */
   }
 
+  /* Styling for the About page  */
+  /* -------------------------- */
+  .case-container{
+    margin: 0;
+    width: 90%;
+    padding: 5%;
+  }
   /* Styling for the About page  */
   /* -------------------------- */
   #about-section {
@@ -276,12 +285,13 @@
   /* Styling for the Login and Register page  */
   /* -------------------------- */
   #login-section {
-    padding: 5% 12%;
-    width: 72%;
+    padding: 0;
+    width: 100%;
   }
 
   #login-h1 {
     font-size: 2em;
+    text-align: center;
   }
 
   #form-container {

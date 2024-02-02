@@ -91,13 +91,13 @@
 .profile-bg {
   background-color: #1b2838;
   width: 1000px;
+  padding: 2em;
 }
 
 .profile-header {
   display: flex;
-  padding: 1em;
   color: white;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .user-ava {
   width: 15%;
@@ -132,7 +132,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.4);
   position: relative;
   padding-bottom: 90px;
-  max-width: 700px;
+  width: 700px;
   display: flex;
   flex-wrap: wrap;
 }
