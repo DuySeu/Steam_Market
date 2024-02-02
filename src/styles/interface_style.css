@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #1b2838;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -129,6 +132,7 @@ body {
   background-color: #171d25;
   padding: 20px 0;
   font-size: 0.8em;
+  margin-top: auto;
 }
 
 #logo {
