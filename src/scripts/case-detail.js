@@ -61,23 +61,23 @@ function showCaseDetail(data) {
                   <th>Quantity</th>
               </tr>
               <tr>
-                  <td>$0.73</td>
+                  <td>0.73 CC</td>
                   <td>1</td>
               </tr>
               <tr>
-                  <td>$0.74</td>
+                  <td>0.74 CC</td>
                   <td>15</td>
               </tr>
               <tr>
-                  <td>$0.76</td>
+                  <td>0.76 CC</td>
                   <td>18</td>
               </tr>
               <tr>
-                  <td>$0.78</td>
+                  <td>0.78 CC</td>
                   <td>50</td>
               </tr>
               <tr>
-                  <td>$0.79</td>
+                  <td>0.79 CC</td>
                   <td>155</td>
               </tr>
           </table>
@@ -92,23 +92,23 @@ function showCaseDetail(data) {
                   <th>Quantity</th>
               </tr>
               <tr>
-                  <td>$0.73</td>
+                  <td>0.73 CC</td>
                   <td>1</td>
               </tr>
               <tr>
-                  <td>$0.74</td>
+                  <td>0.74 CC</td>
                   <td>15</td>
               </tr>
               <tr>
-                  <td>$0.76</td>
+                  <td>0.76 CC</td>
                   <td>18</td>
               </tr>
               <tr>
-                  <td>$0.78</td>
+                  <td>0.78 CC</td>
                   <td>50</td>
               </tr>
               <tr>
-                  <td>$0.79</td>
+                  <td>0.79 CC</td>
                   <td>155</td>
               </tr>
           </table>
