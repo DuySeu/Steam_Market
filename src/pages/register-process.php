@@ -25,7 +25,7 @@ require('db.php');
                   <p class='link'>Click here to <a href='register.php'>registration</a> again.</p>
                   </div>";
         }
-        mysqli_close($conn);
+        mysqli_close($con);
     }
     else{
         echo "<div class='form'>

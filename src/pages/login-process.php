@@ -18,5 +18,5 @@
                   <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
                   </div>";
         }
-        mysqli_close($conn);
+        mysqli_close($con);
 ?>

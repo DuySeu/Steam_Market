@@ -29,7 +29,7 @@ $row = mysqli_fetch_row($queryResult);
 }
 echo "</table>";
 mysqli_free_result($queryResult);
-
+mysqli_close($con);
 
     ?>
 </body>
