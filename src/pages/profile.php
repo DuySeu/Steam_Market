@@ -16,6 +16,9 @@
   </head>
 
   <body>
+    <?php
+    include("session.php");
+    ?>
     <!-- Header Section -->
     <div id="header">
       <!-- Toggleable menu icon -->
@@ -60,7 +63,8 @@
           <div class="user-info">
             <div class="user-wallet">
               <h3>Group 1.7</h3>
-              <p>Ha Noi, Viet Nam</p>
+              <p>Username: <?php echo $_SESSION['username'];
+            ?></p>
             </div>
             <div class="user-wallet">
               <h3>
@@ -70,9 +74,9 @@
             </div>
             <div class="user-wallet">
               <h3>
-                <a href="#" class="profile-link">View Inventory</a>
+                <a href="inventory.php" class="profile-link">View Inventory</a>
               </h3>
-              <h3>
+              
                 <a href="#" class="profile-link">Edit profile</a>
               </h3>
             </div>
