@@ -90,12 +90,15 @@
   background-image: url(../../public/profile-bg.png);
   display: flex;
   justify-content: center;
+ 
 }
 
 .profile-bg {
   background-color: #1b2838;
   width: 1000px;
   padding: 2em;
+  
+
 }
 
 .profile-header {

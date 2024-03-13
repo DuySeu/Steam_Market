@@ -91,7 +91,7 @@
         <div class="market-tab-container">
           <div style="background: #171a21">
             <button onclick="displayText1()" href="" class="market-button">
-              <span>My Active Listings</span>
+              <span>My Selling Listings</span>
             </button>
             <button onclick="displayText2()" href="" class="market-button">
               <span>My Market History</span>
@@ -100,9 +100,9 @@
               <span>Sell An Items</span>
             </button>
           </div>
-          <div class="container">
+          <div class="container" >
             <div id="my-active-listing">
-              <h4>My sell listings (0)</h4>
+             
               
                 <?php
                 require("db.php");
@@ -123,8 +123,7 @@
                 mysqli_close($con);
                 ?>
             
-              <h4>My buy orders (0)</h4>
-              <p class="market-tab">You do not have any buy orders.</p>
+              
             </div>
             <div id="market-history" style="display: none">
               <table style="width: 100%">
@@ -142,13 +141,13 @@
                   <form action="selloffer.php" method="post">
 
                   <label for="caseid"><b>Container Series</b></label>
-                  <input type="text" name="caseid" class="sell-input" />
+                  <input type="text" name="caseid" class="sell-input" require />
 
                   <label for="price"><b>Price</b></label>
-                  <input type="number" min="0" max="10000.0" step="0.1" name="price" class="sell-input" />
+                  <input type="number" min="0" max="10000.0" step="0.1" require name="price" class="sell-input" />
 
                   <div class="submit-form">
-                    <button type="submit"  class="sell-button">Create sell offer</a>
+                    <button type="submit"  class="sell-button">Create or update sell offer</a>
                     
               </form>
                   </div>

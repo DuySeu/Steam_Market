@@ -12,10 +12,20 @@
 $caseid = $_POST["caseid"];
 $price = $_POST["price"];
 $seller = $_SESSION['username'];
-$query = "SELECT * FROM asignment.offer Where caseid ='$caseid'AND seller = '$seller'";
+$query = "SELECT * FROM asignment.offer Where caseid ='$caseid'AND price='$price' AND seller = '$seller'";
 $result = mysqli_query($con, $query) ;
 $rows = mysqli_num_rows($result);
 if($rows == 0){
+    $query = "SELECT * FROM asignment.offer Where caseid ='$caseid' AND seller = '$seller'";
+    $result = mysqli_query($con, $query) ;
+    $rows = mysqli_num_rows($result);
+    if($rows == 1){
+        $query    = "UPDATE  `offer` SET price = '$price'
+                     WHERE caseid ='$caseid' AND seller = '$seller'";
+            $result   = mysqli_query($con, $query);
+            echo"Offer has been change successfuly.";
+        }
+        else{
 $query = "SELECT * FROM asignment.case Where id ='$caseid'AND owner = '$seller'";
 $result = mysqli_query($con, $query) ;
 $rows = mysqli_num_rows($result);
@@ -28,6 +38,7 @@ if($rows == 1){
 else{
     echo"You do not own the case";
 }
+        }
 }
 else{
     echo"Offer has been made already";
