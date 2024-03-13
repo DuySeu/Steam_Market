@@ -63,7 +63,8 @@
           <div class="user-info">
             <div class="user-wallet">
               <h3>Group 1.7</h3>
-              <p>Username: <?php echo $_SESSION['username'];
+              <p>Username: <?php $username = $_SESSION['username'];
+                                  echo $username;
             ?></p>
             </div>
             <div class="user-wallet">
@@ -77,7 +78,11 @@
                 <a href="inventory.php" class="profile-link">View Inventory</a>
               </h3>
               
+              
                 <a href="#" class="profile-link">Edit profile</a>
+              </h3>
+              <h3>
+                <a href="logout.php" class="profile-link">Log out</a>
               </h3>
             </div>
           </div>
@@ -98,10 +103,26 @@
           <div class="container">
             <div id="my-active-listing">
               <h4>My sell listings (0)</h4>
-              <p class="market-tab">
-                You are not selling any items on the Cr1pt0 Market. Sell items from your inventory,
-                or click the "Sell an item" button above.
-              </p>
+              
+                <?php
+                require("db.php");
+                $sql = "SELECT `caseid`, `price`FROM `offer` WHERE seller='$username' and buyer IS NULL";
+                $queryResult = mysqli_query($con, $sql);
+                echo "<table class='market-tab'>";
+                echo "<tr><th>Case id</th><th>Price</th></tr>";
+                $row = mysqli_fetch_row($queryResult);
+                while ($row) {
+                    echo "<tr><td>{$row[0]}</td>";
+                    echo "<td>{$row[1]}</td>";
+            
+            
+                    $row = mysqli_fetch_row($queryResult);
+                }
+                echo "</table>";
+                mysqli_free_result($queryResult);
+                mysqli_close($con);
+                ?>
+            
               <h4>My buy orders (0)</h4>
               <p class="market-tab">You do not have any buy orders.</p>
             </div>
@@ -116,22 +137,23 @@
               </table>
             </div>
             <div id="sell-an-items" style="display: none">
-              <form action="login-process.php" method="post">
+              
                 <div id="form-container">
-                  <label for="itemName"><b>Item Name</b></label>
-                  <input type="text" name="itemName" class="sell-input" />
+                  <form action="selloffer.php" method="post">
 
-                  <label for="containerSeries"><b>Container Series</b></label>
-                  <input type="text" name="containerSeries" class="sell-input" />
+                  <label for="caseid"><b>Container Series</b></label>
+                  <input type="text" name="caseid" class="sell-input" />
 
-                  <label for="quantity"><b>Quantity</b></label>
-                  <input type="text" name="quantity" class="sell-input" />
+                  <label for="price"><b>Price</b></label>
+                  <input type="number" min="0" max="10000.0" step="0.1" name="price" class="sell-input" />
 
                   <div class="submit-form">
-                    <a href="profile.html" class="sell-button">Login</a>
+                    <button type="submit"  class="sell-button">Create sell offer</a>
+                    
+              </form>
                   </div>
                 </div>
-              </form>
+              
             </div>
           </div>
         </div>
