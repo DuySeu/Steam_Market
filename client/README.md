@@ -25,3 +25,5 @@ Additional Notes:
 Ensure that your XAMPP environment is properly configured, especially the PHP and MySQL settings.
 
 Refer to the project documentation for any specific configurations or database setup instructions.
+
+http://localhost:8080/Steam_Market/client/index.html
