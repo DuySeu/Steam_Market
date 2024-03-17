@@ -285,12 +285,3 @@ hr {
   font-size: large;
   text-align: center;
 }
-#connectWalletButton {
-  background: #171a21;
-  cursor: pointer;
-  border: none;
-  padding: 1rem 2rem;
-  color: white;
-  text-decoration: none;
-  font-size: medium;
-}
