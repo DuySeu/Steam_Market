@@ -77,8 +77,6 @@
               <h3>
                 <a href="inventory.php" class="profile-link">View Inventory</a>
               </h3>
-              
-              
                 <a href="#" class="profile-link">Edit profile</a>
               </h3>
               <h3>

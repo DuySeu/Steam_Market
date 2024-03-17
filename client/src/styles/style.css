@@ -90,15 +90,12 @@
   background-image: url(../../public/profile-bg.png);
   display: flex;
   justify-content: center;
- 
 }
 
 .profile-bg {
   background-color: #1b2838;
   width: 1000px;
   padding: 2em;
-  
-
 }
 
 .profile-header {
@@ -287,4 +284,13 @@ hr {
   text-decoration: none;
   font-size: large;
   text-align: center;
+}
+#connectWalletButton {
+  background: #171a21;
+  cursor: pointer;
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-size: medium;
 }

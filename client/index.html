@@ -31,56 +31,35 @@
         <a href="src/pages/about.html">ABOUT</a>
         <a href="src/pages/support.html">SUPPORT</a>
         <a href="src/pages/exchange.html">EXCHANGE</a>
-        <a href="src/pages/login.html">LOGIN</a>
+        <a href="#" id="connectWalletButton">Connect Wallet</a>
+        <a id="walletAddressDisplay" href="src/pages/profile.php"></a>
       </div>
 
       <!-- Main Navigation Bar -->
       <nav id="nav-bar">
         <a href="index.html" id="logo-link"
-          ><img src="public/logo_transparent.png" alt="Cr1pt0 Market logo" width="15%" id="header-logo"
+          ><img
+            src="public/logo_transparent.png"
+            alt="Cr1pt0 Market logo"
+            width="15%"
+            id="header-logo"
         /></a>
         <ul id="menu">
           <li><a href="index.html" class="main-nav-links">STORE</a></li>
           <li><a href="src/pages/about.html" class="main-nav-links">ABOUT</a></li>
           <li><a href="src/pages/support.html" class="main-nav-links">SUPPORT</a></li>
           <li><a href="src/pages/exchange.html" class="main-nav-links">Exchange</a></li>
-          <li><a href="src/pages/profile.php" class="main-nav-links">Profile</a></li>
+          <li>
+            <a href="" class="main-nav-links" id="connectWalletButton">Connect Wallet</a>
+          </li>
+          <li>
+            <a class="main-nav-links" id="walletAddressDisplay" href="src/pages/profile.php"></a>
+          </li>
         </ul>
       </nav>
     </div>
 
     <div id="main">
-      <div class="market-tab-container">
-        <div style="background: #171a21">
-          <button onclick="displayText1()" href="" class="market-button">
-            My Active Listings
-          </button>
-          <button onclick="displayText2()" href="" class="market-button">
-            My Market History
-          </button>
-          <button onclick="displayText3()" href="" class="market-button">
-            Sell An Items
-          </button>
-        </div>
-        <div class="container">
-          <div id="my-active-listing" class="market-tab">
-            <p>
-              <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
-              to see, edit, or remove your Cr1pt0 Market listings.
-            </p>
-          </div>
-          <div id="market-history" style="display: none" class="market-tab">
-            <p>You don't have any history on the Cr1pt0 Market.</p>
-          </div>
-          <div id="sell-an-items" style="display: none" class="market-tab">
-            <p>
-              You need to
-              <a href="src/pages/profile.html" style="text-decoration: none; color: white">Login</a>
-              to do that.
-            </p>
-          </div>
-        </div>
-      </div>
       <div class="products">
         <div class="case-nav">
           <a href="#">Popular Items</a>
@@ -132,5 +111,6 @@
     <!-- Support JavaScript file -->
     <script src="src/scripts/case-api.js"></script>
     <script src="src/scripts/transition.js"></script>
+    <script src="src/scripts/wallet-connection.js"></script>
   </body>
 </html>
