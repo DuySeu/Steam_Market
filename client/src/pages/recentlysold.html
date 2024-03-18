@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata for character set and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets and favicon -->
+    <link rel="stylesheet" href="../styles/interface-style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/subpages-responsive.css" />
+    <link rel="icon" href="../../public/logo_transparent.png" />
+
+    <!-- Title of the page -->
+    <title>Cr1pt0 Market, The Ultimate Online Market Platform</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <div id="header">
+        <!-- Toggleable menu icon -->
+        <div id="togglable-menu">
+          <input type="checkbox" id="toggle" />
+          <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
+        </div>
+  
+        <!-- Side Navigation Bar -->
+        <div id="side-nav">
+          <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
+          <a href="../../index.html">STORE</a>
+          <a href="about.html">ABOUT</a>
+          <a href="support.html">SUPPORT</a>
+          <a href="exchange.html">EXCHANGE</a>
+          <!-- <a id="walletAddressDisplay" href="src/pages/profile.php"></a> -->
+        </div>
+  
+        <!-- Main Navigation Bar -->
+        <nav id="nav-bar">
+          <a href="../../index.html" id="logo-link"
+            ><img
+              src="../../public/logo_transparent.png"
+              alt="Cr1pt0 Market logo"
+              width="15%"
+              id="header-logo"
+          /></a>
+          <ul id="menu">
+            <li><a href="../../index.html" class="main-nav-links">Store</a></li>
+            <li><a href="about.html" class="main-nav-links">About</a></li>
+            <li><a href="support.html" class="main-nav-links">Support</a></li>
+            <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
+            <!-- <li>
+              <a class="main-nav-links" id="walletAddressDisplay" href="src/pages/profile.php"></a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+
+    <div id="main">
+      <div class="products">
+        <div class="case-nav">
+          <a href="../../index.html">Popular Items</a>
+          <a href="#">Newly Listed</a>
+          <a href="recentlysold.html">Recently sold</a>
+          <input
+            type="text"
+            id="case-search"
+            onkeyup="searchFunction()"
+            placeholder="Search.."
+            style="font-size: 17px"
+          />
+        </div>
+        <ul id="sold-case">
+            <li class="case-display container">
+                <img src="../assets/images/case/case1.png" alt="" style="width:70%">
+                <p>Case name</p>
+                <hr style="width: 80%; margin: auto;">
+                <div style="padding: 10px;">
+                    <p>From: 0x2d80CCCE4A1b6Cdfbfa534b75fFAF6eDb421c660</p>
+                    <p>To: 0x5AE576BAb1ed89C23eD848717dAD69a24f9Ab100</p>
+                    <p>Amount paid: 100 CC</p>
+                </div>
+            </li>
+            <li class="case-display container">
+                <img src="../assets/images/case/case2.png" alt="" style="width:70%">
+                <p>Case name</p>
+                <hr style="width: 80%; margin: auto;">
+                <div style="padding: 10px;">
+                    <p>From: 0x2d80CCCE4A1b6Cdfbfa534b75fFAF6eDb421c660</p>
+                    <p>To: 0x5AE576BAb1ed89C23eD848717dAD69a24f9Ab100</p>
+                    <p>Amount paid: 100 CC</p>
+                </div>
+            </li>
+            <li class="case-display container">
+                <img src="../assets/images/case/case3.png" alt="" style="width:70%">
+                <p>Case name</p>
+                <hr style="width: 80%; margin: auto;">
+                <div style="padding: 10px;">
+                    <p>From: 0x2d80CCCE4A1b6Cdfbfa534b75fFAF6eDb421c660</p>
+                    <p>To: 0x5AE576BAb1ed89C23eD848717dAD69a24f9Ab100</p>
+                    <p>Amount paid: 100 CC</p>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer">
+      <div id="logo">
+        <a href="index.html" id="logo-link"
+          ><img src="../../public/logo_transparent.png" alt="Cr1pt0 Market logo"
+        /></a>
+      </div>
+
+      <!-- Copyright and additional information -->
+      <div>
+        <p>
+          &copy; Cr1pt0 Market. All rights reserved. All trademarks are property of their respective
+          owners in Vietnam and other countries.
+        </p>
+        <p>
+          Some geospatial data on this website is provided by
+          <a href="index.html">Cr1pt0market.org</a>.
+        </p>
+
+        <!-- Navigation links for privacy policy, legal, subscriber agreement, and cookies -->
+        <nav>
+          <ul>
+            <li><a href="src/pages/support.html">Privacy Policy</a></li>
+            <li><a href="src/pages/support.html">Legal</a></li>
+            <li><a href="src/pages/support.html">Cr1pt0 Market Subscriber Agreement</a></li>
+            <li><a href="src/pages/about.html">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Support JavaScript file -->
+    <script src="src/scripts/transition.js"></script>
+    <script src="src/scripts/wallet-connection.js"></script>
+  </body>
+</html>
