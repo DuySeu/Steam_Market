@@ -122,19 +122,6 @@
   </body>
 
   <script>
-if (window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-    window.ethereum.request({ method: 'eth_requestAccounts' })
-    .then(() => {
-        // Gọi loadWeb3 và các hàm khác sau khi web3 đã được khởi tạo và tài khoản đã được truy cập thành công
-        loadWeb3();
-    })
-    .catch((error) => {
-        console.error("User denied account access", error);
-    });
-} else {
-    console.log('Please install MetaMask!');
-}
 
 if (window.ethereum) {
     window.web3 = new Web3(window.ethereum);
@@ -195,7 +182,7 @@ let casesInfo = [];
                     <p>Buy Price: ${c.buy_price} CC</p>
                     <p>Sale Price: ${c.sale_price} CC</p>
                     <p>Container Series: ${c.container_series}</p>
-                    <button onclick="buyTicket(${i}, '${c.buy_price}')">Buy Ticket</button>
+                    <button onclick="buyTicket(${i}, '${c.buy_price}')">Buy Case</button>
                 </div>
             `;
             ticketsEl.appendChild(ticketEl);
