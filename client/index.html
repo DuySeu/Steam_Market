@@ -186,6 +186,7 @@ let casesInfo = [];
         if (ticket.owner === EMPTY_ADDRESS) {
             const c = casesInfo[i];
             const ticketEl = document.createElement('div');
+            ticketEl.classList.add('case-card');
             ticketEl.innerHTML = `
                 <div>
                     <h3>${c.name}</h3>
