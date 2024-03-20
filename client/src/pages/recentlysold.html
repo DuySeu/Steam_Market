@@ -151,7 +151,7 @@
         console.log('Account: ', accounts[0]);
         ticketsEl = document.getElementById('sold-case');
       
-        $.getJSON('../../../build/contracts/TicketSales.json', async function (data) {
+        $.getJSON('../../../build/contracts/CaseSale.json', async function (data) {
           const FriendArtifact = data;
           friendinstance = new web3.eth.Contract(
             FriendArtifact.abi,
@@ -162,13 +162,26 @@
       }
       
       async function displayTransactions() {
-        const transactions = await friendinstance.methods.getAllTransactions().call();
-        
+        const transactions = await friendinstance.methods.getTransactionHistory().call();
+     
         // Xóa danh sách hiện tại để hiển thị danh sách mới
         ticketsEl.innerHTML = '';
         
         transactions.forEach((tx, index) => {
+
           const transactionEl = document.createElement('li');
+
+          const transactionDate = new Date(Number(tx.timestamp) * 1000);
+
+          const day = transactionDate.getDate().toString().padStart(2, '0');
+          const month = (transactionDate.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
+          const year = transactionDate.getFullYear().toString().substr(-2); // get last two digits
+          const hours = transactionDate.getHours().toString().padStart(2, '0');
+          const minutes = transactionDate.getMinutes().toString().padStart(2, '0');
+          const seconds = transactionDate.getSeconds().toString().padStart(2, '0');
+
+          const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  
           transactionEl.classList.add('case-display', 'container');
           // console.log(transactionEl);
           console.log(tx);
@@ -179,9 +192,9 @@
             <p>Case ID: ${tx.ticketId}</p>
             <hr style="width: 80%; margin: auto;">
             <div style="padding: 10px;">
-              <p>From: ${tx.from}</p>
+              <p>Time: ${formattedDate}</p>
               <p>To: ${tx.buyer}</p>
-              <!-- <p>Amount paid: ${tx.amount} CC</p> -->
+              <p>Amount paid: ${tx.price} CC</p>
             </div>
           `;
           
