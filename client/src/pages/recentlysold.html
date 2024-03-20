@@ -13,6 +13,11 @@
 
     <!-- Title of the page -->
     <title>Cr1pt0 Market, The Ultimate Online Market Platform</title>
+
+
+    <script src="../../web3.min.js"></script>
+    <script src="../../truffle-contract.js"></script>
+    <script src="../../jquery-2.1.4.js"></script>
   </head>
 
   <body>
@@ -69,6 +74,7 @@
             style="font-size: 17px"
           />
         </div>
+    
         <ul id="sold-case">
             <li class="case-display container">
                 <img src="../assets/images/case/case1.png" alt="" style="width:70%">
@@ -136,7 +142,68 @@
     </div>
 
     <!-- Support JavaScript file -->
-    <script src="src/scripts/transition.js"></script>
-    <script src="src/scripts/wallet-connection.js"></script>
+    <script src="../scripts/transition.js"></script>
+    <script src="../scripts/wallet-connection.js"></script>
+    <script>
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        window.ethereum
+          .request({ method: 'eth_requestAccounts' })
+          .then(() => {
+            loadWeb3();
+          })
+          .catch((error) => {
+            console.error('User denied account access', error);
+          });
+      } else {
+        console.log('Please install MetaMask!');
+      }
+      
+      let ticketsEl;
+      let friendinstance;
+      let casesInfo = [];
+      
+      async function loadWeb3() {
+        const web3 = window.web3;
+        const accounts = await web3.eth.getAccounts();
+        console.log('Account: ', accounts[0]);
+        ticketsEl = document.getElementById('sold-case');
+      
+        $.getJSON('../../../build/contracts/TicketSales.json', async function (data) {
+          const FriendArtifact = data;
+          friendinstance = new web3.eth.Contract(
+            FriendArtifact.abi,
+            FriendArtifact.networks['5777'].address
+          );
+          displayTransactions(); // Thay vì refreshTickets, chúng ta gọi displayTransactions tại đây
+        });
+      }
+      
+      async function displayTransactions() {
+        const transactions = await friendinstance.methods.getAllTransactions().call();
+        
+        // Xóa danh sách hiện tại để hiển thị danh sách mới
+        ticketsEl.innerHTML = '';
+        
+        transactions.forEach((tx, index) => {
+          const transactionEl = document.createElement('li');
+          transactionEl.classList.add('case-display', 'container');
+          
+          // Cấu trúc HTML của mỗi giao dịch
+          transactionEl.innerHTML = `
+            <p>Transaction ${index + 1}</p>
+            <hr style="width: 80%; margin: auto;">
+            <div style="padding: 10px;">
+              <p>From: ${tx.from}</p>
+              <p>To: ${tx.to}</p>
+              <p>Amount paid: ${tx.amount} CC</p>
+            </div>
+          `;
+          
+          ticketsEl.appendChild(transactionEl);
+        });
+      }
+      </script>
+      
   </body>
 </html>
