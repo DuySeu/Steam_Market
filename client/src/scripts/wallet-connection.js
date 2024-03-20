@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setWalletAddress(address) {
-        walletAddressDisplay.textContent = `Connected: ${address.substring(0, 6)}...${address.substring(38)}`;
+        walletAddressDisplay.textContent = `${address.substring(0, 6)}...${address.substring(38)}`;
         connectWalletButton.style.display = 'none';
     }
 
