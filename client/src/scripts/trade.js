@@ -51,16 +51,17 @@ async function refreshTickets() {
     // Kiểm tra nếu vé chưa được mua (owner là địa chỉ 0)
     if (ticket.owner === EMPTY_ADDRESS) {
       const item = casesInfo[i];
-      ticketEl.innerHTML += `
-          <li class="case-display"> 
-            <img src="${item.image}" alt="${item.name}" style="width:100%">
-            <p>${item.name}</p>
-            <hr style="width: 80%; margin: auto;">
-            <div>
-              <p>Price: ${item.buy_price}</p>
-              <button onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
-            </div>
-        </li>
+      // Create a new element for the ticket
+      const ticketEl = document.createElement('li'); // Assuming you want each ticket to be an <li> element
+      ticketEl.className = 'case-display';
+      ticketEl.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" style="width:100%">
+          <p>${item.name}</p>
+          <hr style="width: 80%; margin: auto;">
+          <div>
+            <p>Price: ${item.buy_price}</p>
+            <button onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
+          </div>
           `;
       ticketsEl.appendChild(ticketEl);
     }
