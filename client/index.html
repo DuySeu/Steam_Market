@@ -151,7 +151,7 @@ let casesInfo = [];
     console.log("Account: ", accounts[0]);
         ticketsEl = document.getElementById('case-data'); 
 
-        $.getJSON("http://localhost/Steam_Market/build/contracts/TicketSales.json", async function(data) {
+        $.getJSON("../build/contracts/TicketSales.json", async function(data) {
             const FriendArtifact = data;
             friendinstance = new web3.eth.Contract(FriendArtifact.abi, FriendArtifact.networks['5777'].address);
             await refreshTickets(); // Cập nhật để sử dụng async
@@ -176,19 +176,17 @@ let casesInfo = [];
     if (shouldDisplay) {
       const item = casesInfo[i];
       // Tạo một div mới và thêm class 'case-card'
-      const ticketEl = document.createElement('div');
-      ticketEl.classList.add('case-card');
+      const ticketEl = document.createElement('li'); // Assuming you want each ticket to be an <li> element
+      ticketEl.className = 'case-display';
       ticketEl.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" style="width:100%">
-        <div class="case-info">
-          <h3>${item.name}</h3>
-          <p>Quantity: ${item.quantity}</p>
-          <p>Buy Price: ${item.buy_price} CC</p>
-          <p>Sale Price: ${item.sale_price} CC</p>
-          <p>Container Series: ${item.container_series}</p>
-          <button onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
-        </div>
-      `;
+          <img src="${item.image}" alt="${item.name}" style="width:100%">
+          <p style="color:white">${item.name}</p>
+          <hr style="width: 80%; margin: auto;">
+          <div>
+            <p style="color:white">Price: ${item.buy_price}</p>
+            <button class="buyTicket" onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
+          </div>
+          `;
       // Thêm card mới vào phần tử chứa
       ticketsEl.appendChild(ticketEl);
     }
