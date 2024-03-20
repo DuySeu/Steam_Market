@@ -176,11 +176,11 @@
           ticketEl.className = 'case-display';
           ticketEl.innerHTML = `
           <img src="${item.image}" alt="${item.name}" style="width:100%">
-          <p>${item.name}</p>
+          <p style="color:white">${item.name}</p>
           <hr style="width: 80%; margin: auto;">
           <div>
-            <p>Price: ${item.buy_price}</p>
-            <button onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
+            <p style="color:white">Price: ${item.buy_price}</p>
+            <button class="buyTicket" onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
           </div>
           `;
           ticketsEl.appendChild(ticketEl);
@@ -203,7 +203,5 @@
         console.error(`Error purchasing ticket: ${error.message}`);
       }
     }
-
-    loadWeb3();
   </script>
 </html>
