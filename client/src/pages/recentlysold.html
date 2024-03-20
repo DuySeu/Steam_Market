@@ -22,42 +22,45 @@
   <body>
     <!-- Header Section -->
     <div id="header">
-        <!-- Toggleable menu icon -->
-        <div id="togglable-menu">
-          <input type="checkbox" id="toggle" />
-          <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
-        </div>
-  
-        <!-- Side Navigation Bar -->
-        <div id="side-nav">
-          <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
-          <a href="../../index.html">STORE</a>
-          <a href="about.html">ABOUT</a>
-          <a href="support.html">SUPPORT</a>
-          <a href="exchange.html">EXCHANGE</a>
-          <!-- <a id="walletAddressDisplay" href="src/pages/profile.php"></a> -->
-        </div>
-  
-        <!-- Main Navigation Bar -->
-        <nav id="nav-bar">
-          <a href="../../index.html" id="logo-link"
-            ><img
-              src="../../public/logo_transparent.png"
-              alt="Cr1pt0 Market logo"
-              width="15%"
-              id="header-logo"
-          /></a>
-          <ul id="menu">
-            <li><a href="../../index.html" class="main-nav-links">Store</a></li>
-            <li><a href="about.html" class="main-nav-links">About</a></li>
-            <li><a href="support.html" class="main-nav-links">Support</a></li>
-            <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
-            <!-- <li>
-              <a class="main-nav-links" id="walletAddressDisplay" href="src/pages/profile.php"></a>
-            </li> -->
-          </ul>
-        </nav>
+      <!-- Toggleable menu icon -->
+      <div id="togglable-menu">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" id="toggle-button" onclick="openNav()">&#9776;</label>
       </div>
+
+      <!-- Side Navigation Bar -->
+      <div id="side-nav">
+        <a href="javascript:void(0)" id="close-button" onclick="closeNav()">&times;</a>
+        <a href="../../index.html">STORE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="support.html">SUPPORT</a>
+        <a href="exchange.html">EXCHANGE</a>
+        <!-- <a id="walletAddressDisplay" href="src/pages/profile.php"></a> -->
+      </div>
+
+      <!-- Main Navigation Bar -->
+      <nav id="nav-bar">
+        <a href="../../index.html" id="logo-link"
+          ><img
+            src="../../public/logo_transparent.png"
+            alt="Cr1pt0 Market logo"
+            width="15%"
+            id="header-logo"
+        /></a>
+        <ul id="menu">
+          <li><a href="../../index.html" class="main-nav-links">Store</a></li>
+          <li><a href="about.html" class="main-nav-links">About</a></li>
+          <li><a href="support.html" class="main-nav-links">Support</a></li>
+          <li><a href="exchange.html" class="main-nav-links">Exchange</a></li>
+          <li>
+            <a href="" id="connectWalletButton" class="main-nav-links">Connect Wallet</a>
+          </li>
+          <li>
+            <a id="walletAddressDisplay" class="main-nav-links" href="src/pages/profile.php"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <div id="main">
       <div class="products">
@@ -73,18 +76,18 @@
             style="font-size: 17px"
           />
         </div>
-    
+
         <ul id="sold-case">
-            <li class="case-display container">
-                <img src="../assets/images/case/case1.png" alt="" style="width:70%">
-                <!-- <p>Case name</p>
+          <li class="case-display container">
+            <img src="../assets/images/case/case1.png" alt="" style="width: 70%" />
+            <!-- <p>Case name</p>
                 <hr style="width: 80%; margin: auto;">
                 <div style="padding: 10px;">
                     <p>From: 0x2d80CCCE4A1b6Cdfbfa534b75fFAF6eDb421c660</p>
                     <p>To: 0x5AE576BAb1ed89C23eD848717dAD69a24f9Ab100</p>
                     <p>Amount paid: 100 CC</p>
                 </div> -->
-            </li>
+          </li>
         </ul>
       </div>
     </div>
@@ -119,87 +122,72 @@
         </nav>
       </div>
     </div>
-
   </body>
-    <!-- Support JavaScript file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
-    <script src="src/scripts/transition.js"></script>
-    <script src="src/scripts/wallet-connection.js"></script>
-    <script>
-      if (window.ethereum) {
-        window.web3 = new Web3(window.ethereum);
-        window.ethereum
-          .request({ method: 'eth_requestAccounts' })
-          .then(() => {
-            loadWeb3();
-          })
-          .catch((error) => {
-            console.error('User denied account access', error);
-          });
-      } else {
-        console.log('Please install MetaMask!');
-      }
-      
-      let ticketsEl;
-      let friendinstance;
-      let casesInfo = [];
-      
-      async function loadWeb3() {
-        const web3 = window.web3;
-        const accounts = await web3.eth.getAccounts();
-        console.log('Account: ', accounts[0]);
-        ticketsEl = document.getElementById('sold-case');
-      
-        $.getJSON('../../../build/contracts/CaseSale.json', async function (data) {
-          const FriendArtifact = data;
-          friendinstance = new web3.eth.Contract(
-            FriendArtifact.abi,
-            FriendArtifact.networks['5777'].address
-          );
-          displayTransactions(); // Thay vì refreshTickets, chúng ta gọi displayTransactions tại đây
-        });
-      }
-      
-      async function displayTransactions() {
-        const transactions = await friendinstance.methods.getTransactionHistory().call();
-     
-        // Xóa danh sách hiện tại để hiển thị danh sách mới
-        ticketsEl.innerHTML = '';
-        
-        transactions.forEach((tx, index) => {
+  <!-- Support JavaScript file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="../scripts/transition.js"></script>
+  <script src="../scripts/wallet-connection.js"></script>
+  <script>
+    window.web3 = new Web3(window.ethereum);
+    loadWeb3();
 
-          const transactionEl = document.createElement('li');
+    let historyEl;
+    let caseInstance;
+    let casesInfo = [];
 
-          const transactionDate = new Date(Number(tx.timestamp) * 1000);
+    async function loadWeb3() {
+      const web3 = window.web3;
+      const accounts = await web3.eth.getAccounts();
+      console.log('Account: ', accounts[0]);
+      historyEl = document.getElementById('sold-case');
 
-          const day = transactionDate.getDate().toString().padStart(2, '0');
-          const month = (transactionDate.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
-          const year = transactionDate.getFullYear().toString().substr(-2); // get last two digits
-          const hours = transactionDate.getHours().toString().padStart(2, '0');
-          const minutes = transactionDate.getMinutes().toString().padStart(2, '0');
-          const seconds = transactionDate.getSeconds().toString().padStart(2, '0');
+      $.getJSON('../../../build/contracts/CaseSale.json', async function (data) {
+        const CaseArtifact = data;
+        caseInstance = new web3.eth.Contract(
+          CaseArtifact.abi,
+          CaseArtifact.networks['5777'].address
+        );
+        displayTransactions();
+      });
+    }
 
-          const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-  
-          transactionEl.classList.add('case-display', 'container');
-          // console.log(transactionEl);
-          console.log(tx);
-          
-          // Cấu trúc HTML của mỗi giao dịch
-          transactionEl.innerHTML = `
+    async function displayTransactions() {
+      const transactions = await caseInstance.methods.getTransactionHistory().call();
+
+      // Clear the current list to display the new list
+      historyEl.innerHTML = '';
+
+      transactions.forEach((tx, index) => {
+        const transactionEl = document.createElement('li');
+
+        const transactionDate = new Date(Number(tx.timestamp) * 1000);
+
+        const day = transactionDate.getDate().toString().padStart(2, '0');
+        const month = (transactionDate.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
+        const year = transactionDate.getFullYear().toString().substr(0); // get last two digits
+        const hours = transactionDate.getHours().toString().padStart(2, '0');
+        const minutes = transactionDate.getMinutes().toString().padStart(2, '0');
+
+        const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+        const amountInCC = Number(tx.amount) / 10000000000000000;
+
+        transactionEl.classList.add('case-display', 'container');
+
+        // HTML structure of each transaction
+        transactionEl.innerHTML = `
             <p>Transaction ${index + 1}</p>
-            <p>Case ID: ${tx.ticketId}</p>
+            <p>Case ID: ${tx.caseId}</p>
             <hr style="width: 80%; margin: auto;">
             <div style="padding: 10px;">
               <p>Time: ${formattedDate}</p>
               <p>To: ${tx.buyer}</p>
-              <p>Amount paid: ${tx.price} CC</p>
+              <p>Amount paid: ${amountInCC} CC</p>
             </div>
           `;
-          
-          ticketsEl.appendChild(transactionEl);
-        });
-      }
-      </script>
+
+        historyEl.appendChild(transactionEl);
+      });
+    }
+  </script>
 </html>
