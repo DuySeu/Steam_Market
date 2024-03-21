@@ -14,9 +14,9 @@
     <!-- Title of the page -->
     <title>Cr1pt0 Market, The Ultimate Online Market Platform</title>
 
-    <script src="web3.min.js"></script>
-    <script src="truffle-contract.js"></script>
-    <script src="jquery-2.1.4.js"></script>
+    <!-- <script src="web3.min.js"></script> -->
+    <!-- <script src="truffle-contract.js"></script>
+    <script src="jquery-2.1.4.js"></script> -->
   </head>
 
   <body>
@@ -116,77 +116,5 @@
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
   <script src="src/scripts/transition.js"></script>
   <script src="src/scripts/wallet-connection.js"></script>
-  <!-- <script src="src/scripts/trade.js"></script> -->
-  <script>
-    window.web3 = new Web3(window.ethereum);
-    loadWeb3();
-    const EMPTY_ADDRESS = '0x0000000000000000000000000000000000000000';
-    let casesEl;
-    let caseInstance;
-
-    async function loadCasesInfo() {
-      const response = await fetch('db.json');
-      const data = await response.json();
-      casesInfo = data.cases;
-    }
-
-    async function loadWeb3() {
-      const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
-      console.log('Account: ', accounts[0]);
-      casesEl = document.getElementById('case-data');
-
-      $.getJSON('../build/contracts/CaseSale.json', async function (data) {
-        const CaseArtifact = data;
-        caseInstance = new web3.eth.Contract(
-          CaseArtifact.abi,
-          CaseArtifact.networks['5777'].address
-        );
-        // console.log(caseInstance);
-        await refreshCases();
-      });
-    }
-
-    async function refreshCases() {
-      await loadCasesInfo();
-      casesEl.innerHTML = ''; // Clear current list to refresh
-
-      for (let i = 0; i < casesInfo.length; i++) {
-        const caseItem = await caseInstance.methods.cases(i).call();
-        // console.log(caseItem);
-
-        if (caseItem.owner === EMPTY_ADDRESS) {
-          const item = casesInfo[i];
-          const caseEl = document.createElement('li');
-          caseEl.className = 'case-display';
-          caseEl.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" style="width:100%">
-          <p style="color:white">${item.name}</p>
-          <hr style="width: 80%; margin: auto;">
-          <div>
-            <p style="color:white">Price: ${item.buy_price}</p>
-            <button class="buyCase" onclick="buyCase(${i}, '${item.buy_price}')">Buy Case</button>
-          </div>
-        `;
-          casesEl.appendChild(caseEl);
-        }
-      }
-    }
-
-    async function buyCase(caseId, buyPriceETH) {
-      const accounts = await web3.eth.getAccounts();
-      const account = accounts[0];
-      const etherValue = parseFloat(buyPriceETH) * 0.01;
-      const priceWei = web3.utils.toWei(etherValue.toString(), 'ether');
-      try {
-        await caseInstance.methods
-          .buyCase(caseId)
-          .send({ from: account, value: priceWei, gas: 500000 });
-        console.log(`Case ${caseId} has been successfully purchased.`);
-        await refreshCases();
-      } catch (error) {
-        console.error(`Error purchasing case: ${error.message}`);
-      }
-    }
-  </script>
+  <script src="src/scripts/trade.js"></script>
 </html>

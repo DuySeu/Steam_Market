@@ -1,86 +1,70 @@
-if (window.ethereum) {
-  window.web3 = new Web3(window.ethereum);
-  window.ethereum
-    .request({ method: 'eth_requestAccounts' })
-    .then(() => {
-      // Gọi loadWeb3 và các hàm khác sau khi web3 đã được khởi tạo và tài khoản đã được truy cập thành công
-      loadWeb3();
-    })
-    .catch((error) => {
-      console.error('User denied account access', error);
-    });
-} else {
-  console.log('Please install MetaMask!');
-}
-
-// Định nghĩa địa chỉ Ethereum rỗng
+window.web3 = new Web3(window.ethereum);
+loadWeb3();
 const EMPTY_ADDRESS = '0x0000000000000000000000000000000000000000';
-
-let ticketsEl;
-let friendinstance;
-let casesInfo = [];
+let casesEl;
+let caseInstance;
+let accounts;
 
 async function loadCasesInfo() {
-  const response = await fetch('db.json');
+  const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
   const data = await response.json();
   casesInfo = data.cases;
 }
 
 async function loadWeb3() {
   const web3 = window.web3;
-  const accounts = await web3.eth.getAccounts();
+  accounts = await web3.eth.getAccounts();
   console.log('Account: ', accounts[0]);
-  ticketsEl = document.getElementById('case-data');
+  casesEl = document.getElementById('case-data');
 
-  $.getJSON('../build/contracts/TicketSales.json', async function (data) {
-    const FriendArtifact = data;
-    friendinstance = new web3.eth.Contract(
-      FriendArtifact.abi,
-      FriendArtifact.networks['5777'].address
+  $.getJSON(' http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function (data) {
+    const CaseArtifact = data;
+    caseInstance = new web3.eth.Contract(
+      CaseArtifact.abi,
+      CaseArtifact.networks['5777'].address
     );
-    await refreshTickets(); // Cập nhật để sử dụng async
+    // console.log(caseInstance);
+    await refreshCases();
   });
 }
 
-async function refreshTickets() {
+async function refreshCases() {
   await loadCasesInfo();
-  ticketsEl.innerHTML = '';
-  for (let i = 0; i < casesInfo.length; i++) {
-    const ticket = await friendinstance.methods.tickets(i).call();
+  casesEl.innerHTML = ''; // Clear current list to refresh
 
-    // Kiểm tra nếu vé chưa được mua (owner là địa chỉ 0)
-    if (ticket.owner === EMPTY_ADDRESS) {
+  for (let i = 0; i < casesInfo.length; i++) {
+    const caseItem = await caseInstance.methods.cases(i).call();
+    // console.log(caseItem);
+
+    if (caseItem.owner === EMPTY_ADDRESS) {
       const item = casesInfo[i];
-      // Create a new element for the ticket
-      const ticketEl = document.createElement('li'); // Assuming you want each ticket to be an <li> element
-      ticketEl.className = 'case-display';
-      ticketEl.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" style="width:100%">
-          <p>${item.name}</p>
-          <hr style="width: 80%; margin: auto;">
-          <div>
-            <p>Price: ${item.buy_price}</p>
-            <button onclick="buyTicket(${i}, '${item.buy_price}')">Buy Case</button>
-          </div>
-          `;
-      ticketsEl.appendChild(ticketEl);
+      const caseEl = document.createElement('li');
+      caseEl.className = 'case-display';
+      caseEl.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" style="width:100%">
+      <p>${item.name}</p>
+      <hr style="width: 80%; margin: auto;">
+      <div>
+        <p>Price: ${item.buy_price}</p>
+        <button class="buyCase" onclick="buyCase(${i}, '${item.buy_price}')">Buy Case</button>
+      </div>
+    `;
+      casesEl.appendChild(caseEl);
     }
   }
 }
 
-async function buyTicket(ticketId, buyPriceCC) {
+async function buyCase(caseId, buyPriceETH) {
   const accounts = await web3.eth.getAccounts();
   const account = accounts[0];
-  // Giả sử 1 CC tương đương với 0.01 Ether, bạn cần xác định tỷ giá này
-  const etherValue = parseFloat(buyPriceCC) * 0.01; // Chuyển CC sang Ether dựa trên tỷ giá của bạn
-  const priceWei = web3.utils.toWei(etherValue.toString(), 'ether');
-
+  const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
   try {
-    await friendinstance.methods.buyTicket(ticketId).send({ from: account, value: priceWei });
-    console.log(`Ticket ${ticketId} has been successfully purchased.`);
-    await refreshTickets();
+    await caseInstance.methods
+      .buyCase(caseId)
+      .send({ from: account, value: priceWei, gas: 500000 });
+    console.log(`Case ${caseId} has been successfully purchased.`);
+    await refreshCases();
   } catch (error) {
-    console.error(`Error purchasing ticket: ${error.message}`);
+    console.error(`Error purchasing case: ${error.message}`);
   }
 }
-

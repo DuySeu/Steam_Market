@@ -8,15 +8,16 @@
     <!-- Stylesheets and favicon -->
     <link rel="stylesheet" href="../styles/interface-style.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/subpages.css" />
     <link rel="stylesheet" href="../styles/subpages-responsive.css" />
     <link rel="icon" href="../../public/logo_transparent.png" />
 
     <!-- Title of the page -->
     <title>Cr1pt0 Market, The Ultimate Online Market Platform</title>
 
-    <script src="../../web3.min.js"></script>
+    <!-- <script src="../../web3.min.js"></script>
     <script src="../../truffle-contract.js"></script>
-    <script src="../../jquery-2.1.4.js"></script>
+    <script src="../../jquery-2.1.4.js"></script> -->
   </head>
 
   <body>
@@ -56,7 +57,7 @@
             <a href="" id="connectWalletButton" class="main-nav-links">Connect Wallet</a>
           </li>
           <li>
-            <a id="walletAddressDisplay" class="main-nav-links" href="src/pages/profile.php"></a>
+            <a id="walletAddressDisplay" class="main-nav-links" href="profile.php"></a>
           </li>
         </ul>
       </nav>
@@ -77,18 +78,7 @@
           />
         </div>
 
-        <ul id="sold-case">
-          <li class="case-display container">
-            <img src="../assets/images/case/case1.png" alt="" style="width: 70%" />
-            <!-- <p>Case name</p>
-                <hr style="width: 80%; margin: auto;">
-                <div style="padding: 10px;">
-                    <p>From: 0x2d80CCCE4A1b6Cdfbfa534b75fFAF6eDb421c660</p>
-                    <p>To: 0x5AE576BAb1ed89C23eD848717dAD69a24f9Ab100</p>
-                    <p>Amount paid: 100 CC</p>
-                </div> -->
-          </li>
-        </ul>
+        <ul id="case-data"></ul>
       </div>
     </div>
 
@@ -140,7 +130,7 @@
       const web3 = window.web3;
       const accounts = await web3.eth.getAccounts();
       console.log('Account: ', accounts[0]);
-      historyEl = document.getElementById('sold-case');
+      historyEl = document.getElementById('case-data');
 
       $.getJSON('../../../build/contracts/CaseSale.json', async function (data) {
         const CaseArtifact = data;
@@ -160,9 +150,9 @@
 
       transactions.forEach((tx, index) => {
         const transactionEl = document.createElement('li');
+        transactionEl.classList.add('case-display', 'container');
 
         const transactionDate = new Date(Number(tx.timestamp) * 1000);
-
         const day = transactionDate.getDate().toString().padStart(2, '0');
         const month = (transactionDate.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
         const year = transactionDate.getFullYear().toString().substr(0); // get last two digits
@@ -170,9 +160,8 @@
         const minutes = transactionDate.getMinutes().toString().padStart(2, '0');
 
         const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
-        const amountInCC = Number(tx.amount) / 10000000000000000;
-
-        transactionEl.classList.add('case-display', 'container');
+        const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(38)}`;
+        const amountCC = parseFloat(web3.utils.fromWei(tx.amount, 'ether')) * 100;
 
         // HTML structure of each transaction
         transactionEl.innerHTML = `
@@ -181,8 +170,8 @@
             <hr style="width: 80%; margin: auto;">
             <div style="padding: 10px;">
               <p>Time: ${formattedDate}</p>
-              <p>To: ${tx.buyer}</p>
-              <p>Amount paid: ${amountInCC} CC</p>
+              <p>To: ${newOwner}</p>
+              <p>Amount paid: ${amountCC} CC</p>
             </div>
           `;
 

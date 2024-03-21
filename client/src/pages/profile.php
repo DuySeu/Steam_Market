@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Metadata for character set and responsive design -->
   <meta charset="UTF-8" />
@@ -54,11 +53,10 @@
         <img src="../../public/logo.png" alt="user logo" class="user-ava" />
         <div class="user-info">
           <div class="user-wallet">
-            <h3>Group 1.7</h3>
-            <p>Username:
-                <a href="" id="connectWalletButton">Connect Wallet</a>
-                <p id="walletAddressDisplay" style="text-decoration: none;"></p>
-            </p>
+            <h3>Username:
+            </h3>
+            <a href="" id="connectWalletButton">Connect Wallet</a>
+            <p id="walletAddressDisplay" style="text-decoration: none;"></p>
           </div>
           <div class="user-wallet">
             <h3>
@@ -92,18 +90,13 @@
           </button>
         </div>
         <div class="container">
+          <div id="my-active-listing" style="display: none">
+            hihii
+          </div>
           <div id="market-history">
-            <table style="width: 100%">
-              <tr id="my-history">
-                <th class="history-head">NAME</th>
-                <th class="history-head">ACTED ON</th>
-                <th class="history-head">WITH</th>
-                <th class="history-head">PRICE</th>
-              </tr>
-            </table>
+            <ul id="case-data"></ul>
           </div>
           <div id="sell-an-items" style="display: none">
-
             <div id="form-container">
               <form action="selloffer.php" method="post">
 
@@ -114,8 +107,8 @@
                 <input type="number" min="0" max="10000.0" step="0.1" require name="price" class="sell-input" />
 
                 <div class="submit-form">
-                  <button type="submit" class="sell-button">Create or update sell offer</a>
-
+                  <a type="submit" class="sell-button">Create or update sell offer</a>
+                </div>
               </form>
             </div>
           </div>
@@ -157,8 +150,66 @@
 
 </body>
 <!-- Support JavaScript file -->
-<script src="../scripts/market-history.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+<!-- <script src="../scripts/market-history.js"></script> -->
 <script src="../scripts/transition.js"></script>
 <script src="../scripts/wallet-connection.js"></script>
+<!-- <script src="../scripts/trade.js"></script> -->
+<script>
+  window.web3 = new Web3(window.ethereum);
+  loadWeb3();
+  let casesEl;
+  let caseInstance;
+  let accounts
+
+  async function loadCasesInfo() {
+    const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
+    const data = await response.json();
+    casesInfo = data.cases;
+  }
+
+  async function loadWeb3() {
+    const web3 = window.web3;
+    accounts = await web3.eth.getAccounts();
+    console.log('Account: ', accounts[0]);
+    casesEl = document.getElementById('case-data');
+
+    $.getJSON('../../../build/contracts/CaseSale.json', async function(data) {
+      const CaseArtifact = data;
+      caseInstance = new web3.eth.Contract(
+        CaseArtifact.abi,
+        CaseArtifact.networks['5777'].address
+      );
+      // console.log(caseInstance);
+      await refreshCases();
+    });
+  }
+
+  async function refreshCases() {
+    await loadCasesInfo();
+    casesEl.innerHTML = ''; // Clear current list to refresh
+
+    for (let i = 0; i < casesInfo.length; i++) {
+      const caseItem = await caseInstance.methods.cases(i).call();
+      // console.log(caseItem);
+
+      if (caseItem.owner === accounts[0]) {
+        const item = casesInfo[i];
+        const caseEl = document.createElement('li');
+        caseEl.className = 'case-display';
+        caseEl.innerHTML = `
+          <img src="../../${item.image}" alt="${item.name}" style="width:100%">
+          <p style="color:white">${item.name}</p>
+          <hr style="width: 80%; margin: auto;">
+          <div>
+            <p style="color:white">Buy Price: ${item.buy_price}</p>
+          </div>
+        `;
+        casesEl.appendChild(caseEl);
+      }
+    }
+  }
+</script>
 
 </html>

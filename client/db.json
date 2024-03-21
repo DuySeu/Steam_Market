@@ -4,10 +4,7 @@
       "id": 0,
       "name": "Dreams & Nightmares Case",
       "image": "src/assets/images/case/case1.png",
-      "quantity": 698,
-      "buy_price": "24.5",
-      "sale_price": "60.7",
-      "container_series": "#472"
+      "buy_price": "24.5"
     },
     {
       "id": 1,
