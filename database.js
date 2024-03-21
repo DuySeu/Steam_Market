@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const fs = require('fs')
+
  const connection = mysql.createConnection({ 
 	 host: 'localhost', 
 	 database: 'asignment', 
@@ -19,9 +20,13 @@ connection.connect(function (err) {
 connection.query('SELECT * FROM cases', function(error, results, fields) {
 	if(error)
 		throw error;
+		var data = {}
+		data.cases = []
 		results.forEach(result => {
-			fs.writeFileSync("test.json", JSON.stringify(result));
-			
-		});
+			data.cases.push(result)
+		})
+		
+		fs.writeFileSync('test.json', JSON.stringify(data))
+		
 });
 
