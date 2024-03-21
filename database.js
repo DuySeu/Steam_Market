@@ -26,7 +26,7 @@ connection.query('SELECT * FROM cases', function(error, results, fields) {
 			data.cases.push(result)
 		})
 		
-		fs.writeFileSync('test.json', JSON.stringify(data))
+		fs.writeFileSync('db.json', JSON.stringify(data))
 		
 });
 
