@@ -50,6 +50,57 @@
       "buy_price": "37.2",
       "sale_price": "55.7",
       "container_series": "#956"
+    },
+    {
+      "id": 6,
+      "name": "Dreams & Nightmare Case",
+      "image": "src/assets/images/case/case1.png",
+      "buy_price": "224.5"
+    },
+    {
+      "id": 7,
+      "name": "Fractur Case",
+      "image": "src/assets/images/case/case2.png",
+      "quantity": 684,
+      "buy_price": "624.1",
+      "sale_price": "59.4",
+      "container_series": "#540"
+    },
+    {
+      "id": 8,
+      "name": "Snakebit Case",
+      "image": "src/assets/images/case/case3.png",
+      "quantity": 866,
+      "buy_price": "521.6",
+      "sale_price": "45.8",
+      "container_series": "#558"
+    },
+    {
+      "id": 9,
+      "name": "Revolutin Case",
+      "image": "src/assets/images/case/case4.png",
+      "quantity": 631,
+      "buy_price": "621.1",
+      "sale_price": "61.9",
+      "container_series": "#921"
+    },
+    {
+      "id": 10,
+      "name": "Gamm Case",
+      "image": "src/assets/images/case/case5.png",
+      "quantity": 537,
+      "buy_price": "302.7",
+      "sale_price": "35.2",
+      "container_series": "#612"
+    },
+    {
+      "id": 11,
+      "name": "Recoi Case",
+      "image": "src/assets/images/case/case6.png",
+      "quantity": 793,
+      "buy_price": "372.2",
+      "sale_price": "55.7",
+      "container_series": "#956"
     }
   ]
 }

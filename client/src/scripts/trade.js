@@ -9,6 +9,7 @@ async function loadCasesInfo() {
   const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
   const data = await response.json();
   casesInfo = data.cases;
+  console.log(casesInfo);
 }
 
 async function loadWeb3() {
@@ -17,15 +18,16 @@ async function loadWeb3() {
   console.log('Account: ', accounts[0]);
   casesEl = document.getElementById('case-data');
 
-  $.getJSON(' http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function (data) {
-    const CaseArtifact = data;
-    caseInstance = new web3.eth.Contract(
-      CaseArtifact.abi,
-      CaseArtifact.networks['5777'].address
-    );
-    // console.log(caseInstance);
-    await refreshCases();
-  });
+  $.getJSON(
+    ' http://localhost:8080/Steam_Market/build/contracts/CaseSale.json',
+    async function (data) {
+      const CaseArtifact = data;
+      caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
+      // console.log(caseInstance);
+      await refreshCases();
+      // console.log(caseInstance);
+    }
+  );
 }
 
 async function refreshCases() {
@@ -46,7 +48,7 @@ async function refreshCases() {
       <hr style="width: 80%; margin: auto;">
       <div>
         <p>Price: ${item.buy_price}</p>
-        <button class="buyCase" onclick="buyCase(${i}, '${item.buy_price}')">Buy Case</button>
+        <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
       </div>
     `;
       casesEl.appendChild(caseEl);
@@ -54,9 +56,19 @@ async function refreshCases() {
   }
 }
 
+async function checkAndBuyCase(caseId, buyPriceETH) {
+  const accounts = await web3.eth.getAccounts();
+  if (accounts.length === 0) {
+    await window.ethereum.enable();
+  }
+  await buyCase(caseId, buyPriceETH);
+}
+
 async function buyCase(caseId, buyPriceETH) {
   const accounts = await web3.eth.getAccounts();
   const account = accounts[0];
+  // console.log('Account: ', account[0]);
+
   const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
   try {
     await caseInstance.methods

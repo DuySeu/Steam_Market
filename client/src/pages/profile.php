@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Metadata for character set and responsive design -->
   <meta charset="UTF-8" />
@@ -181,7 +182,7 @@
         CaseArtifact.abi,
         CaseArtifact.networks['5777'].address
       );
-      // console.log(caseInstance);
+      console.log(caseInstance);
       await refreshCases();
     });
   }
@@ -203,11 +204,31 @@
           <p style="color:white">${item.name}</p>
           <hr style="width: 80%; margin: auto;">
           <div>
-            <p style="color:white">Buy Price: ${item.buy_price}</p>
+            <p>Price: ${item.buy_price}</p>
+            <button class="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Sell Case</button>
           </div>
         `;
         casesEl.appendChild(caseEl);
       }
+    }
+  }
+  async function sellCase(caseId, buyPriceETH) {
+    const accounts = await web3.eth.getAccounts();
+    const account = accounts[0];
+    console.log('Account: ', account[0]);
+
+    // const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
+    try {
+      await caseInstance.methods
+        .sellCase(caseId)
+        .send({
+          from: account,
+          gas: 500000
+        });
+      console.log(`Case ${caseId} has been successfully sell.`);
+      await refreshCases();
+    } catch (error) {
+      console.error(`Error purchasing case: ${error.message}`);
     }
   }
 </script>

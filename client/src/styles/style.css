@@ -287,11 +287,12 @@ hr {
   font-size: large;
   text-align: center;
 }
-.buyCase {
+#buyCase {
   background-color: #688f3e;
   border: none;
   color: white;
   padding: 0.5em 2em;
   font-size: medium;
   border-radius: 1em;
+  cursor: pointer;
 }
