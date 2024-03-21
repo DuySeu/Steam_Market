@@ -175,7 +175,7 @@
     console.log('Account: ', accounts[0]);
     casesEl = document.getElementById('case-data');
 
-    $.getJSON('../../../build/contracts/CaseSale.json', async function(data) {
+    $.getJSON('http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function(data) {
       const CaseArtifact = data;
       caseInstance = new web3.eth.Contract(
         CaseArtifact.abi,
