@@ -161,18 +161,17 @@
 
         const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
         const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(38)}`;
-        const amountCC = parseFloat(web3.utils.fromWei(tx.amount, 'ether')) * 100;
+        const amountCC = (parseFloat(web3.utils.fromWei(tx.amount, 'ether')) * 10).toFixed(2);
 
         // HTML structure of each transaction
         transactionEl.innerHTML = `
             <p>Transaction ${index + 1}</p>
             <p>Case ID: ${tx.caseId}</p>
-            <p>Type: ${tx.transactionType}</p>
             <hr style="width: 80%; margin: auto;">
             <div style="padding: 10px;">
               <p>Time: ${formattedDate}</p>
               <p>To: ${newOwner}</p>
-              <p>Amount: ${amountCC} CC</p>
+              <p>Amount: ${amountCC}CC</p>
             </div>
           `;
 

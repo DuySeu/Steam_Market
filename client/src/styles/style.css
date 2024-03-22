@@ -287,7 +287,7 @@ hr {
   font-size: large;
   text-align: center;
 }
-#buyCase {
+#buyCase, #sellCase {
   background-color: #688f3e;
   border: none;
   color: white;
@@ -295,4 +295,16 @@ hr {
   font-size: medium;
   border-radius: 1em;
   cursor: pointer;
+}
+#market-history, #my-active-listing {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  font-weight: bolder;
+  gap: 2em;
+  padding: 0;
+}
+#buyCase:hover, #sellCase:hover {
+  background-color: white;
+  color: #688f3e;
 }

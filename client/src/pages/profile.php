@@ -32,7 +32,7 @@
       <a href="about.html">ABOUT</a>
       <a href="support.html">SUPPORT</a>
       <a href="exchange.html">EXCHANGE</a>
-      <a href="profile.html">PROFILE</a>
+      <a href="profile.php">PROFILE</a>
     </div>
 
     <!-- Main Navigation Bar -->
@@ -67,11 +67,6 @@
           </div>
           <div class="user-wallet">
             <h3>
-              <a href="inventory.php" class="profile-link">View Inventory</a>
-            </h3>
-            <a href="#" class="profile-link">Edit profile</a>
-            </h3>
-            <h3>
               <a href="logout.php" class="profile-link">Log out</a>
             </h3>
           </div>
@@ -84,19 +79,17 @@
             <span>My Selling Listings</span>
           </button>
           <button onclick="displayText2()" href="" class="market-button">
-            <span>My Market History</span>
+            <span>View Inventory</span>
           </button>
           <button onclick="displayText3()" href="" class="market-button">
             <span>Sell An Items</span>
           </button>
         </div>
         <div class="container">
-          <div id="my-active-listing" style="display: none">
-            hihii
-          </div>
-          <div id="market-history">
-            <ul id="case-data"></ul>
-          </div>
+          <ul id="my-active-listing" style="display: none">
+          </ul>
+          <ul id="market-history">
+          </ul>
           <div id="sell-an-items" style="display: none">
             <div id="form-container">
               <form action="selloffer.php" method="post">
@@ -160,9 +153,10 @@
 <script>
   window.web3 = new Web3(window.ethereum);
   loadWeb3();
-  let casesEl;
   let caseInstance;
   let accounts
+  let casesOwned = document.getElementById('market-history');
+  let casesSell = document.getElementById('my-active-listing');
 
   async function loadCasesInfo() {
     const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
@@ -174,7 +168,6 @@
     const web3 = window.web3;
     accounts = await web3.eth.getAccounts();
     console.log('Account: ', accounts[0]);
-    casesEl = document.getElementById('case-data');
 
     $.getJSON('http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function(data) {
       const CaseArtifact = data;
@@ -182,33 +175,44 @@
         CaseArtifact.abi,
         CaseArtifact.networks['5777'].address
       );
-      console.log(caseInstance);
+      // console.log(caseInstance);
       await refreshCases();
     });
   }
 
   async function refreshCases() {
     await loadCasesInfo();
-    casesEl.innerHTML = ''; // Clear current list to refresh
+    casesOwned.innerHTML = ''; // Clear current list to refresh
+    casesSell.innerHTML = ''; // Clear current list to refresh
 
     for (let i = 0; i < casesInfo.length; i++) {
       const caseItem = await caseInstance.methods.cases(i).call();
       // console.log(caseItem);
 
-      if (caseItem.owner === accounts[0]) {
-        const item = casesInfo[i];
-        const caseEl = document.createElement('li');
-        caseEl.className = 'case-display';
+      const item = casesInfo[i];
+      const caseEl = document.createElement('li');
+      caseEl.className = 'case-display', 'container';
+      if (caseItem.owner === accounts[0] && caseItem.isForSale === false) {
         caseEl.innerHTML = `
           <img src="../../${item.image}" alt="${item.name}" style="width:100%">
           <p style="color:white">${item.name}</p>
           <hr style="width: 80%; margin: auto;">
           <div>
             <p>Price: ${item.buy_price}</p>
-            <button class="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Sell Case</button>
+            <button id="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Offer</button>
           </div>
         `;
-        casesEl.appendChild(caseEl);
+        casesOwned.appendChild(caseEl);
+      } else if (caseItem.owner === accounts[0] && caseItem.isForSale === true) {
+        caseEl.innerHTML = `
+          <img src="../../${item.image}" alt="${item.name}" style="width:100%">
+          <p style="color:white">${item.name}</p>
+          <hr style="width: 80%; margin: auto;">
+          <div>
+            <p>Price: ${item.buy_price}</p>
+          </div>
+        `;
+        casesSell.appendChild(caseEl);
       }
     }
   }
@@ -220,7 +224,7 @@
     // const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
     try {
       await caseInstance.methods
-        .sellCase(caseId)
+        .offerCase(caseId)
         .send({
           from: account,
           gas: 500000
