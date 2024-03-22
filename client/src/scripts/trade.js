@@ -6,10 +6,10 @@ let caseInstance;
 let accounts;
 
 async function loadCasesInfo() {
-  const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
+  const response = await fetch('http://localhost:8080/Steam_Market/client');
   const data = await response.json();
   casesInfo = data.cases;
-  console.log(casesInfo);
+  // console.log(casesInfo);
 }
 
 async function loadWeb3() {
@@ -23,7 +23,7 @@ async function loadWeb3() {
     async function (data) {
       const CaseArtifact = data;
       caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
-      // console.log(caseInstance);
+      console.log(caseInstance);
       await refreshCases();
       // console.log(caseInstance);
     }
@@ -36,7 +36,7 @@ async function refreshCases() {
 
   for (let i = 0; i < casesInfo.length; i++) {
     const caseItem = await caseInstance.methods.cases(i).call();
-    // console.log(caseItem);
+    console.log(caseItem);
 
     if (caseItem.owner === EMPTY_ADDRESS) {
       const item = casesInfo[i];
@@ -47,7 +47,7 @@ async function refreshCases() {
       <p>${item.name}</p>
       <hr style="width: 80%; margin: auto;">
       <div>
-        <p>Price: ${item.buy_price}</p>
+        <p>Price: ${item.buy_price}CC</p>
         <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
       </div>
     `;

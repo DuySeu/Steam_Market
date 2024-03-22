@@ -296,3 +296,11 @@ hr {
   border-radius: 1em;
   cursor: pointer;
 }
+#market-history, #my-active-listing {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  font-weight: bolder;
+  gap: 2em;
+  padding: 0;
+}
