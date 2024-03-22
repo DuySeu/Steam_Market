@@ -296,3 +296,8 @@ hr {
   border-radius: 1em;
   cursor: pointer;
 }
+
+#buyCase:hover, #sellCase:hover {
+  background-color: white;
+  color: #688f3e;
+}
