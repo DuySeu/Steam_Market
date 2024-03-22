@@ -161,6 +161,36 @@
         </nav>
       </div>
     </div>
+    <script>
+      // JavaScript to toggle active class for question and answer
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      // Corrected the ID to match the HTML
+      const searchInput = document.getElementById('search-input');
+    
+      faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+              question.classList.toggle('active');
+              const answer = question.nextElementSibling;
+              answer.classList.toggle('active');
+          });
+      });
+    
+      // JavaScript for search functionality
+      searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+    
+          faqQuestions.forEach(question => {
+              const questionText = question.textContent.toLowerCase();
+              const faqItem = question.closest('.faq-item');
+    
+              if (questionText.includes(searchTerm)) {
+              faqItem.style.display = 'block';
+              } else {
+              faqItem.style.display = 'none';
+              }
+          });
+      });
+    </script>
   </body>
   <!-- External JavaScript file for Side Navigation Bar functionality -->
   <script src="../scripts/transition.js"></script>
