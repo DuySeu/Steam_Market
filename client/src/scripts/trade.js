@@ -6,7 +6,7 @@ let caseInstance;
 let accounts;
 
 async function loadCasesInfo() {
-  const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
+  const response = await fetch('db.json');
   const data = await response.json();
   casesInfo = data.cases;
   console.log(casesInfo);
@@ -19,7 +19,7 @@ async function loadWeb3() {
   casesEl = document.getElementById('case-data');
 
   $.getJSON(
-    ' http://localhost:8080/Steam_Market/build/contracts/CaseSale.json',
+    ' http://localhost/Steam_Market/build/contracts/CaseSale.json',
     async function (data) {
       const CaseArtifact = data;
       caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
