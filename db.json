@@ -5,7 +5,7 @@
         "name": "Dreams & Nightmares Case",
         "image": "src/assets/images/case/case1.png",
         
-        "buy_price": "24.5CC",
+        "buy_price": "24.5CC"
 
       },
       {
@@ -13,7 +13,7 @@
         "name": "Fracture Case",
         "image": "src/assets/images/case/case2.png",
         
-        "buy_price": "64.1CC",
+        "buy_price": "64.1CC"
         
       },
       {
@@ -21,7 +21,7 @@
         "name": "Snakebite Case",
         "image": "src/assets/images/case/case3.png",
         
-        "buy_price": "51.6CC",
+        "buy_price": "51.6CC"
        
         
       },
