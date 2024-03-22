@@ -1,3 +1,36 @@
+<?php
+require('db.php');
+        $_SESSION['resgister']="";
+        $err ="";
+        $username =$_POST['uname'];
+        $query = "SELECT * FROM asignment.login WHERE username='$username'";
+        $result = mysqli_query($con, $query);
+        $rows = mysqli_num_rows($result);
+        if($rows == 0){
+        $username = mysqli_real_escape_string($con, $username);
+        $email    = $_POST['email'];
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = $_POST['psw'];
+        $password = mysqli_real_escape_string($con, $password);
+        $query    = "INSERT into `login` (username, password, email, credit)
+                     VALUES ('$username', '$password', '$email', 0)";
+        $result   = mysqli_query($con, $query);
+
+        if ($result ) {
+            $err = "
+            <h4 style='color:green'>You are registered successfully. Please return to Login Page</h4>";
+        } else {
+            $err = "
+                  <h4 style='color:red'>Required fields are missing.</h4>";
+        }
+        mysqli_close($con);
+    }
+    else{
+        $err = "<h4 style='color:red'>Please select another username.</h4>";
+    }
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,13 +105,15 @@
           <input type="checkbox" name="remember" id="remember-box" class="pwd-and-remember-label" required />I am 18 years of age or older and agree to the terms of the Subscriber Agreement and the Privacy Policy.
         </label>
 
+        <?php echo $err; ?>
+
         <!-- Button to submit registration -->
         <div id="btn-container">
           <input type="submit" value="Register" id="submit-btn" />
         </div>
 
         <!-- Link to login if already registered -->
-        <p id="register-or-login-link"><a href="login.html">Already have an account? Log in here!</a></p>
+        <p id="register-or-login-link"><a href="login.php">Already have an account? Log in here!</a></p>
       </div>
     </form>
   </section>
