@@ -7,7 +7,7 @@
 }
 
 .market-tab-container {
-  margin: 0 20%;
+  margin: 0 15%;
 }
 
 .market-tab {
@@ -103,10 +103,10 @@
 .profile-header {
   display: flex;
   color: white;
-  justify-content: space-between;
+  justify-content: start;
 }
 .user-ava {
-  width: 15%;
+  width: 7em;
 }
 .user-info {
   display: flex;
@@ -307,4 +307,9 @@ hr {
 #buyCase:hover, #sellCase:hover {
   background-color: white;
   color: #688f3e;
+}
+
+#connectWalletButton {
+  color: white;
+  text-decoration: none;
 }

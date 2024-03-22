@@ -332,6 +332,7 @@ font-size: small;
   }
   .profile-header{
     padding: 0;
+    justify-content: start;
   }
 /* Case-detail*/
 
