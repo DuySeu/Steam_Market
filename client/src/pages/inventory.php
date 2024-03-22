@@ -18,17 +18,20 @@
     $username = $_SESSION['username'];
     $sql = "SELECT `id`, `name`FROM `case` WHERE owner='$username'";
     $queryResult = mysqli_query($con, $sql);
-    echo "<table width='100%'>";
-    echo "<tr><th>Case id</th><th>Type</th></tr>";
-    $row = mysqli_fetch_row($queryResult);
-    while ($row) {
-        echo "<tr><td>{$row[0]}</td>";
-        echo "<td>{$row[1]}</td>";
-
-
+    if (mysqli_num_rows($queryResult) > 0) {
+        echo "<table width='100%'>";
+        echo "<tr><th>Case id</th><th>Type</th></tr>";
         $row = mysqli_fetch_row($queryResult);
+        while ($row) {
+            echo "<tr><td>{$row[0]}</td>";
+            echo "<td>{$row[1]}</td></tr>";
+
+            $row = mysqli_fetch_row($queryResult);
+        }
+        echo "</table>";
+    } else {
+        echo "<p>You have no cases.</p>";
     }
-    echo "</table>";
     mysqli_free_result($queryResult);
     mysqli_close($con);
 

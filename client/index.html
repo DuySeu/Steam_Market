@@ -126,12 +126,15 @@
     let casesEl;
     let caseInstance;
     let accounts;
+    let casesInfo = []; // Initialize casesInfo to hold the cases data
+    let currentSearchTerm = ''; // Initialize currentSearchTerm
 
     async function loadCasesInfo() {
       const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
       const data = await response.json();
-      casesInfo = data.cases;
       // console.log(casesInfo);
+      casesInfo = data.cases; // Store fetched cases in casesInfo
+      refreshCases(false); // Initial call to display cases
     }
 
     async function loadWeb3() {
@@ -149,15 +152,26 @@
             CaseArtifact.networks['5777'].address
           );
           // console.log(caseInstance);
-          await refreshCases();
+          // await refreshCases();
           // console.log(caseInstance);
+          await loadCasesInfo(); // Move loadCases
         }
       );
     }
 
-    async function refreshCases() {
-      await loadCasesInfo();
+    async function refreshCases(loadFromServer = true) {
+      if (loadFromServer) {
+        await loadCasesInfo();
+      }
+      
       casesEl.innerHTML = ''; // Clear current list to refresh
+
+      const filteredCases = casesInfo.filter(caseItem => caseItem.name.toLowerCase().includes(currentSearchTerm.toLowerCase()));
+
+      if (filteredCases.length === 0) {
+          casesEl.innerHTML = '<p>No matching cases found.</p>';
+          return;
+        }
 
       for (let i = 0; i < casesInfo.length; i++) {
         const caseItem = await caseInstance.methods.cases(i).call();
@@ -182,6 +196,14 @@
         }
       }
     }
+
+    function searchFunction() {
+    const searchTerm = document.getElementById('case-search').value;
+    currentSearchTerm = searchTerm.toLowerCase(); // Update the current search term
+    refreshCases(false); // Refresh the cases list based on the new search term
+    }
+
+    document.getElementById('case-search').addEventListener('keyup', searchFunction);
 
     async function checkAndBuyCase(caseId, buyPriceETH) {
       const accounts = await web3.eth.getAccounts();
