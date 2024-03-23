@@ -35,8 +35,7 @@
         <a href="src/pages/about.html">ABOUT</a>
         <a href="src/pages/support.html">SUPPORT</a>
         <a href="src/pages/exchange.html">EXCHANGE</a>
-        <a href="" id="connectWalletButton" class="main-nav-links">Connect Wallet</a>
-        <a id="walletAddressDisplay" class="main-nav-links" href="src/pages/profile.php"></a>
+
         <!-- <a id="walletAddressDisplay" href="src/pages/profile.php"></a> -->
       </div>
 
@@ -68,7 +67,7 @@
       <div class="products">
         <div class="case-nav">
           <a href="#">Popular Items</a>
-          <a href="#">Newly Listed</a>
+          <a href="src/pages/#">Newly Listed</a>
           <a href="src/pages/recentlysold.html">Recently sold</a>
           <input
             type="text"
@@ -116,97 +115,83 @@
   <!-- Support JavaScript file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
-  <script src="src/scripts/transition.js"></script>
-  <script src="src/scripts/wallet-connection.js"></script>
   <script src="/database.js"></script>
   <script>
-    window.web3 = new Web3(window.ethereum);
-    loadWeb3();
-    // const EMPTY_ADDRESS = "0x0000000000000000000000000000000000000000";
-    let casesEl;
-    let caseInstance;
-    let accounts;
-    let casesInfo = []; // Initialize casesInfo to hold the cases data
+window.web3 = new Web3(window.ethereum);
+loadWeb3();
+let casesEl;
+let caseInstance;
+let accounts;
 
-    async function loadCasesInfo() {
-      const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
-      const data = await response.json();
-      // console.log(casesInfo);
-      casesInfo = data.cases; // Store fetched cases in casesInfo
-      refreshCases(); // Initial call to display cases
-    }
+async function loadCasesInfo() {
+    const response = await fetch('db.json');
+    const data = await response.json();
+    casesInfo = data.cases;
+}
 
-    async function loadWeb3() {
-      const web3 = window.web3;
-      accounts = await web3.eth.getAccounts();
-      console.log('Account: ', accounts[0]);
-      casesEl = document.getElementById('case-data');
+async function loadWeb3() {
+    const web3 = window.web3;
+    accounts = await web3.eth.getAccounts();
+    casesEl = document.getElementById('case-data');
 
-      $.getJSON(
-        'http://localhost:8080/Steam_Market/build/contracts/CaseSale.json',
-        async function (data) {
-          const CaseArtifact = data;
-          caseInstance = new web3.eth.Contract(
-            CaseArtifact.abi,
-            CaseArtifact.networks['5777'].address
-          );
-          // console.log(caseInstance);
-          await refreshCases();
-          // console.log(caseInstance);
+    $.getJSON('http://localhost/Steam_Market/build/contracts/CaseSale.json', async function(data) {
+        const CaseArtifact = data;
+        caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
+        await refreshCases();
+    });
+}
+
+async function refreshCases() {
+    await loadCasesInfo();
+    casesEl.innerHTML = ''; // Clear current list to refresh
+
+    for (let i = 0; i < casesInfo.length; i++) {
+        let caseItem = await caseInstance.methods.cases(i).call();
+
+        let item = casesInfo[i];
+        let caseEl = document.createElement('li');
+        caseEl.className = 'case-display';
+        caseEl.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width:100%">
+            <p>${item.name}</p>
+            <hr style="width: 80%; margin: auto;">
+            <div>
+                ${caseItem.isForSale ? `<p>For Sale</p>` : `<p>Not for Sale</p>`}
+            </div>
+        `;
+
+        if (caseItem.owner.toUpperCase() === accounts[0].toUpperCase()) {
+            caseEl.innerHTML += `<button id="sellCase" onclick="offerCase(${i})">Offer Case</button>`;
+        } else if (caseItem.isForSale) {
+            caseEl.innerHTML += `<button id="buyCase" onclick="buyCase(${i}, '${item.buy_price}')">Buy Case</button>`;
         }
-      );
+
+        casesEl.appendChild(caseEl);
     }
+}
 
-    async function refreshCases() {
-      await loadCasesInfo();
-      
-      casesEl.innerHTML = ''; // Clear current list to refresh
-
-      for (let i = 0; i < casesInfo.length; i++) {
-        const caseItem = await caseInstance.methods.cases(i).call();
-        console.log(caseItem.isForSale);
-        if (caseItem.isForSale === true) {
-          const seller = `${caseItem.owner.substring(0, 6)}...${caseItem.owner.substring(38)}`;
-          const item = casesInfo[i];
-          // console.log(item);
-          const caseEl = document.createElement('li');
-          caseEl.className = 'case-display';
-          caseEl.innerHTML = `
-                                <img src="${item.image}" alt="${item.name}" style="width:100%">
-                                <p>${item.name}</p>
-                                <hr style="width: 80%; margin: auto;">
-                                <div>
-                                  <p>Price: ${seller}</p>
-                                  <p>Price: ${item.buy_price}CC</p>
-                                  <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
-                                </div>
-                              `;
-          casesEl.appendChild(caseEl);
-        }
-      }
+async function offerCase(caseId) {
+    try {
+        await caseInstance.methods.offerCase(caseId).send({ from: accounts[0], gas: 500000 });
+        console.log(`Case ${caseId} offered for sale.`);
+        await refreshCases();
+    } catch (error) {
+        console.error(`Error offering case for sale: ${error.message}`);
     }
+}
 
-    async function checkAndBuyCase(caseId, buyPriceETH) {
-      const accounts = await web3.eth.getAccounts();
-      if (accounts.length === 0) {
-        await window.ethereum.enable();
-      }
-      await buyCase(caseId, buyPriceETH);
-    }
-
-    async function buyCase(caseId, buyPriceETH) {
-      const accounts = await web3.eth.getAccounts();
-      const account = accounts[0];
-      const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.1).toString(), 'ether');
-      try {
-        await caseInstance.methods
-          .buyCase(caseId)
-          .send({ from: account, value: priceWei, gas: 500000 });
+async function buyCase(caseId, buyPriceETH) {
+    const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
+    try {
+        await caseInstance.methods.buyCase(caseId).send({ from: accounts[0], value: priceWei, gas: 500000 });
         console.log(`Case ${caseId} has been successfully purchased.`);
         await refreshCases();
-      } catch (error) {
+    } catch (error) {
         console.error(`Error purchasing case: ${error.message}`);
-      }
     }
+}
+
   </script>
+    <script src="src/scripts/transition.js"></script>
+    <script src="src/scripts/wallet-connection.js"></script>
 </html>

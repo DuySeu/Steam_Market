@@ -121,62 +121,91 @@
   <script>
     window.web3 = new Web3(window.ethereum);
     loadWeb3();
-
-    let historyEl;
+    // const EMPTY_ADDRESS = "0x0000000000000000000000000000000000000000";
+    let casesEl;
     let caseInstance;
-    let casesInfo = [];
+    let accounts;
+    let casesInfo = []; // Initialize casesInfo to hold the cases data
+
+    async function loadCasesInfo() {
+      const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
+      const data = await response.json();
+      // console.log(casesInfo);
+      casesInfo = data.cases; // Store fetched cases in casesInfo
+      refreshCases(); // Initial call to display cases
+    }
 
     async function loadWeb3() {
       const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
+      accounts = await web3.eth.getAccounts();
       console.log('Account: ', accounts[0]);
-      historyEl = document.getElementById('case-data');
+      casesEl = document.getElementById('case-data');
 
-      $.getJSON('../../../build/contracts/CaseSale.json', async function (data) {
-        const CaseArtifact = data;
-        caseInstance = new web3.eth.Contract(
-          CaseArtifact.abi,
-          CaseArtifact.networks['5777'].address
-        );
-        displayTransactions();
-      });
+      $.getJSON(
+        'http://localhost:8080/Steam_Market/build/contracts/CaseSale.json',
+        async function (data) {
+          const CaseArtifact = data;
+          caseInstance = new web3.eth.Contract(
+            CaseArtifact.abi,
+            CaseArtifact.networks['5777'].address
+          );
+          // console.log(caseInstance);
+          await refreshCases();
+          // console.log(caseInstance);
+        }
+      );
     }
 
-    async function displayTransactions() {
-      const transactions = await caseInstance.methods.getTransactionHistory().call();
+    async function refreshCases() {
+      await loadCasesInfo();
+      
+      casesEl.innerHTML = ''; // Clear current list to refresh
 
-      // Clear the current list to display the new list
-      historyEl.innerHTML = '';
+      for (let i = 0; i < casesInfo.length; i++) {
+        const caseItem = await caseInstance.methods.cases(i).call();
+        console.log(caseItem.isForSale);
+        if (caseItem.isForSale === true) {
+          const seller = `${caseItem.owner.substring(0, 6)}...${caseItem.owner.substring(38)}`;
+          const item = casesInfo[i];
+          // console.log(item);
+          const caseEl = document.createElement('li');
+          caseEl.className = 'case-display';
+          caseEl.innerHTML = `
+                                <img src="${item.image}" alt="${item.name}" style="width:100%">
+                                <p>${item.name}</p>
+                                <hr style="width: 80%; margin: auto;">
+                                <div>
+                                  <p>Price: ${seller}</p>
+                                  <p>Price: ${item.buy_price}CC</p>
+                                  <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
+                                </div>
+                              `;
+          casesEl.appendChild(caseEl);
+        }
+      }
+    }
 
-      transactions.forEach((tx, index) => {
-        const transactionEl = document.createElement('li');
-        transactionEl.classList.add('case-display', 'container');
+    async function checkAndBuyCase(caseId, buyPriceETH) {
+      const accounts = await web3.eth.getAccounts();
+      if (accounts.length === 0) {
+        await window.ethereum.enable();
+      }
+      await buyCase(caseId, buyPriceETH);
+    }
 
-        const transactionDate = new Date(Number(tx.timestamp) * 1000);
-        const day = transactionDate.getDate().toString().padStart(2, '0');
-        const month = (transactionDate.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
-        const year = transactionDate.getFullYear().toString().substr(0); // get last two digits
-        const hours = transactionDate.getHours().toString().padStart(2, '0');
-        const minutes = transactionDate.getMinutes().toString().padStart(2, '0');
-
-        const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
-        const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(38)}`;
-        const amountCC = (parseFloat(web3.utils.fromWei(tx.amount, 'ether')) * 10).toFixed(2);
-
-        // HTML structure of each transaction
-        transactionEl.innerHTML = `
-            <p>Transaction ${index + 1}</p>
-            <p>Case ID: ${tx.caseId}</p>
-            <hr style="width: 80%; margin: auto;">
-            <div style="padding: 10px;">
-              <p>Time: ${formattedDate}</p>
-              <p>To: ${newOwner}</p>
-              <p>Amount: ${amountCC}CC</p>
-            </div>
-          `;
-
-        historyEl.appendChild(transactionEl);
-      });
+    async function buyCase(caseId, buyPriceETH) {
+      const accounts = await web3.eth.getAccounts();
+      const account = accounts[0];
+      const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.1).toString(), 'ether');
+      try {
+        await caseInstance.methods
+          .buyCase(caseId)
+          .send({ from: account, value: priceWei, gas: 500000 });
+        console.log(`Case ${caseId} has been successfully purchased.`);
+        await refreshCases();
+      } catch (error) {
+        console.error(`Error purchasing case: ${error.message}`);
+      }
     }
   </script>
 </html>
