@@ -4,7 +4,6 @@ pragma solidity ^0.8.0;
 contract CaseSale {
     struct Case {
         address owner;
-        // uint256 price;
         bool isForSale;
     }
 
@@ -12,7 +11,7 @@ contract CaseSale {
         address buyer;
         uint256 caseId;
         uint256 timestamp;
-        uint256 amount; // buy or offer price
+        uint256 amount;
     }
     Transaction[] public transactions;
 
@@ -33,11 +32,11 @@ contract CaseSale {
         require(caseId < cases.length, "Invalid Case ID");
         require(cases[caseId].isForSale, "Case not for sale");
 
-        address previousOwner = cases[caseId].owner; // Lưu lại chủ sở hữu trước đó
-        cases[caseId].owner = msg.sender; // Cập nhật chủ sở hữu mới
+        address previousOwner = cases[caseId].owner;
+        cases[caseId].owner = msg.sender;
         cases[caseId].isForSale = false;
 
-        payable(previousOwner).transfer(msg.value); // Chuyển tiền cho chủ sở hữu trước đó
+        payable(previousOwner).transfer(msg.value); 
         transactions.push(
             Transaction(msg.sender, caseId, block.timestamp, msg.value)
         );

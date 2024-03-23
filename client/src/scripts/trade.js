@@ -1,6 +1,5 @@
 window.web3 = new Web3(window.ethereum);
 loadWeb3();
-const EMPTY_ADDRESS = '0x0000000000000000000000000000000000000000';
 let casesEl;
 let caseInstance;
 let accounts;
@@ -18,39 +17,39 @@ async function loadWeb3() {
   console.log('Account: ', accounts[0]);
   casesEl = document.getElementById('case-data');
 
-  $.getJSON(
-    ' http://localhost/Steam_Market/build/contracts/CaseSale.json',
-    async function (data) {
-      const CaseArtifact = data;
-      caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
-      console.log(caseInstance);
-      await refreshCases();
-      // console.log(caseInstance);
-    }
-  );
+  $.getJSON('http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function (data) {
+    const CaseArtifact = data;
+    caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
+    console.log(caseInstance);
+    await refreshCases();
+    // console.log(caseInstance);
+  });
 }
 
 async function refreshCases() {
   await loadCasesInfo();
+
   casesEl.innerHTML = ''; // Clear current list to refresh
 
   for (let i = 0; i < casesInfo.length; i++) {
     const caseItem = await caseInstance.methods.cases(i).call();
-    console.log(caseItem);
-
-    if (caseItem.owner === EMPTY_ADDRESS) {
+    console.log(caseItem.isForSale);
+    if (caseItem.isForSale === true) {
+      const seller = `${caseItem.owner.substring(0, 6)}...${caseItem.owner.substring(38)}`;
       const item = casesInfo[i];
+      // console.log(item);
       const caseEl = document.createElement('li');
       caseEl.className = 'case-display';
       caseEl.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" style="width:100%">
-      <p>${item.name}</p>
-      <hr style="width: 80%; margin: auto;">
-      <div>
-        <p>Price: ${item.buy_price}CC</p>
-        <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
-      </div>
-    `;
+                            <img src="${item.image}" alt="${item.name}" style="width:100%">
+                            <p>${item.name}</p>
+                            <hr style="width: 80%; margin: auto;">
+                            <div>
+                              <p>Price: ${seller}</p>
+                              <p>Price: ${item.buy_price}CC</p>
+                              <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
+                            </div>
+                          `;
       casesEl.appendChild(caseEl);
     }
   }
@@ -69,7 +68,7 @@ async function buyCase(caseId, buyPriceETH) {
   const account = accounts[0];
   // console.log('Account: ', account[0]);
 
-  const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.01).toString(), 'ether');
+  const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.1).toString(), 'ether');
   try {
     await caseInstance.methods
       .buyCase(caseId)
