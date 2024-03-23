@@ -159,9 +159,8 @@
   let casesSell = document.getElementById('my-active-listing');
 
   async function loadCasesInfo() {
-    const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
-    const data = await response.json();
-    casesInfo = data.cases;
+    const response = await fetch('http://localhost:8080/Steam_Market/client/src/api/case-api.php');
+    casesInfo = await response.json();
   }
 
   async function loadWeb3() {
