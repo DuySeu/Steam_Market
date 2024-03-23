@@ -161,51 +161,8 @@
       
       casesEl.innerHTML = ''; // Clear current list to refresh
 
-      for (let i = 0; i < casesInfo.length; i++) {
-        const caseItem = await caseInstance.methods.cases(i).call();
-        console.log(caseItem.isForSale);
-        if (caseItem.isForSale === true) {
-          const seller = `${caseItem.owner.substring(0, 6)}...${caseItem.owner.substring(38)}`;
-          const item = casesInfo[i];
-          // console.log(item);
-          const caseEl = document.createElement('li');
-          caseEl.className = 'case-display';
-          caseEl.innerHTML = `
-                                <img src="${item.image}" alt="${item.name}" style="width:100%">
-                                <p>${item.name}</p>
-                                <hr style="width: 80%; margin: auto;">
-                                <div>
-                                  <p>Price: ${seller}</p>
-                                  <p>Price: ${item.buy_price}CC</p>
-                                  <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
-                                </div>
-                              `;
-          casesEl.appendChild(caseEl);
-        }
-      }
-    }
-
-    async function checkAndBuyCase(caseId, buyPriceETH) {
-      const accounts = await web3.eth.getAccounts();
-      if (accounts.length === 0) {
-        await window.ethereum.enable();
-      }
-      await buyCase(caseId, buyPriceETH);
-    }
-
-    async function buyCase(caseId, buyPriceETH) {
-      const accounts = await web3.eth.getAccounts();
-      const account = accounts[0];
-      const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.1).toString(), 'ether');
-      try {
-        await caseInstance.methods
-          .buyCase(caseId)
-          .send({ from: account, value: priceWei, gas: 500000 });
-        console.log(`Case ${caseId} has been successfully purchased.`);
-        await refreshCases();
-      } catch (error) {
-        console.error(`Error purchasing case: ${error.message}`);
-      }
+      const caseItem = await caseInstance.methods.getTransactionHistory().call();
+      console.log(caseItem);
     }
   </script>
 </html>
