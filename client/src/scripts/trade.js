@@ -5,7 +5,7 @@ let caseInstance;
 let accounts;
 
 async function loadCasesInfo() {
-  const response = await fetch('http://localhost:8080/Steam_Market/client/src/api/case-api.php');
+  const response = await fetch('http://localhost/Steam_Market/client/src/api/case-api.php');
   casesInfo = await response.json();
   // console.log(casesInfo);
 }
@@ -16,7 +16,7 @@ async function loadWeb3() {
   console.log('Account: ', accounts[0]);
   casesEl = document.getElementById('case-data');
 
-  $.getJSON('http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function (data) {
+  $.getJSON('http://localhost/Steam_Market/build/contracts/CaseSale.json', async function (data) {
     const CaseArtifact = data;
     caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
     console.log(caseInstance);

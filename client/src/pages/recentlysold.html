@@ -120,49 +120,62 @@
   <script src="../scripts/wallet-connection.js"></script>
   <script>
     window.web3 = new Web3(window.ethereum);
-    loadWeb3();
-    // const EMPTY_ADDRESS = "0x0000000000000000000000000000000000000000";
-    let casesEl;
+    let historyEl;
     let caseInstance;
-    let accounts;
-    let casesInfo = []; // Initialize casesInfo to hold the cases data
-
-    async function loadCasesInfo() {
-      const response = await fetch('http://localhost:8080/Steam_Market/client/db.json');
-      const data = await response.json();
-      // console.log(casesInfo);
-      casesInfo = data.cases; // Store fetched cases in casesInfo
-      refreshCases(); // Initial call to display cases
-    }
-
+  
     async function loadWeb3() {
-      const web3 = window.web3;
-      accounts = await web3.eth.getAccounts();
-      console.log('Account: ', accounts[0]);
-      casesEl = document.getElementById('case-data');
-
-      $.getJSON(
-        'http://localhost:8080/Steam_Market/build/contracts/CaseSale.json',
-        async function (data) {
-          const CaseArtifact = data;
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const web3 = new Web3(window.ethereum);
+          const accounts = await web3.eth.getAccounts();
+          console.log('Account:', accounts[0]);
+          historyEl = document.getElementById('case-data');
+  
+          const response = await fetch('../../../build/contracts/CaseSale.json');
+          const CaseArtifact = await response.json();
           caseInstance = new web3.eth.Contract(
             CaseArtifact.abi,
             CaseArtifact.networks['5777'].address
           );
-          // console.log(caseInstance);
-          await refreshCases();
-          // console.log(caseInstance);
+          displayTransactions();
+        } catch (error) {
+          console.error("Could not get accounts", error);
         }
-      );
+      } else {
+        console.log('Please install MetaMask!');
+      }
     }
-
-    async function refreshCases() {
-      await loadCasesInfo();
-      
-      casesEl.innerHTML = ''; // Clear current list to refresh
-
-      const caseItem = await caseInstance.methods.getTransactionHistory().call();
-      console.log(caseItem);
+  
+    async function displayTransactions() {
+      const transactions = await caseInstance.methods.getTransactionHistory().call();
+  
+      historyEl.innerHTML = ''; // Clear the list
+  
+      transactions.forEach((tx, index) => {
+        const transactionEl = document.createElement('li');
+        transactionEl.classList.add('case-display', 'container');
+  
+        const transactionDate = new Date(Number(tx.timestamp) * 1000);
+        const formattedDate = transactionDate.toLocaleString();
+        const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(tx.buyer.length - 4)}`;
+        const amountCC = web3.utils.fromWei(tx.amount, 'ether');
+  
+        transactionEl.innerHTML = `
+          <p>Transaction ${index + 1}</p>
+          <p>Case ID: ${tx.caseId}</p>
+          <hr style="width: 80%; margin: auto;">
+          <div style="padding: 10px;">
+            <p>Time: ${formattedDate}</p>
+            <p>To: ${newOwner}</p>
+            <p>Amount: ${amountCC} CC</p>
+          </div>
+        `;
+  
+        historyEl.appendChild(transactionEl);
+      });
     }
+  
+    loadWeb3();
   </script>
 </html>
