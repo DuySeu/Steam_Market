@@ -44,6 +44,7 @@ async function refreshCases() {
       caseEl.className = 'case-display';
       caseEl.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:100%"/>
                         <p>${item.name}</p>
+                        <p>${item.id}</p>
                         <hr style="width: 80%; margin: auto;">
                         <div>
                           <p>Price: ${seller}</p>

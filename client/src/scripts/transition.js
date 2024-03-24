@@ -24,14 +24,14 @@ function displayText2() {
   var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'none';
 }
-function displayText3() {
-  var text1 = document.getElementById('my-active-listing');
-  text1.style.display = 'none';
-  var text2 = document.getElementById('market-history');
-  text2.style.display = 'none';
-  var text3 = document.getElementById('sell-an-items');
-  text3.style.display = 'block';
-}
+// function displayText3() {
+//   var text1 = document.getElementById('my-active-listing');
+//   text1.style.display = 'none';
+//   var text2 = document.getElementById('market-history');
+//   text2.style.display = 'none';
+//   var text3 = document.getElementById('sell-an-items');
+//   text3.style.display = 'block';
+// }
 
 // JavaScript to toggle active class for question and answer
 const faqQuestions = document.querySelectorAll('.faq-question');

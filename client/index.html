@@ -110,60 +110,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
   <script src="src/scripts/transition.js"></script>
-  <!-- <script src="src/scripts/wallet-connection.js"></script> -->
+  <script src="src/scripts/wallet-connection.js"></script>
   <script src="src/scripts/trade.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const walletAddressDisplay = document.getElementById('walletAddressDisplay');
-      const connectWalletButton = document.getElementById('connectWalletButton');
-      const walletBalanceDisplay = document.getElementById('walletBalanceDisplay');
-      // const logoutButton = document.getElementById('logoutButton');
-
-      connectWalletButton.addEventListener('click', connectWallet);
-      // logoutButton.addEventListener('click', logoutWallet);
-
-      function connectWallet() {
-        if (typeof window.ethereum !== 'undefined') {
-          window.ethereum
-            .request({ method: 'eth_requestAccounts' })
-            .then((accounts) => {
-              setWalletAddress(accounts[0]);
-            })
-            .catch((err) => {
-              console.error(err);
-              alert('An error occurred!');
-            });
-        } else {
-          alert('Please install MetaMask!');
-        }
-      }
-
-      function setWalletAddress(address) {
-        walletAddressDisplay.textContent = `${address.substring(0, 6)}...${address.substring(38)}`;
-        connectWalletButton.style.display = 'none';
-      }
-
-      // Optional: Automatically try to connect when the page loads
-      if (typeof window.ethereum !== 'undefined') {
-        window.ethereum
-          .request({ method: 'eth_accounts' })
-          .then((accounts) => {
-            if (accounts.length > 0) {
-              setWalletAddress(accounts[0]);
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-
-      // Listen for account changes
-      if (window.ethereum) {
-        window.ethereum.on('accountsChanged', function (accounts) {
-          setWalletAddress(accounts[0]);
-        });
-      }
-
-    });
-  </script>
 </html>
