@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `asignment`
+-- Database: `assignment`
 --
 
 -- --------------------------------------------------------
@@ -67,12 +67,12 @@ INSERT INTO `cases` (`id`, `name`, `image`, `buy_price`) VALUES
 ('2', 'Fracture Case', 'src/assets/images/case/case2.png', 64),
 ('3', 'Dreams & Nightmares Case', 'src/assets/images/case/case1.png', 25),
 ('4', 'Recoil Case', 'src/assets/images/case/case6.png', 37),
-('5', 'Snakebite Case', 'src/assets/images/case/case3.png', 52);
+('5', 'Snakebite Case', 'src/assets/images/case/case3.png', 52),
 ('6', 'Gamma Case', 'src/assets/images/case/case5.png', 22),
 ('7', 'Revolution Case', 'src/assets/images/case/case4.png', 33),
 ('8', 'Fracture Case', 'src/assets/images/case/case2.png', 42),
 ('9', 'Dreams & Nightmares Case', 'src/assets/images/case/case1.png', 31),
-('10', 'Recoil Case', 'src/assets/images/case/case6.png', 53),
+('10', 'Recoil Case', 'src/assets/images/case/case6.png', 53);
 
 -- --------------------------------------------------------
 

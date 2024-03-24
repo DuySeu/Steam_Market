@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "asignment");
+$con = mysqli_connect("localhost", "root", "", "assignment");
 $response = array();
 if ($con) {
   $sql = "select * from cases";
