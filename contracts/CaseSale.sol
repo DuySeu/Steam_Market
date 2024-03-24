@@ -3,16 +3,15 @@ pragma solidity ^0.8.0;
 
 contract CaseSale {
     struct Case {
-        uint price;
         address owner;
+        bool isForSale;
     }
 
     struct Transaction {
         address buyer;
         uint256 caseId;
         uint256 timestamp;
-        string transactionType; // "buy" or "sell"
-        uint256 amount; //buy or sell price
+        uint256 amount;
     }
     Transaction[] public transactions;
 
@@ -20,49 +19,36 @@ contract CaseSale {
     address public owner;
 
     event Buy(address indexed buyer, uint indexed caseId);
-    event Sell(address indexed buyer, uint indexed caseId);
+    event Offer(address indexed buyer, uint indexed caseId);
 
     constructor() {
         owner = msg.sender;
-        for (uint i = 0; i < 10; i++) {
-            cases.push(Case(0, address(0x0)));
+        for (uint i = 0; i < 20; i++) {
+            cases.push(Case(address(owner), true));
         }
     }
 
     function buyCase(uint caseId) external payable {
-        require(caseId >= 0, "Invalid Case ID");
-        require(cases[caseId].owner == address(0x0), "Case already owned");
-        require(msg.value >= cases[caseId].price, "Incorrect Ether sent");
+        require(caseId < cases.length, "Invalid Case ID");
+        require(cases[caseId].isForSale, "Case not for sale");
 
+        address previousOwner = cases[caseId].owner;
         cases[caseId].owner = msg.sender;
+        cases[caseId].isForSale = false;
+
+        payable(previousOwner).transfer(msg.value);
         transactions.push(
-            Transaction(msg.sender, caseId, block.timestamp, "buy", msg.value)
+            Transaction(msg.sender, caseId, block.timestamp, msg.value)
         );
         emit Buy(msg.sender, caseId);
     }
 
-    function sellCase(uint caseId) external {
-        require(caseId >= 0, "Invalid Case ID");
-        require(cases[caseId].owner == msg.sender, "Not the Case owner");
-
-        cases[caseId].owner = address(0x0);
-        payable(msg.sender).transfer(cases[caseId].price);
-        transactions.push(
-            Transaction(
-                msg.sender,
-                caseId,
-                block.timestamp,
-                "sell",
-                cases[caseId].price
-            )
-        );
-        emit Sell(msg.sender, caseId);
+    function offerCase(uint caseId) external {
+        require(caseId < cases.length, "Invalid Case ID");
+        cases[caseId].isForSale = true;
+        emit Offer(msg.sender, caseId);
     }
 
-    // function getCaseInfo(uint caseId) external view returns (uint price, address owner) {
-    //     require(caseId >= 0 && caseId < 10, "Invalid Case ID");
-    //     return (cases[caseId].price, cases[caseId].owner);
-    // }
     function getTransactionHistory()
         external
         view

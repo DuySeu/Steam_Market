@@ -10,17 +10,17 @@ function closeNav() {
 
 function displayText1() {
   var text1 = document.getElementById('my-active-listing');
-  text1.style.display = 'block';
+  text1.style.display = 'grid';
   var text2 = document.getElementById('market-history');
   text2.style.display = 'none';
   var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'none';
 }
 function displayText2() {
-  var Text1 = document.getElementById('my-active-listing');
-  Text1.style.display = 'none';
-  var Text2 = document.getElementById('market-history');
-  Text2.style.display = 'block';
+  var text1 = document.getElementById('my-active-listing');
+  text1.style.display = 'none';
+  var text2 = document.getElementById('market-history');
+  text2.style.display = 'grid';
   var text3 = document.getElementById('sell-an-items');
   text3.style.display = 'none';
 }

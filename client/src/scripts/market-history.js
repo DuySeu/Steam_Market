@@ -4,6 +4,11 @@ loadWeb3();
 let historyEl;
 let caseInstance;
 let casesInfo = [];
+async function loadCasesInfo() {
+  const response = await fetch('http://localhost:8080/Steam_Market/client/src/api/case-api.php');
+  casesInfo = await response.json();
+  console.log(casesInfo);
+}
 
 async function loadWeb3() {
   const web3 = window.web3;
@@ -22,6 +27,7 @@ async function loadWeb3() {
 }
 
 async function displayTransactions() {
+  await loadCasesInfo();
   const transactions = await caseInstance.methods.getTransactionHistory().call();
 
   // Clear the current list to display the new list
@@ -40,7 +46,7 @@ async function displayTransactions() {
 
     const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
     const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(38)}`;
-    const amountCC = (parseFloat(web3.utils.fromWei(tx.amount, 'ether')) * 10).toFixed(2);
+    const amountCC = web3.utils.fromWei(tx.amount, 'ether') * 10;
 
     // HTML structure of each transaction
     transactionEl.innerHTML = `
@@ -49,7 +55,7 @@ async function displayTransactions() {
         <hr style="width: 80%; margin: auto;">
         <div style="padding: 10px;">
           <p>Time: ${formattedDate}</p>
-          <p>To: ${newOwner}</p>
+          <p>From: ${newOwner}</p>
           <p>Amount: ${amountCC}CC</p>
         </div>
       `;

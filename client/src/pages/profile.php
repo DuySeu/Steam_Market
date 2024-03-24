@@ -54,20 +54,13 @@
         <img src="../../public/logo.png" alt="user logo" class="user-ava" />
         <div class="user-info">
           <div class="user-wallet">
-            <h3>Username:
-            </h3>
+            <h3>Username:</h3>
             <a href="" id="connectWalletButton">Connect Wallet</a>
             <p id="walletAddressDisplay" style="text-decoration: none;"></p>
           </div>
           <div class="user-wallet">
             <h3>
-              <a href="exchange.html" class="profile-link">Wallet balance:</a>
-              <p id="walletBalance">...CC</p>
-            </h3>
-          </div>
-          <div class="user-wallet">
-            <h3>
-              <a href="logout.php" class="profile-link">Log out</a>
+              <a id="logoutButton" href="../../index.html" class="profile-link">Log out</a>
             </h3>
           </div>
         </div>
@@ -76,21 +69,21 @@
       <div class="market-tab-container">
         <div style="background: #171a21">
           <button onclick="displayText1()" href="" class="market-button">
-            <span>My Selling Listings</span>
+            <span>My Selling List</span>
           </button>
           <button onclick="displayText2()" href="" class="market-button">
             <span>View Inventory</span>
           </button>
-          <button onclick="displayText3()" href="" class="market-button">
+          <!-- <button onclick="displayText3()" href="" class="market-button">
             <span>Sell An Items</span>
-          </button>
+          </button> -->
         </div>
         <div class="container">
           <ul id="my-active-listing" style="display: none">
           </ul>
           <ul id="market-history">
           </ul>
-          <div id="sell-an-items" style="display: none">
+          <!-- <div id="sell-an-items" style="display: none">
             <div id="form-container">
               <form action="selloffer.php" method="post">
 
@@ -105,7 +98,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -146,10 +139,9 @@
 <!-- Support JavaScript file -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
-<!-- <script src="../scripts/market-history.js"></script> -->
 <script src="../scripts/transition.js"></script>
 <script src="../scripts/wallet-connection.js"></script>
-<!-- <script src="../scripts/trade.js"></script> -->
+<script src="../scripts/logout.js"></script>
 <script>
   window.web3 = new Web3(window.ethereum);
   loadWeb3();
@@ -187,7 +179,6 @@
     for (let i = 0; i < casesInfo.length; i++) {
       const caseItem = await caseInstance.methods.cases(i).call();
       // console.log(caseItem);
-
       const item = casesInfo[i];
       const caseEl = document.createElement('li');
       caseEl.className = 'case-display', 'container';

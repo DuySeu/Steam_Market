@@ -103,7 +103,7 @@
 .profile-header {
   display: flex;
   color: white;
-  justify-content: start;
+  justify-content: space-around;
 }
 .user-ava {
   width: 7em;
