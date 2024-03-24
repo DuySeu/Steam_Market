@@ -33,11 +33,10 @@ function displayText2() {
 //   text3.style.display = 'block';
 // }
 
-// JavaScript to toggle active class for question and answer
-const faqQuestions = document.querySelectorAll('.faq-question');
-const searchInput = document.getElementById('searchInput');
+const casesName = document.querySelectorAll('.case-name');
+const searchInput = document.getElementById('case-search');
 
-faqQuestions.forEach((question) => {
+casesName.forEach((question) => {
   question.addEventListener('click', () => {
     question.classList.toggle('active');
     const answer = question.nextElementSibling;
@@ -49,9 +48,9 @@ faqQuestions.forEach((question) => {
 searchInput.addEventListener('input', function () {
   const searchTerm = this.value.toLowerCase();
 
-  faqQuestions.forEach((question) => {
+  casesName.forEach((question) => {
     const questionText = question.textContent.toLowerCase();
-    const faqItem = question.closest('.faq-item');
+    const faqItem = question.closest('.case-display');
 
     if (questionText.includes(searchTerm)) {
       faqItem.style.display = 'block';
@@ -60,22 +59,3 @@ searchInput.addEventListener('input', function () {
     }
   });
 });
-
-function searchFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i;
-  input = document.getElementById('case-search');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById('case-data');
-  li = ul.getElementsByTagName('li');
-
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName('a')[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = '';
-    } else {
-      li[i].style.display = 'none';
-    }
-  }
-}

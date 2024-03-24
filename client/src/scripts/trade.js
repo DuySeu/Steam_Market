@@ -43,7 +43,7 @@ async function refreshCases() {
       const caseEl = document.createElement('li');
       caseEl.className = 'case-display';
       caseEl.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:100%"/>
-                        <p>${item.name}</p>
+                        <p class="case-name">${item.name}</p>
                         <p>${item.id}</p>
                         <hr style="width: 80%; margin: auto;">
                         <div>
