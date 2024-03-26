@@ -62,11 +62,10 @@
         <div class="case-nav">
           <a href="index.html">Popular Items</a>
           <a href="index.html">Newly Listed</a>
-          <a href="src/pages/recentlysold.html">Transaction history</a>
+          <a href="src/pages/recentlysold.html">Recently sold</a>
           <input
             type="text"
             id="case-search"
-            onkeyup="searchFunction()"
             placeholder="Search.."
             style="font-size: 17px"
           />
@@ -105,6 +104,29 @@
         </nav>
       </div>
     </div>
+    <script>
+      // JavaScript for search functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('case-search');
+    
+        searchInput.addEventListener('input', function () {
+          const searchTerm = this.value.toLowerCase();
+          const caseDisplays = document.querySelectorAll('.case-display');
+    
+          caseDisplays.forEach((caseDisplay) => {
+            const caseNameElement = caseDisplay.querySelector('.case-name');
+            if (caseNameElement) {
+              const caseNameText = caseNameElement.textContent.toLowerCase();
+              if (caseNameText.includes(searchTerm)) {
+                caseDisplay.style.display = 'block';
+              } else {
+                caseDisplay.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    </script>
   </body>
   <!-- Support JavaScript file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
