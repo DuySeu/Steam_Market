@@ -24,29 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `case`
---
-
-CREATE TABLE `case` (
-  `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `owner` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `case`
---
-
-INSERT INTO `case` (`id`, `name`, `owner`) VALUES
-(1, 'Dreams & Nightmares Case', 'long'),
-(2, 'Dreams & Nightmares Case', 'long'),
-(3, 'Dreams & Nightmares Case', 'lit'),
-(4, 'Dreams & Nightmares Case', 'lit'),
-(5, 'Dreams & Nightmares Case', 'lit');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cases`
 --
 

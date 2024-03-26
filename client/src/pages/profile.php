@@ -189,7 +189,7 @@
           <hr style="width: 80%; margin: auto;">
           <div>
             <p>Price: ${item.buy_price}CC</p>
-            <button id="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Offer</button>
+            <button id="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Sell</button>
           </div>
         `;
         casesOwned.appendChild(caseEl);
