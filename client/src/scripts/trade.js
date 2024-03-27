@@ -44,10 +44,10 @@ async function refreshCases() {
       caseEl.className = 'case-display';
       caseEl.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:100%"/>
                         <p class="case-name">${item.name}</p>
-                        <p>${item.id}</p>
+                        <p>Case ID: ${item.id}</p>
                         <hr style="width: 80%; margin: auto;">
                         <div>
-                          <p>Price: ${seller}</p>
+                          <p>Seller: ${seller}</p>
                           <p>Price: ${item.buy_price}CC</p>
                           <button id="buyCase" onclick="checkAndBuyCase(${i}, '${item.buy_price}')">Buy Case</button>
                         </div>
