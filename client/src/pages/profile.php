@@ -226,15 +226,11 @@
 
     // Check if there are no cases in inventory and for sale, then display a message on the website
     if (!hasCasesInInventory) {
-      document.getElementById('inventoryMessage').innerHTML = "You have no cases in the inventory.";
-    } else {
-      document.getElementById('inventoryMessage').innerHTML = ""; // Clear the message if cases are present
+      casesOwned.innerHTML = "You have no cases in the inventory.";
     }
 
     if (!hasCasesForSale) {
-      document.getElementById('saleMessage').innerHTML = "You have no cases for sale.";
-    } else {
-      document.getElementById('saleMessage').innerHTML = ""; // Clear the message if cases are for sale
+      casesSell.innerHTML = "You have no cases for sale.";
     }
   }
   async function sellCase(caseId, buyPriceETH) {

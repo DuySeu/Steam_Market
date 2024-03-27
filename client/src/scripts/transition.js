@@ -10,7 +10,7 @@ function closeNav() {
 
 function displayText1() {
   var text1 = document.getElementById('my-active-listing');
-  if (text1) text1.style.display = 'grid';
+  if (text1) text1.style.display = 'block';
   var text2 = document.getElementById('market-history');
   if (text2) text2.style.display = 'none';
   var text3 = document.getElementById('sell-an-items');
@@ -20,7 +20,7 @@ function displayText2() {
   var text1 = document.getElementById('my-active-listing');
   if (text1) text1.style.display = 'none';
   var text2 = document.getElementById('market-history');
-  if (text2) text2.style.display = 'grid';
+  if (text2) text2.style.display = 'block';
   var text3 = document.getElementById('sell-an-items');
   if (text3) text3.style.display = 'none';
 }
