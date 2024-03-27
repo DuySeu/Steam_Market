@@ -46,7 +46,7 @@ async function displayTransactions() {
 
     const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
     const newOwner = `${tx.buyer.substring(0, 6)}...${tx.buyer.substring(38)}`;
-    const amountCC = web3.utils.fromWei(tx.amount, 'ether') * 10;
+    const amountCC = Number(web3.utils.fromWei(tx.amount, 'ether') * 10).toFixed(0);
 
     // HTML structure of each transaction
     transactionEl.innerHTML = `
@@ -55,7 +55,7 @@ async function displayTransactions() {
         <hr style="width: 80%; margin: auto;">
         <div style="padding: 10px;">
           <p>Time: ${formattedDate}</p>
-          <p>From: ${newOwner}</p>
+          <p>Buyer: ${newOwner}</p>
           <p>Amount: ${amountCC}CC</p>
         </div>
       `;

@@ -62,13 +62,8 @@
         <div class="case-nav">
           <a href="index.html">Popular Items</a>
           <a href="index.html">Newly Listed</a>
-          <a href="src/pages/recentlysold.html">Recently sold</a>
-          <input
-            type="text"
-            id="case-search"
-            placeholder="Search.."
-            style="font-size: 17px"
-          />
+          <a href="src/pages/recentlysold.html">Transaction History</a>
+          <input type="text" id="case-search" placeholder="Search.." style="font-size: 17px" />
         </div>
         <ul id="case-data"></ul>
       </div>
@@ -106,13 +101,13 @@
     </div>
     <script>
       // JavaScript for search functionality
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('case-search');
-    
+
         searchInput.addEventListener('input', function () {
           const searchTerm = this.value.toLowerCase();
           const caseDisplays = document.querySelectorAll('.case-display');
-    
+
           caseDisplays.forEach((caseDisplay) => {
             const caseNameElement = caseDisplay.querySelector('.case-name');
             if (caseNameElement) {
@@ -127,11 +122,11 @@
         });
       });
     </script>
-  </body>
   <!-- Support JavaScript file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
   <script src="src/scripts/wallet-connection.js"></script>
   <script src="src/scripts/trade.js"></script>
   <script src="src/scripts/transition.js"></script>
+  </body>
 </html>
