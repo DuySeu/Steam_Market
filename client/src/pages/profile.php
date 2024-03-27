@@ -57,6 +57,8 @@
             <h3>Username:</h3>
             <a href="" id="connectWalletButton">Connect Wallet</a>
             <p id="walletAddressDisplay" style="text-decoration: none;"></p>
+            <p id="saleMessage"></p>
+            <p id="inventoryMessage"></p>
           </div>
           <div class="user-wallet">
             <h3>
@@ -66,23 +68,34 @@
         </div>
       </div>
       <hr />
+      
+      
       <div class="market-tab-container">
         <div style="background: #171a21">
           <button onclick="displayText1()" href="" class="market-button">
             <span>My Selling List</span>
+            
+            
           </button>
           <button onclick="displayText2()" href="" class="market-button">
             <span>View Inventory</span>
+            
           </button>
+          
           <!-- <button onclick="displayText3()" href="" class="market-button">
             <span>Sell An Items</span>
           </button> -->
         </div>
         <div class="container">
-          <ul id="my-active-listing" style="display: none">
-          </ul>
-          <ul id="market-history">
-          </ul>
+            
+          <div id="my-active-listing" style="display: none">
+            <p id="saleMessage"></p>
+          </div>
+          
+          <div id="market-history">
+          
+          </div>
+          
           <!-- <div id="sell-an-items" style="display: none">
             <div id="form-container">
               <form action="selloffer.php" method="post">
@@ -151,7 +164,7 @@
   let casesSell = document.getElementById('my-active-listing');
 
   async function loadCasesInfo() {
-    const response = await fetch('http://localhost:8080/Steam_Market/client/src/api/case-api.php');
+    const response = await fetch('http://localhost/Steam_Market/client/src/api/case-api.php');
     casesInfo = await response.json();
   }
 
@@ -160,7 +173,7 @@
     accounts = await web3.eth.getAccounts();
     console.log('Account: ', accounts[0]);
 
-    $.getJSON('http://localhost:8080/Steam_Market/build/contracts/CaseSale.json', async function(data) {
+    $.getJSON('http://localhost/Steam_Market/build/contracts/CaseSale.json', async function(data) {
       const CaseArtifact = data;
       caseInstance = new web3.eth.Contract(
         CaseArtifact.abi,
@@ -176,34 +189,52 @@
     casesOwned.innerHTML = ''; // Clear current list to refresh
     casesSell.innerHTML = ''; // Clear current list to refresh
 
+    let hasCasesForSale = false;
+    let hasCasesInInventory = false;
+
     for (let i = 0; i < casesInfo.length; i++) {
       const caseItem = await caseInstance.methods.cases(i).call();
       // console.log(caseItem);
       const item = casesInfo[i];
-      const caseEl = document.createElement('li');
-      caseEl.className = 'case-display', 'container';
+      const caseEl = document.createElement('ul');
+      caseEl.className = 'view-inv';
       if (caseItem.owner === accounts[0] && caseItem.isForSale === false) {
-        caseEl.innerHTML = `
+        hasCasesInInventory = true;
+        caseEl.innerHTML = `<li class="case-display container">
           <img src="../../${item.image}" alt="${item.name}" style="width:100%">
           <p style="color:white">${item.name}</p>
           <hr style="width: 80%; margin: auto;">
           <div>
             <p>Price: ${item.buy_price}CC</p>
             <button id="buyCase" onclick="sellCase(${i}, '${item.buy_price}')">Sell</button>
-          </div>
+          </div></li>
         `;
         casesOwned.appendChild(caseEl);
       } else if (caseItem.owner === accounts[0] && caseItem.isForSale === true) {
-        caseEl.innerHTML = `
+        hasCasesForSale = true;
+        caseEl.innerHTML = `<li class="case-display container">
           <img src="../../${item.image}" alt="${item.name}" style="width:100%">
           <p style="color:white">${item.name}</p>
           <hr style="width: 80%; margin: auto;">
           <div>
             <p>Price: ${item.buy_price}CC</p>
-          </div>
+          </div></li>
         `;
         casesSell.appendChild(caseEl);
       }
+    }
+
+    // Check if there are no cases in inventory and for sale, then display a message on the website
+    if (!hasCasesInInventory) {
+      document.getElementById('inventoryMessage').innerHTML = "You have no cases in the inventory.";
+    } else {
+      document.getElementById('inventoryMessage').innerHTML = ""; // Clear the message if cases are present
+    }
+
+    if (!hasCasesForSale) {
+      document.getElementById('saleMessage').innerHTML = "You have no cases for sale.";
+    } else {
+      document.getElementById('saleMessage').innerHTML = ""; // Clear the message if cases are for sale
     }
   }
   async function sellCase(caseId, buyPriceETH) {

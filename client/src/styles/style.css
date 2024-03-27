@@ -106,7 +106,7 @@
   justify-content: space-around;
 }
 .user-ava {
-  width: 7em;
+  width: 10em;
 }
 .user-info {
   display: flex;
@@ -296,7 +296,7 @@ hr {
   border-radius: 1em;
   cursor: pointer;
 }
-#market-history, #my-active-listing {
+.view-inv {
   display: grid;
   list-style: none;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -325,4 +325,8 @@ hr {
 #sellCase:hover{
   background-color: white;
   color: #07beff;
+}
+
+#saleMessage, #inventoryMessage {
+  font-weight: bolder;
 }
