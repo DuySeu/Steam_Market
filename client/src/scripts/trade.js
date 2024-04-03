@@ -1,7 +1,7 @@
 window.web3 = new Web3(window.ethereum);
 loadWeb3();
 let casesEl;
-let caseInstance;
+let CaseContract;
 let accounts;
 let caseItem;
 
@@ -21,9 +21,16 @@ async function loadWeb3() {
     'http://localhost/Steam_Market/build/contracts/CaseSale.json',
     async function (data) {
       const CaseArtifact = data;
-      caseInstance = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
+      const CaseContract = TruffleContract(CaseArtifact);
+      CaseContract = new web3.eth.Contract(CaseArtifact.abi, CaseArtifact.networks['5777'].address);
       await refreshCases();
-      // console.log(caseInstance);
+      var CaseInstance;
+
+      CaseContract.deployed().then(function(instance) {
+        CaseInstance = instance;
+        CaseInstance.mint(buyMintDataString, {from: '0xD5EbE59E9aB725AAe8B7ed3730251D6B75575378'});
+        CaseInstance.mint(sellMintDataString, {from: '0xD5EbE59E9aB725AAe8B7ed3730251D6B75575378'});
+      });
     }
   );
 }
@@ -34,8 +41,7 @@ async function refreshCases() {
   casesEl.innerHTML = ''; // Clear current list to refresh
 
   for (let i = 0; i < casesInfo.length; i++) {
-    caseItem = await caseInstance.methods.cases(i).call();
-    // console.log(caseInstance.methods.cases(i).call());
+    caseItem = await CaseContract.methods.cases(i).call();
     if (caseItem.isForSale === true) {
       const seller = `${caseItem.owner.substring(0, 6)}...${caseItem.owner.substring(38)}`;
       const item = casesInfo[i];
@@ -72,7 +78,7 @@ async function buyCase(caseId, buyPriceETH) {
 
   const priceWei = web3.utils.toWei((parseFloat(buyPriceETH) * 0.1).toString(), 'ether');
   try {
-    await caseInstance.methods
+    await CaseContract.methods
       .buyCase(caseId)
       .send({ from: account, value: priceWei, gas: 500000 });
     console.log(`Case ${caseId} has been successfully purchased.`);

@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract CaseSale {
+import "./ERC721Full.sol";
+
+contract CaseSale is ERC721Full {
     struct Case {
         address owner;
         bool isForSale;
@@ -21,11 +23,19 @@ contract CaseSale {
     event Buy(address indexed buyer, uint indexed caseId);
     event Offer(address indexed buyer, uint indexed caseId);
 
-    constructor() {
-        owner = msg.sender;
-        for (uint i = 0; i < 20; i++) {
-            cases.push(Case(address(owner), true));
-        }
+    constructor() ERC721Full("CaseSale", "CASESALE") public {
+    }
+   
+    function mint(string memory _case) public {
+      require(!_caseExists[_case]);
+      uint _id = cases.push(_case);
+      _mint(msg.sender, _id);
+      _caseExists[_case] = true;
+    }
+
+    function burn(uint _tokenId) public {
+      require(_isApprovedOrOwner(msg.sender, _tokenId));
+      _burn(ownerOf(_tokenId), _tokenId); 
     }
 
     function buyCase(uint caseId) external payable {
